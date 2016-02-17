@@ -1,5 +1,4 @@
 <footer>
-123312
   <div class="container">
     <div class="row">
       <!-- <?php if ($informations) { ?>
