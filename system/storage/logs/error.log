@@ -4928,3 +4928,4 @@
 2016-02-17 16:31:52 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
 2016-02-17 16:31:52 - PHP Notice:  Error: Could not load template /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/common/footer.tpl! in /home/f/fb7903js/weblame.me/public_html/system/storage/modification/system/engine/loader.php on line 86
 2016-02-17 16:32:13 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 13:46:00 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
