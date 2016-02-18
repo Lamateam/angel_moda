@@ -83,7 +83,7 @@
           <li><a href="<?php echo $shoptour; ?>" title="<?php echo $text_shoptour; ?>"><?php echo $text_shoptour; ?></a></li>
           <li><a href="<?php echo $mailus; ?>" title="<?php echo $text_mailus; ?>"><?php echo $text_mailus; ?></a></li>
           <li><a href="<?php echo $contacts; ?>" title="<?php echo $text_contact; ?>"><?php echo $text_contact; ?></a></li>
-          <li><a href="/index.php?route=blog/blog" title="<?php echo $text_blog;?>"><?php echo $text_blog;?></a></li>
+          <li><a href="/index.php?route=blog/blog" class="footer_blog" title="<?php echo $text_blog;?>"><?php echo $text_blog;?></a></li>
         </ul>
       </div>
      <div class="col15-md-5 col-sm-6 hidden-sm hidden-xs">

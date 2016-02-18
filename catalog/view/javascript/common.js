@@ -138,6 +138,18 @@ $(document).on("change",".photo_file", function(){
 
 $(document).ready(function(){
 	
+
+	//footer blog link
+
+	if (!$(".footer_blog").length>0) {
+		if ($("html[lang='en']").length>0) {
+			$("footer .col15-md-5.col-sm-12 .list-unstyled:last-child").append('<li><a href="/index.php?route=blog/blog" class="footer_blog" title="Blog">Blog</a></li>');
+		}else {
+			$("footer .col15-md-5.col-sm-12 .list-unstyled:last-child").append('<li><a href="/index.php?route=blog/blog" class="footer_blog" title="Блог">Блог</a></li>');
+		}
+	}
+
+	
 	
 	
 	if ($("html[lang='en']").length>0) {

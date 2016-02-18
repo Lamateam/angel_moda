@@ -1,10 +1,14 @@
 <?php echo $header; ?>
 <div class="container">
-  <ul class="breadcrumb">
+  <div class="row">
+    <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
     <?php } ?>
   </ul>
+  </div>
+
+  
   <div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
@@ -14,9 +18,8 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h2><?php echo $name; ?></h2>
+      <h1><?php echo $name; ?></h1>
       <?php if ($articles) { ?>
-
         <?php foreach ($articles as $article) { ?>
           <div class="panel panel-default">
               <div class="panel-body">
