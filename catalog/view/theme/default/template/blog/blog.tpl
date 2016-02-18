@@ -17,50 +17,31 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $name; ?></h1>
+      <h1 class="blog"><?php echo $name; ?></h1>
       <div class="row row_blog">
 
       <?php if ($articles) { ?>
         <?php foreach ($articles as $article) { ?>
 
 
-        <div class ="col-lg-4 col-md-4 col-sm-2 col-xs-1 ">
+        <div class ="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
           <div class="article_block">
-               <div class="img_block">
-                  <a href="<?php echo $article['href']; ?>" title="<?php echo $article['name']; ?>">
-                     <img src="http://localhost/image/catalog/1200081396-900x350w.jpg" class="img-responsive">
-
-                  </a>
-                </div>
-                <h2><a href="<?php echo $article['href']; ?>" title="<?php echo $article['name']; ?>"><?php echo $article['name']; ?>  </a></h2>
                 <span class="date_category"><?php echo $article['date_modified']; ?></span>
-
+                <h2><a href="<?php echo $article['href']; ?>" title="<?php echo $article['name']; ?>"><?php echo $article['name']; ?>  </a></h2>
+              
+                <div class="article_intro"><?php echo $article['intro_text']; ?></div>
             </div>
         </div>
 
-
-
-          <div class="panel panel-default" style="display: none;">
-              <div class="panel-body">
-                <div class="article-layout article-list col-xs-12">
-                  <div class="article-intro">
-                    <div>
-                        <h3><a href="<?php echo $article['href']; ?>"><?php echo $article['name']; ?></a></h3>
-                        <p><?php echo $article['date_modified']; ?></p>
-                        <p><?php echo $article['intro_text']; ?></p>
-                    </div>
-                  </div>
-                  <div class="buttons">
-                        <div class="pull-right"><a href="<?php echo $article['href']; ?>" class="btn btn-primary"><?php echo $button_read_more; ?></a></div>
-                  </div>
-                </div>
-              </div>
-          </div>
         <?php } ?>
       </div>  
       <div class="row">
-        <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>
-        <div class="col-sm-6 text-right"><?php echo $results; ?></div>
+        <div class="col-xs-12 text-left">
+            <div class="row">
+        <?php echo $pagination; ?>
+            </div>
+        </div>
+       
       </div>
       <?php } ?>
       <?php if (!$articles) { ?>
@@ -69,4 +50,8 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+
+
+
+
 <?php echo $footer; ?>

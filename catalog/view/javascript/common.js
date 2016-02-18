@@ -29,8 +29,6 @@ $(document).on("change",".photo_file", function(){
 });
 
 
-
-
 	if ($("html[lang='en']").length>0) {
 		var error_text = "Error";
 	}else {
@@ -138,7 +136,9 @@ $(document).on("change",".photo_file", function(){
 
 $(document).ready(function(){
 	
+	//article img
 
+	 get_article_ready();
 	//footer blog link
 
 	if (!$(".footer_blog").length>0) {
@@ -1168,3 +1168,22 @@ $(document).delegate('.agree', 'click', function(e) {
 
 
 
+function get_article_ready() {
+	$(".article_block").each(function(){
+		var src = $(this).find(".article_intro img").attr("src");
+		var title = $(this).find(".article_intro h2 a").text;
+		var href = $(this).find(".article_intro h2 a").attr("href");
+		$(this).find(".article_intro img").remove();
+	
+		var text = '<div class="img_block"><a href="'+href+'" title="'+title+'"><img class="img-responsive" src="'+src+'" alt='+title+' ></a></div>';
+
+
+		$(this).prepend(text);
+
+		
+	});
+
+
+	$("#content img").addClass("img-responsive");
+	
+}

@@ -1867,7 +1867,9 @@ div.required .control-label:after {
 [class^="product-category-60"] #menu .nav > li:nth-child(2) > a,
 [class^="product-category-64"] #menu .nav > li:nth-child(3) > a,
 [class^="product-category-65"] #menu .nav > li:nth-child(4) > a,
-[class^="product-category-85"] #menu .nav > li:nth-child(5) > a
+[class^="product-category-85"] #menu .nav > li:nth-child(5) > a,
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover,
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover
 {
 	color: white;
 	background-color: #ce1313;
@@ -2536,13 +2538,7 @@ h2.price {
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-	#content .col-md-2:nth-child(6n+1),
-	#content .col-md-2:nth-child(6n+1),
-	#content .col-md-3:nth-child(4n+1),
-	#content .col-md-4:nth-child(3n+1),
-	#content .col-md-6:nth-child(2n+1) {
-		clear: left;
-	}
+
 	
 	.container.raitings_cont {
 		padding-left: 0px;
@@ -2550,15 +2546,6 @@ h2.price {
 	}
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-	#content .col-sm-2:nth-child(6n+1),
-	#content .col-sm-2:nth-child(6n+1),
-	#content .col-sm-3:nth-child(4n+1),
-	#content .col-sm-4:nth-child(3n+1),
-	#content .col-sm-6:nth-child(2n+1) {
-		clear: left;
-	}
-}
 
 
 /* fixed colum left + content + right*/
@@ -2662,6 +2649,174 @@ h2.price {
 	margin-right: -25px;
 }
 
+.img_block {
+	padding-bottom: 15px;
+}
+
+#content .article_block h2 {
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+#content .article_block h2 a {
+	text-decoration: none;
+color:  #000000;
+font-size: 18px;/* Приближение из-за подстановки шрифтов */
+font-weight: 700;
+line-height: 24px;/* Приближение из-за подстановки шрифтов */
+text-align: left;
+}
+#content .article_block h2 a:hover {
+	color: #ce1313
+}
+
+
+#content .article_block .article_intro, .article_intro p, .article_intro span {
+	color:  #444444;
+	font-size: 12px;/* Приближение из-за подстановки шрифтов */
+	font-weight: 400;
+	line-height: 16px;/* Приближение из-за подстановки шрифтов */
+	text-align: left;
+}
+
+#content .article_block .article_intro {
+	margin-top: 10px;
+	position: relative;
+}
+
+#content h1.blog {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+#content .article_block {
+	margin-top: 35px;
+	padding-bottom: 25px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.article_intro img {
+	display: none;
+}
+
+#content .pagination_block ul li:before {
+	display: none;
+}
+#content .pagination_block ul {
+	width: 100%;
+	text-align: center;
+}
+
+#content .pagination_block ul li {
+	display: inline-block;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+
+.pagination>li>a, .pagination>li>span {
+	border-radius: 50%;
+	background: none;
+	border: none;
+	transition: none;
+	color:  #7e7e7e;
+	font-weight: bold;
+font-size: 15px;/* Приближение из-за подстановки шрифтов */
+font-weight: 700;
+
+text-align: center;
+}
+
+.pagination>li:first-child>a, .pagination>li:first-child>span, .pagination>li:last-child>a, .pagination>li:last-child>span {
+	border-radius: 50%;
+}
+
+.pagination_block {
+	margin-top: 50px;
+	overflow: hidden;
+	padding-top: 4px;
+	padding-bottom: 0px;
+
+	border-radius: 20px;
+	position: relative;
+	width: 80%;
+	margin-left: 10%;
+	background: #f4f4f4;
+}
+
+
+
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
+
+}
+
+.pagination>li>a, .pagination>li>span {
+
+}
+
+
+.pagination>li>a, .pagination>li>span {
+
+}
+
+
+
+
+.pagination>li.pagination_nav>a{
+
+	color:  #7e7e7e;
+	font-size: 13px;/* Приближение из-за подстановки шрифтов */
+	font-weight: 400;
+	line-height: 18px;/* Приближение из-за подстановки шрифтов */
+	text-align: center;
+	font-style: normal;
+}
+
+.pagination>li.pagination_nav:hover>a {
+	background: none!important;
+	border: none;
+	opacity: 0.8;
+}
+
+li.pagination_nav.disabled_cur {
+	visibility: hidden;
+}
+
+.pagination_nav.pagination_right {
+	float: right;
+}
+
+.pagination_nav.pagination_left {
+	float: left;
+}
+
+.date_category, .article-subtitle .article-date{
+	color:  #b2b2b2;
+	font-size: 13px;/* Приближение из-за подстановки шрифтов */
+	font-style: italic;
+	text-align: left;
+}
+
+#content .article-date {
+	display: block;
+	font-size: 16px;
+	margin-bottom: 25px;
+}
+
+#content img {
+	border-radius: 10px;
+	margin-bottom: 15px;
+}
+
+.article-description .addthis_toolbox {
+	padding-top: 15px;
+}
+
+#content .article-title h1 {
+	margin-bottom: 0px;
+}
 /*Footer*/
 
 footer {
@@ -4107,6 +4262,10 @@ text-align: left;
 }
 
 @media (max-width: 768px) {
+
+	#content  .pagination_block ul li.pagination_nav {
+		display: none;
+	}
 
 	.cart_desc {
 		width: 130px;

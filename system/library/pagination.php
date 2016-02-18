@@ -5,10 +5,10 @@ class Pagination {
 	public $limit = 20;
 	public $num_links = 8;
 	public $url = '';
-	public $text_first = '|&lt;';
-	public $text_last = '&gt;|';
-	public $text_next = '&gt;';
-	public $text_prev = '&lt;';
+	public $text_first = '';
+	public $text_last = '';
+	public $text_next = '<span class="next_text">Следующая</span>';
+	public $text_prev = '<span class="next_text">Предыдущая</span>';
 
 	public function render() {
 		$total = $this->total;
@@ -30,12 +30,21 @@ class Pagination {
 
 		$this->url = str_replace('%7Bpage%7D', '{page}', $this->url);
 
-		$output = '<ul class="pagination">';
+
+
+		$output = "<div class='pagination_block'>";
+
+		
+
+		$output .= '<ul class="pagination">';
 
 		if ($page > 1) {
-			$output .= '<li><a href="' . str_replace('{page}', 1, $this->url) . '">' . $this->text_first . '</a></li>';
-			$output .= '<li><a href="' . str_replace('{page}', $page - 1, $this->url) . '">' . $this->text_prev . '</a></li>';
+			
+			$output .= '<li class="pagination_nav pagination_left "><a  href="' . str_replace('{page}', $page - 1, $this->url) . '">' . $this->text_prev . '</a></li>';
+		}else{
+			$output .= '<li class="pagination_nav pagination_left disabled_cur"><span>' . $this->text_prev . '</span></li>';
 		}
+
 
 		if ($num_pages > 1) {
 			if ($num_pages <= $num_links) {
@@ -65,13 +74,17 @@ class Pagination {
 			}
 		}
 
-		if ($page < $num_pages) {
-			$output .= '<li><a href="' . str_replace('{page}', $page + 1, $this->url) . '">' . $this->text_next . '</a></li>';
-			$output .= '<li><a href="' . str_replace('{page}', $num_pages, $this->url) . '">' . $this->text_last . '</a></li>';
+			if ($page < $num_pages) {
+			$output .= '<li class="pagination_nav pagination_right"> <a href="' . str_replace('{page}', $page + 1, $this->url) . '">' . $this->text_next . '</a></li>';	
 		}
+		
 
 		$output .= '</ul>';
 
+	
+
+
+		$output .= "</div>";
 		if ($num_pages > 1) {
 			return $output;
 		} else {
