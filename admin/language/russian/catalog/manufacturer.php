@@ -18,6 +18,7 @@ $_['column_action']      = 'Действие';
 
 // Entry
 $_['entry_name']         = 'Производитель';
+$_['entry_description']  = 'Описание';
 $_['entry_store']        = 'Магазины';
 $_['entry_keyword']      = 'SEO URL';
 $_['entry_image']        = 'Изображение';

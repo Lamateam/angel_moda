@@ -78,6 +78,7 @@ class ControllerCommonHeader extends Controller {
 		$data['header_contacts'] = $this->language->get('header_contacts');
 		$data['header_wholesailors'] = $this->language->get('header_wholesailors');
 		$data['header_shop'] = $this->language->get('header_shop');
+		$data['header_manufacturers'] = $this->language->get('header_manufacturers');
 
 
 		$data['home'] = $this->url->link('common/home');

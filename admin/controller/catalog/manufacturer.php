@@ -270,6 +270,9 @@ class ControllerCatalogManufacturer extends Controller {
 		$data['text_amount'] = $this->language->get('text_amount');
 
 		$data['entry_name'] = $this->language->get('entry_name');
+		
+		$data['entry_description'] = $this->language->get('entry_description');
+		
 		$data['entry_store'] = $this->language->get('entry_store');
 		$data['entry_keyword'] = $this->language->get('entry_keyword');
 		$data['entry_image'] = $this->language->get('entry_image');
@@ -345,6 +348,14 @@ class ControllerCatalogManufacturer extends Controller {
 			$data['name'] = $manufacturer_info['name'];
 		} else {
 			$data['name'] = '';
+		}
+		
+		if (isset($this->request->post['description'])) {
+			$data['description'] = $this->request->post['name'];
+		} elseif (!empty($manufacturer_info)) {
+			$data['description'] = $manufacturer_info['description'];
+		} else {
+			$data['description'] = '';
 		}
 
 		$this->load->model('setting/store');

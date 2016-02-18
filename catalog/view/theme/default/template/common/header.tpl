@@ -225,6 +225,7 @@
             <li><a href="<?php echo $category['href']; ?>" title="<?php echo $category['name']; ?>"><?php echo $category['name']; ?></a></li>
           <?php } ?>
         <?php } ?>
+        <li><a href="/manufacturers" title="<?php echo $header_manufacturers;?>"><?php echo $header_manufacturers;?></a></li>
         <li><a href="/wholesale" title="<?php echo $header_wholesailors;?>"><?php echo $header_wholesailors;?></a></li>
         <li class="i-lab"><a href="/i-lab" title="I-LAB">I-LAB</a></li>
         <li><a href="/shoptour" title="<?php echo $header_shop;?>"><?php echo $header_shop;?>

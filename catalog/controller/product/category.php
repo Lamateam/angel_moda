@@ -204,6 +204,7 @@ class ControllerProductCategory extends Controller {
         $p['product_id'] = (int)$product_info['product_id'];
         $p['manufacturer'] = $product_info['manufacturer'];
         $p['manufacturer_image'] = $product_info['manufacturer_image'];
+        $p['manufacturer_description'] = $product_info['manufacturer_description'];
         $p['manufacturers'] = $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $product_info['manufacturer_id']);
         $p['model'] = $product_info['model'];
         $p['reward'] = $product_info['reward'];

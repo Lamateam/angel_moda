@@ -22,6 +22,7 @@ $_['text_rostow']           = 'Ростов-на-Дону';
 $_['header_contacts']           = 'Контакты';
 $_['header_wholesailors']           = 'Оптовикам';
 $_['header_shop']     = 'Шоп-туры';
+$_['header_manufacturers'] = 'Бренды';
 
 
 

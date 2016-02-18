@@ -46,15 +46,41 @@ class ControllerInformationInformation extends Controller {
 			
 			$data['right_column'] = $this->load->controller('information/right_column');
 			
-			if ($information_info['title'] == 'I-lab') {
+			if ((int)$information_id == 15) {
 				$tpl_path = 'i-lab.tpl';
 				$data['form'] = $this->load->controller('common/shoptour');
-			} else if ($information_info['title'] == 'Контакты') {
+			} else if ((int)$information_id == 14) {
 				$data['vk_link'] = $this->config->get('config_vk_link');
 				$data['facebook_link'] = $this->config->get('config_facebook_link');
 				$data['twitter_link'] = $this->config->get('config_twitter_link');
 				$data['instagram_link'] = $this->config->get('config_instagram_link');
 				$tpl_path = 'contacts.tpl';
+			} else if ((int)$information_id == 16) {
+				$data['description'] = '';
+				
+				$this->load->model('catalog/manufacturer');
+				$data['manufacturers'] = array();
+
+				$results = $this->model_catalog_manufacturer->getManufacturers();
+
+				foreach ($results as $result) {
+					if (is_numeric(utf8_substr($result['name'], 0, 1))) {
+						$key = '0 - 9';
+					} else {
+						$key = utf8_substr(utf8_strtoupper($result['name']), 0, 1);
+					}
+
+					if (!isset($data['manufacturers'][$key])) {
+						$data['manufacturers'][$key]['name'] = $key;
+					}
+
+					$data['manufacturers'][$key]['manufacturer'][] = array(
+						'name' => $result['name'],
+						'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $result['manufacturer_id'])
+					);
+				}
+				
+				$tpl_path = 'manufacturers.tpl';
 			} else {
 				$tpl_path = 'information.tpl';
 			}
