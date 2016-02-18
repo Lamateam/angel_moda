@@ -4,11 +4,11 @@
    
     
 			<?php echo $content_top; ?>
+			<?php echo $top_products; ?>
 			<?php echo $content_bottom; ?>
 		</div>
     <?php echo $column_right; ?></div>
 </div>
-<?php print_r($top_products); ?>
 <section class="preferences">
 	<div class="container">
 	   <h2>
