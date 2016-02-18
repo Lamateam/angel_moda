@@ -4,5 +4,5 @@ system/logs/
 system/storage/
 
 
-/config.php
+config.php
 admin/config.php

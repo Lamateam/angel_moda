@@ -37,7 +37,7 @@
           <div class="form-group">
             <label class="col-sm-2 control-label" for="input-description"><?php echo $entry_description; ?></label>
             <div class="col-sm-10">
-              <input type="text" name="description" value="<?php echo $description; ?>" placeholder="<?php echo $entry_description; ?>" id="input-description" class="form-control" />
+              <textarea type="text" name="description"  placeholder="<?php echo $entry_description; ?>" id="input-description" class="form-control" /><?php echo $description; ?></textarea>
             </div>
           </div>
           <div class="form-group">

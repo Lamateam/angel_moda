@@ -1171,14 +1171,16 @@ $(document).delegate('.agree', 'click', function(e) {
 function get_article_ready() {
 	$(".article_block").each(function(){
 		var src = $(this).find(".article_intro img").attr("src");
-		var title = $(this).find(".article_intro h2 a").text;
-		var href = $(this).find(".article_intro h2 a").attr("href");
-		$(this).find(".article_intro img").remove();
+		var title = $(this).find("h2 a").text();
+		var href_text = $(this).find("h2 a").attr("href");
+		console.log(href_text);
+		
 	
-		var text = '<div class="img_block"><a href="'+href+'" title="'+title+'"><img class="img-responsive" src="'+src+'" alt='+title+' ></a></div>';
+		var text = '<div class="img_block"><a href="'+href_text+'" title="'+title+'"><img class="img-responsive" src="'+src+'" alt='+title+' ></a></div>';
 
 
 		$(this).prepend(text);
+		$(this).find(".article_intro img").remove();
 
 		
 	});

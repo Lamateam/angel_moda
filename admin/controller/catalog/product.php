@@ -5,6 +5,7 @@ class ControllerCatalogProduct extends Controller {
 	public function index() {
 		$this->language->load('catalog/product');
 
+
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$this->load->model('catalog/product');
@@ -13,7 +14,16 @@ class ControllerCatalogProduct extends Controller {
 	}
 
 	public function add() {
+
+
+
+
+
+
 		$this->language->load('catalog/product');
+
+
+
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
@@ -764,12 +774,13 @@ class ControllerCatalogProduct extends Controller {
 		}
 
 		if (isset($this->request->post['sku'])) {
-			$data['sku'] = $this->request->post['sku'];
-		} elseif (!empty($product_info)) {
-			$data['sku'] = $product_info['sku'];
-		} else {
-			$data['sku'] = '';
-		}
+        $data['sku'] = $this->request->post['sku'];
+    } elseif (!empty($product_info)) {
+        $data['sku'] = $product_info['sku'];
+    } else {
+      	$sku_auto = $this->db->query("SELECT MAX(sku) as sku FROM " . DB_PREFIX . "product");
+      	$data['sku'] = $sku_auto->row['sku']+1;
+    }
 
 		if (isset($this->request->post['upc'])) {
 			$data['upc'] = $this->request->post['upc'];
@@ -1307,7 +1318,7 @@ class ControllerCatalogProduct extends Controller {
 			if ((utf8_strlen($value['name']) < 3) || (utf8_strlen($value['name']) > 255)) {
 				$this->error['name'][$language_id] = $this->language->get('error_name');
 			}
-
+			
 			if ((utf8_strlen($value['meta_title']) < 3) || (utf8_strlen($value['meta_title']) > 255)) {
 				$this->error['meta_title'][$language_id] = $this->language->get('error_meta_title');
 			}
