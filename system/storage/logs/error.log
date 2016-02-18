@@ -4928,6 +4928,7 @@
 2016-02-17 16:31:52 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
 2016-02-17 16:31:52 - PHP Notice:  Error: Could not load template /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/common/footer.tpl! in /home/f/fb7903js/weblame.me/public_html/system/storage/modification/system/engine/loader.php on line 86
 2016-02-17 16:32:13 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
+<<<<<<< HEAD
 2016-02-17 17:02:25 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
 2016-02-17 17:02:29 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
 2016-02-17 19:30:46 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
@@ -4945,3 +4946,25 @@
 2016-02-18 14:46:35 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
 2016-02-18 16:20:41 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
 2016-02-18 16:28:25 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
+=======
+2016-02-17 13:46:00 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 13:49:15 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 13:57:14 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 14:53:18 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 15:00:14 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 15:02:38 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 15:09:00 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 15:09:03 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 15:09:06 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 15:09:09 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 15:09:13 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 15:09:16 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 15:09:20 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 15:11:47 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 15:12:00 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 15:12:12 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 15:14:03 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+                                                                                                                                                   2016-02-18 13:20:50 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-18 13:21:07 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-18 13:21:17 - PHP Notice:  Undefined variable: zone_id in /var/www/html/catalog/view/theme/default/template/popup/register.tpl on line 299
+>>>>>>> eec0017f1a99d1364a5452dec6964d99d438cdcb
