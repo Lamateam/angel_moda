@@ -4928,3 +4928,20 @@
 2016-02-17 16:31:52 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
 2016-02-17 16:31:52 - PHP Notice:  Error: Could not load template /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/common/footer.tpl! in /home/f/fb7903js/weblame.me/public_html/system/storage/modification/system/engine/loader.php on line 86
 2016-02-17 16:32:13 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 17:02:25 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 17:02:29 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-17 19:30:46 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-18 1:15:59 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-18 1:23:40 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-18 5:40:46 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-18 11:21:29 - PHP Warning:  unlink(/home/f/fb7903js/weblame.me/public_html/system/storage/cache/cache.country.status.1455766846): No such file or directory in /home/f/fb7903js/weblame.me/public_html/system/library/cache/file.php on line 17
+2016-02-18 11:21:29 - PHP Warning:  session_start(): Cannot send session cookie - headers already sent by (output started at /home/f/fb7903js/weblame.me/public_html/index.php:98) in /home/f/fb7903js/weblame.me/public_html/system/library/session.php on line 21
+2016-02-18 11:21:29 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/f/fb7903js/weblame.me/public_html/index.php:98) in /home/f/fb7903js/weblame.me/public_html/system/library/session.php on line 21
+2016-02-18 11:21:29 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/f/fb7903js/weblame.me/public_html/index.php:98) in /home/f/fb7903js/weblame.me/public_html/index.php on line 185
+2016-02-18 11:21:29 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/f/fb7903js/weblame.me/public_html/index.php:98) in /home/f/fb7903js/weblame.me/public_html/system/library/currency.php on line 45
+2016-02-18 11:21:29 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-18 11:21:29 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-18 14:46:25 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-18 14:46:35 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-18 16:20:41 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
+2016-02-18 16:28:25 - PHP Notice:  Undefined variable: zone_id in /home/f/fb7903js/weblame.me/public_html/catalog/view/theme/default/template/popup/register.tpl on line 299
