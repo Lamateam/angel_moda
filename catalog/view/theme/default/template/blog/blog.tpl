@@ -1,5 +1,5 @@
 <?php echo $header; ?>
-<div class="container">
+<div class="container blog">
   <div class="row">
     <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -8,7 +8,6 @@
   </ul>
   </div>
 
-  
   <div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
@@ -19,9 +18,29 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <h1><?php echo $name; ?></h1>
+      <div class="row row_blog">
+
       <?php if ($articles) { ?>
         <?php foreach ($articles as $article) { ?>
-          <div class="panel panel-default">
+
+
+        <div class ="col-lg-4 col-md-4 col-sm-2 col-xs-1 ">
+          <div class="article_block">
+               <div class="img_block">
+                  <a href="<?php echo $article['href']; ?>" title="<?php echo $article['name']; ?>">
+                     <img src="http://localhost/image/catalog/1200081396-900x350w.jpg" class="img-responsive">
+
+                  </a>
+                </div>
+                <h2><a href="<?php echo $article['href']; ?>" title="<?php echo $article['name']; ?>"><?php echo $article['name']; ?>  </a></h2>
+                <span class="date_category"><?php echo $article['date_modified']; ?></span>
+
+            </div>
+        </div>
+
+
+
+          <div class="panel panel-default" style="display: none;">
               <div class="panel-body">
                 <div class="article-layout article-list col-xs-12">
                   <div class="article-intro">
@@ -38,7 +57,7 @@
               </div>
           </div>
         <?php } ?>
-
+      </div>  
       <div class="row">
         <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>
         <div class="col-sm-6 text-right"><?php echo $results; ?></div>

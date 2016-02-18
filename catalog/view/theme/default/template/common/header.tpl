@@ -149,7 +149,7 @@
             <a href="<?php echo $home; ?>"><img src="/image/logo.svg"  title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
          
         </div>
-        <div class="col15-md-5 col-xs-6 col-sm-4 pull-right">
+        <div class="col15-md-5 col-xs-6 col-sm-4  pull-right">
             <?php echo $cart; ?>
         </div>
         

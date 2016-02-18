@@ -21,16 +21,65 @@
     <?php } else { ?>
       <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+
+
+
+
+
+
+    <?php
+      if ($_SERVER['REQUEST_URI'] == "/contacts") {
+    ?>
+            <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
      <div class="row">
+
+
+        <div class="col-sm-12">
+          <h1><?php echo $heading_title; ?></h1>
+          <?php echo $description; ?><?php echo $content_bottom; ?></div> 
+        </div>
+
+
+
+
+
+      
+      </div>
+
+
+
+
+
+
+
+    <?php
+  } else {?>
+          <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+     <div class="row">
+
+
         <div class="col-sm-9">
           <h1><?php echo $heading_title; ?></h1>
           <?php echo $description; ?><?php echo $content_bottom; ?></div> 
         </div>
+
+
+
+
+
         <div class="col-sm-3">
             <?php echo $column_right; ?>
         </div>
       </div>
+  <?php } ?>
+
+
+
+
+
+
+
+
     </div>
 </div>
 

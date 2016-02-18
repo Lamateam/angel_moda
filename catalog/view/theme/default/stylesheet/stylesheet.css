@@ -1277,6 +1277,13 @@ h6 {
 	margin-bottom: 15px;
 }
 
+.row_contact .map {
+	width: 100%;
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+}
+
 .contact_row_form button.btn.btn-primary {
 	font-size: 14px;
 	padding: 11px 37px;
@@ -2642,6 +2649,19 @@ h2.price {
 	opacity: 1;
 }
 
+
+/*Article*/
+
+.article_block {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.row_blog {
+	margin-left: -25px;
+	margin-right: -25px;
+}
+
 /*Footer*/
 
 footer {
@@ -3391,6 +3411,8 @@ a.list-group-item:focus {
 header {
 	padding-top: 20px;
 	padding-bottom: 5px;
+	overflow: hidden;
+	width: 100%;
 }
 
 .header_city {
