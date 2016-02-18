@@ -20,12 +20,8 @@
               </div>
               <span class="product_title"><?php echo $product['name'];?></span>
             
-            
-            
             </div>
-            
-            
-            
+          
             <?php
             }
         
