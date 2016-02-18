@@ -52,6 +52,10 @@ th.prev, th.next {
 	border-radius: 10px;
 }
 
+#content .row_contact h2 {
+	margin-top: 0px
+}
+
 .radio-inline input[type=radio] {
 	height: 16px;
 	width: 16px;

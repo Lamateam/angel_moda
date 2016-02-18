@@ -32,4 +32,7 @@
   $("#menu .nav > li:nth-child(9)").addClass("active"); 
 </script>
 
+
+
+
 <?php echo $footer; ?>

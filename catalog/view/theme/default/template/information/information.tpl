@@ -104,6 +104,13 @@
       $("#menu .nav > li:nth-child(6)").addClass("active");
     <?php
   }
+  if ($_SERVER['REQUEST_URI'] == "/contacts") {
+    ?>
+      $("#menu .nav > li:nth-child(9)").addClass("active");
+    <?php
+  }
+
+
 
 
 
