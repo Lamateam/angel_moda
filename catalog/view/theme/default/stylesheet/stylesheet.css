@@ -2625,6 +2625,7 @@ h2.price {
 
 .cart_block {
 	cursor: pointer;
+	overflow: hidden;
 }
 
 /*Slider-top*/
@@ -3568,7 +3569,6 @@ a.list-group-item:focus {
 header {
 	padding-top: 20px;
 	padding-bottom: 5px;
-	overflow-x: hidden;
 	width: 100%;
 }
 
@@ -4272,6 +4272,7 @@ text-align: left;
 
 	.cart_desc {
 		width: 130px;
+
 	}
 	
 	#cart.pull-right>.dropdown-menu::before {
