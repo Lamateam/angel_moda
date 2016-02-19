@@ -132,9 +132,33 @@ $(document).on("change",".photo_file", function(){
 	} else {
 				var error_textarea = "Вы не ввели текст вопроса";
 	}
+
+
 	
 
 $(document).ready(function(){
+
+
+
+	if ($("html[lang='en']").length>0) {
+		$(".ru_text").remove();
+	}else {
+		$(".en_text").remove();
+	}
+
+
+	$(".brand_cate").each(function(){
+		var height=0;
+		$(this).find(".brand_cate_right").each(function(){
+			var cur_height = $(this).find(".brand_right_text").height();
+			$(this).find(".hidden-xs").css("height",cur_height);
+
+			height+=$(this).height();
+		});
+
+		$(this).find(".brand_cate_left").css("height", height);
+
+	});
 	
 	//article img
 
@@ -1189,3 +1213,16 @@ function get_article_ready() {
 	$("#content img").addClass("img-responsive");
 	
 }
+
+
+$(document).ready(function(){
+    $('a[href^="#"]').click(function(e){ //берем все ссылки атрибут href которых начинается с #
+    	e.preventDefault();
+    	e.stopPropagation();
+
+      if(document.getElementById($(this).attr('href').substr(1)) != null) { //на странице есть элемент с нужным нам id
+         $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top }, 500); // анимируем скролл к элементу
+      }     
+      return false;
+    });
+});

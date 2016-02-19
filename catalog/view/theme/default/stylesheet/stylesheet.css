@@ -2059,6 +2059,96 @@ footer h5 {
 	text-align: left;
 }
 
+.brand_cate_left {
+	width: 50px;
+	float: left;
+	height: auto;
+	background-color:  #eeeeee;
+}
+
+.brand_cate_left-top {
+	text-align: center;
+	color:  #ffffff;
+	letter-spacing: -2px;
+font-size: 22px;/* Приближение из-за подстановки шрифтов */
+font-weight: 700;
+line-height: 36px;/* Приближение из-за подстановки шрифтов */
+
+padding-top: 10px;
+padding-bottom: 10px;
+background-color:  #ce1313;
+}
+
+.brand_cate {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.brand_cate_right {
+	margin-left: 3px;
+	width: 90%;
+	width: calc(100% - 53px);
+}
+
+.brand_cate_right .img_title {
+	background-position: center;
+}
+
+#content .brand_right_text h2, #content .brand_right_text h2 a {
+	color:  #000000;
+font-size: 17px;/* Приближение из-за подстановки шрифтов */
+font-weight: 700;
+line-height: 18px;/* Приближение из-за подстановки шрифтов */
+text-decoration: underline;
+	text-transform: none;
+}
+
+#content .brand_right_text h2 {
+	margin-bottom: 20px;
+	margin-top: 25px;
+}
+
+#content .brand_right_text {
+	padding-bottom: 25px;
+}
+
+#content .brand_right_text h2 a:hover {
+	color: #ce1313;
+}
+
+.brand_cate  {
+	overflow: hidden;
+}
+
+#content .brand_right_text p {
+
+color:  #a6a6a6;
+font-size: 13px;/* Приближение из-за подстановки шрифтов */
+font-style: italic;
+line-height: 22px;/* Приближение из-за подстановки шрифтов */
+text-align: left;
+}
+
+#content .brand_img {
+	display: inline-block;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 150px auto;
+}
+
+#content .brand_right_text p+a {
+	font-size: 14px;
+	margin-top: 20px;
+	display: block;
+}
+
+
+.brand_cate + .brand_cate, .brand_cate_right + .brand_cate_right  {
+	border-top: 1px solid #e5e5e5;
+}
+
 /* breadcrumb */
 
 .breadcrumb {
@@ -2478,6 +2568,14 @@ h2.price {
 }
 
 @media (max-width: 768px) {
+
+	.brands_row {
+		display: none;
+	}
+
+	#content .brand_right_text h2 {
+		margin-top: 10px;
+	}
 	.product-list .product-thumb .button-group {
 		border-left: none;
 	}
@@ -3903,6 +4001,10 @@ body.stop-scrolling {
 .upload_style .image_file,
 .upload_style .btn.btn-default {
 	margin-top: 18px;
+}
+
+.call_back .form-control {
+	background: white;
 }
 
 .upload_style .btn.btn-default {
