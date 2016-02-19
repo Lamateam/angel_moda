@@ -5,6 +5,8 @@ class ControllerInformationInformation extends Controller {
 
 		$this->load->model('catalog/information');
 
+
+
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
@@ -29,6 +31,8 @@ class ControllerInformationInformation extends Controller {
 				'text' => $information_info['title'],
 				'href' => $this->url->link('information/information', 'information_id=' .  $information_id)
 			);
+
+	
 
 			$data['heading_title'] = $information_info['title'];
 
@@ -76,6 +80,9 @@ class ControllerInformationInformation extends Controller {
 
 					$data['manufacturers'][$key]['manufacturer'][] = array(
 						'name' => $result['name'],
+						'description' => $result['description'],
+						'description_en' => $result['description_en'],
+						'image' =>$this->model_tool_image->resize($result['image'], $this->config->get('config_image_cart_width'), $this->config->get('config_image_cart_height'),"a") ,
 						'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $result['manufacturer_id'])
 					);
 				}
@@ -104,6 +111,9 @@ class ControllerInformationInformation extends Controller {
 
 			$data['button_continue'] = $this->language->get('button_continue');
 
+
+		
+
 			$data['continue'] = $this->url->link('common/home');
 
 			$this->response->addHeader($this->request->server['SERVER_PROTOCOL'] . ' 404 Not Found');
@@ -114,6 +124,9 @@ class ControllerInformationInformation extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
+
+
+
 
 			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/error/not_found.tpl')) {
 				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/error/not_found.tpl', $data));

@@ -358,6 +358,14 @@ class ControllerCatalogManufacturer extends Controller {
 			$data['description'] = '';
 		}
 
+		if (isset($this->request->post['description_en'])) {
+			$data['description_en'] = $this->request->post['name'];
+		} elseif (!empty($manufacturer_info)) {
+			$data['description_en'] = $manufacturer_info['description_en'];
+		} else {
+			$data['description_en'] = '';
+		}
+
 		$this->load->model('setting/store');
 
 		$data['stores'] = $this->model_setting_store->getStores();
