@@ -20,6 +20,9 @@
       <h1 class="blog"><?php echo $name; ?></h1>
       <div class="row row_blog">
 
+     
+
+
       <?php if ($articles) { ?>
         <?php foreach ($articles as $article) { ?>
 

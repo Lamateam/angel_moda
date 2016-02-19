@@ -40,6 +40,14 @@
               <textarea type="text" name="description"  placeholder="<?php echo $entry_description; ?>" id="input-description" class="form-control" /><?php echo $description; ?></textarea>
             </div>
           </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-description_en"><?php echo $entry_description; ?> English</label>
+            <div class="col-sm-10">
+              <textarea type="text" name="description_en"  placeholder="<?php echo $entry_description; ?>" id="input-description_en" class="form-control" /><?php echo $description_en; ?></textarea>
+            </div>
+          </div>
+
           <div class="form-group">
             <label class="col-sm-2 control-label"><?php echo $entry_store; ?></label>
             <div class="col-sm-10">

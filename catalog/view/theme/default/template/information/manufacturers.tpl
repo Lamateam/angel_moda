@@ -14,158 +14,52 @@
       <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
     <?php } ?>
   </ul>
-  <?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-      <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-      <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-      <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-
-
-
-
-
-
-    <?php
-      if ($_SERVER['REQUEST_URI'] == "/contacts") {
-    ?>
-            <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-     <div class="row">
-
-
+  </div>
+  <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+      <div class="row"> 
         <div class="col-sm-12">
           <h1><?php echo $heading_title; ?></h1>
-          <?php echo $description; ?><?php echo $content_bottom; ?></div> 
-        </div>
-
-
-
-
-
-      
-      </div>
-
-
-
-
-
-
-
-    <?php
-  } else {?>
-          <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-     <div class="row">
-
-
-        <div class="col-sm-9">
-          <h1><?php echo $heading_title; ?></h1>
-          <?php echo $description; ?><?php echo $content_bottom; ?></div> 
-        </div>
-
-
-
-
-
-        <div class="col-sm-3">
-            <?php echo $column_right; ?>
+          <?php echo $description; ?><?php echo $content_bottom; ?>
         </div>
       </div>
-  <?php } ?>
+
+        <div class="brands_row">
+
+            <span class="brand_alpha">
+                 <?php if ($current_language_code='en') {?>
+                    Brand index:
+                 <?php }else { ?>
+                    Алфавитный указатель:
+                 <?php }?>
+            </span>
 
 
 
 
+            <?php foreach($manufacturers as $category){?> &nbsp;&nbsp;&nbsp;
+              <a class="brand_alpha_item" title="<?php echo $category['name'];?>" href="/manufacturers#<?php echo $category['name'];?>"
+              ><?php echo $category['name'];?></a> <?php }?> </p>
+
+        </div>
+        <div class="items">
+          <div class="row">
+          <?php foreach($manufacturers as $category){?> 
+            <div class="brand_cate col-sm-12" id="#<?php echo $category['name'];?>">
+              <div class="brand_cate_left pull-left" >
+                  <div class="brand_cate_left-top text-center">
+                      <?php echo $category['name'];?>
+                  </div>
+              </div>
+            </div>
+
+          <?php } ?>
+          </div>
+        </div>
 
 
-
-
+         
+        </div>
+      </div>
     </div>
 </div>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    if ($("html[lang='en']").length>0) {
-       $("#date_start").datepicker({
-
-        changeMonth: false,
-        changeYear: false,
-        dateFormat: 'dd.mm.yy',
-        minDate: 0,
-         firstDay: 1  ,
-        onSelect: function(dateText) {
-                 $("#date_end").datepicker('option', 'minDate', dateText);
-         }
-    });
-    
-     $("#date_end").datepicker({
-       
-        changeMonth: false,
-        changeYear: false,
-        dateFormat: 'dd.mm.yy',
-        minDate: 0,
-         firstDay: 1  
-    });
-      
-    }else{
-      $("#date_start").datepicker({
-        monthNames:
-        ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август", 
-        "Сентябрь","Октябрь","Ноябрь","Декабрь"],
-        dayNamesMin: 
-        [ "Вс","Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
-        changeMonth: false,
-        changeYear: false,
-        dateFormat: 'dd.mm.yy',
-        minDate: 0,
-         firstDay: 1,
-        onSelect: function(dateText) {
-                 $("#date_end").datepicker('option', 'minDate', dateText);
-         }
-    });
-    
-     $("#date_end").datepicker({
-        monthNames:
-        ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август", 
-        "Сентябрь","Октябрь","Ноябрь","Декабрь"],
-        dayNamesMin: 
-        ["Вс","Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
-        changeMonth: false,
-        changeYear: false,
-        dateFormat: 'dd.mm.yy',
-        minDate: 0,
-         firstDay: 1    });
-    }
-  });
-
-
-<?php
-
-
-  if ($_SERVER['REQUEST_URI'] == "/shoptour") {
-    ?>
-      $("#menu .nav > li:nth-child(8)").addClass("active");
-    <?php
-  }
-
-  if ($_SERVER['REQUEST_URI'] == "/wholesale") {
-    ?>
-      $("#menu .nav > li:nth-child(6)").addClass("active");
-    <?php
-  }
-  if ($_SERVER['REQUEST_URI'] == "/contacts") {
-    ?>
-      $("#menu .nav > li:nth-child(9)").addClass("active");
-    <?php
-  }
-
-
-
-
-
-
-
-?>
-</script>
 <?php echo $footer; ?>

@@ -5,6 +5,8 @@ class ControllerInformationInformation extends Controller {
 
 		$this->load->model('catalog/information');
 
+
+
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
@@ -29,6 +31,9 @@ class ControllerInformationInformation extends Controller {
 				'text' => $information_info['title'],
 				'href' => $this->url->link('information/information', 'information_id=' .  $information_id)
 			);
+
+
+			$data['current_language_code'] = $this->config->get('config_language'); 
 
 			$data['heading_title'] = $information_info['title'];
 
@@ -76,6 +81,9 @@ class ControllerInformationInformation extends Controller {
 
 					$data['manufacturers'][$key]['manufacturer'][] = array(
 						'name' => $result['name'],
+						'description' => $result['description'],
+						'description_en' => $result['description_en'],
+						'image' => $result['image'],
 						'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $result['manufacturer_id'])
 					);
 				}

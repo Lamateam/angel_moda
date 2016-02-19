@@ -1773,17 +1773,24 @@ div.required .control-label:after {
 
 /*SLider*/
 
-#slideshow0.owl-carousel .owl-wrapper-outer {
+#carousel0 {
+	border-top:1px solid #e9e9e9;
+	padding-top: 25px;
+}
+
+#slideshow0.owl-carousel .owl-wrapper-outer, #carousel0.owl-carousel .owl-wrapper-outer{
 	border: none;
 	box-shadow: none;
 }
+
+
 
 #slideshow0.owl-carousel .owl-buttons {
 	color: white;
 	font-size: 26px;
 }
 
-#slideshow0.owl-carousel .owl-buttons div  {
+#slideshow0.owl-carousel .owl-buttons div, #carousel0.owl-carousel .owl-buttons div {
 	opacity: 1;
 	border-radius: 50%;
 	background-color:  #000000;
@@ -1794,11 +1801,18 @@ div.required .control-label:after {
 	text-align: center;
 	transition: 200ms all ease-in;
 }
-#slideshow0.owl-carousel .owl-buttons div:hover  {
+#slideshow0.owl-carousel .owl-buttons div:hover, #carousel0.owl-carousel .owl-buttons div:hover  {
 	background-color:  #ce1313;
 }
 
+#carousel0.owl-carousel {
+	width: inherit;
+}
 
+#carousel0.owl-carousel .img-responsive {
+	text-align: center;
+	display: inline-block;
+}
 
 #slideshow0.owl-carousel .owl-buttons .owl-prev {
 	left: 35px;
@@ -1808,11 +1822,20 @@ div.required .control-label:after {
     right: 35px;
 }
 
-#slideshow0.owl-carousel .owl-buttons div i {
+#carousel0.owl-carousel .owl-buttons .owl-prev {
+	left: -10px;
+}
+
+#carousel0.owl-carousel .owl-buttons .owl-next {
+    right: -10px;
+}
+
+
+#slideshow0.owl-carousel .owl-buttons div i, #carousel0.owl-carousel .owl-buttons div i {
 	margin: 8px 0 0;
 }
 
-#slideshow0.owl-carousel .owl-buttons div i {
+#slideshow0.owl-carousel .owl-buttons div i, #carousel0.owl-carousel .owl-buttons div i {
 	color: white;
 	font-size: 20px;
 }
@@ -1869,7 +1892,8 @@ div.required .control-label:after {
 [class^="product-category-65"] #menu .nav > li:nth-child(4) > a,
 [class^="product-category-85"] #menu .nav > li:nth-child(5) > a,
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover,
-.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover,
+.brand_alpha_item:hover, .brand_alpha_item:active, .brand_alpha_item:focus
 {
 	color: white;
 	background-color: #ce1313;
@@ -1884,9 +1908,6 @@ div.required .control-label:after {
 #menu .nav > li.i-lab.active > a {
 	color: white;
 }
-
-
-#menu .dropdown-inner .list-unstyled {}
 
 #menu .dropdown-inner a {
 	min-width: 160px;
@@ -2021,6 +2042,22 @@ footer h5 {
 	padding: 8px 14px 8px 14px;
 }
 
+/*Brands*/
+
+.brands_row {
+	border-top: 1px solid #e5e5e5;
+	line-height: 78px;
+	height: 82px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.brand_alpha {
+	color:  #000000;
+	font-size: 13px;/* Приближение из-за подстановки шрифтов */
+	font-weight: 400;
+	line-height: 36px;/* Приближение из-за подстановки шрифтов */
+	text-align: left;
+}
 
 /* breadcrumb */
 
@@ -2034,6 +2071,19 @@ footer h5 {
 		font-weight: 400;
 		line-height: 30px; 
 		text-align: left;	
+}
+
+.brand_alpha_item{
+    color: #000000;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: left;
+    padding: 6px 11px;
+    transition: none!important;
+    border-radius: 26px;
+    width: 7px;
+    background: none;
 }
 
 .breadcrumb li a {
