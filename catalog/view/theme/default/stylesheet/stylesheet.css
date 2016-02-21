@@ -3119,6 +3119,7 @@ footer .footer_more {
 	background-size: contain;
 	background-position: left;
 	left: -15px;
+	z-index: 15;
 	background-repeat: no-repeat;
 }
 
