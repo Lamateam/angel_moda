@@ -900,7 +900,7 @@ var cart = {
 				}
 			},
 	        error: function(xhr, ajaxOptions, thrownError) {
-	            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+	           sweetAlert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 	        }
 		});
 	},
@@ -964,7 +964,7 @@ var voucher = {
 				}
 			},
 	        error: function(xhr, ajaxOptions, thrownError) {
-	            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+	            sweetAlert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 	        }
 		});
 	}
@@ -986,16 +986,15 @@ var wishlist = {
 				}
 
 				if (json['success']) {
-					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+					sweetAlert(json['success']);
+					
 				}
 
-				$('#wishlist-total span').html(json['total']);
-				$('#wishlist-total').attr('title', json['total']);
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
 			},
 	        error: function(xhr, ajaxOptions, thrownError) {
-	            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+	            sweetAlert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 	        }
 		});
 	},
@@ -1015,15 +1014,14 @@ var compare = {
 				$('.alert').remove();
 
 				if (json['success']) {
-					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
-
+					sweetAlert(json['success']);
 					$('#compare-total').html(json['total']);
 
 					$('html, body').animate({ scrollTop: 0 }, 'slow');
 				}
 			},
 	        error: function(xhr, ajaxOptions, thrownError) {
-	            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+	            sweetAlert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 	        }
 		});
 	},
