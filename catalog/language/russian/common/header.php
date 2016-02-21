@@ -2,7 +2,7 @@
 // Text
 $_['text_send']  = 'Написать нам';
 $_['text_home']          = 'Главная';
-$_['text_wishlist']      = 'Закладки (%s)';
+$_['text_wishlist']      = 'Wishlist (%s)';
 $_['text_shopping_cart'] = 'Корзина';
 $_['text_category']      = 'Меню';
 $_['text_account']       = 'Личный кабинет';

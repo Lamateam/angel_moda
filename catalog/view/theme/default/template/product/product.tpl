@@ -1,6 +1,7 @@
 <?php echo $header; ?>
-<div class="container">
+<div class="container product_page">
 
+<div class="row">
 
 
   <ul class="breadcrumb">
@@ -8,19 +9,46 @@
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
     <?php } ?>
   </ul>
+</div>	
+	<h1><?php echo $heading_title; ?></h1>
 	
-	
-	
-  <div class="row"><?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-    <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-    <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+  <div class="row">
+    <div id="content" class="col-xs-12"><?php echo $content_top; ?>
       <div class="row">
+        <div class="col-lg-5">
+          <?php if ($thumb || $images) { ?>
+            <ul class="thumbnails">
+                  <?php if ($thumb) { ?>
+                  <li><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+                  <?php } ?>
+                  <?php if ($images) { ?>
+                  <?php foreach ($images as $image) { ?>
+                  <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+                  <?php } ?>
+                  <?php } ?>
+            </ul>
+          <?php } ?>
+
+
+
+
+
+
+
+        </div>
+        <div class="col-lg-7"> 
+
+        </div>
+
+
+
+
+
+
+
+
+
+
         <?php if ($column_left || $column_right) { ?>
         <?php $class = 'col-sm-6'; ?>
         <?php } else { ?>
@@ -129,7 +157,7 @@
             <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i></button>
             <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product_id; ?>');"><i class="fa fa-exchange"></i></button>
           </div>
-          <h1><?php echo $heading_title; ?></h1>
+       
           <ul class="list-unstyled">
             <?php if ($manufacturer) { ?>
             <li><?php echo $text_manufacturer; ?> <a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a></li>

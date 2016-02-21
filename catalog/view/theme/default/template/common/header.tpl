@@ -56,13 +56,20 @@
           <a href="<?php echo $wishlist; ?>" id="wishlist-total" class="topped_links hidden-xs" title="Wishlist">
        
        <?php }else {?>
-          <a href="#enter_form" role="button"  data-toggle="modal"  id="wishlist-total" class="topped_links hidden-xs" title="Wishlist">
+          <span href="#enter_form" role="button"  data-toggle="modal"  id="wishlist-total" class="topped_links hidden-xs" title="Wishlist">
        
        <?php }?>
    
        
        <i class="fa fa-heart hidden-xs">
-       </i> <span class=""><span class="underlined">Wishlist</span> <span class="text_red">(<?php echo $total_wishlist; ?>)</span></span></a>
+       </i> <span class=""><span class="underlined">Wishlist</span> <span class="text_red">(<?php echo $total_wishlist; ?>)</span>
+       </span>
+        <?php if ($logged) { ?>    
+            </a>
+         <?php }else {?> 
+          </span>
+          <?php }?>
+       </span>
        
        
        <a href="/contacts" class="topped_links hidden-xs" title="<?php  echo $text_send; ?>">

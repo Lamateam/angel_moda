@@ -972,6 +972,7 @@ var voucher = {
 
 var wishlist = {
 	'add': function(product_id) {
+
 		$.ajax({
 			url: 'index.php?route=account/wishlist/add',
 			type: 'post',
