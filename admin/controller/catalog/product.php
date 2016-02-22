@@ -28,6 +28,13 @@ class ControllerCatalogProduct extends Controller {
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$this->load->model('catalog/product');
+		
+		if ($this->request->server['REQUEST_METHOD'] == 'POST') {
+			$this->request->post['product_description']['1']['meta_title'] = 'Купить ' . $this->request->post['product_description']['1']['name'] . ' в интернет - магазине Angel - moda';
+			$this->request->post['product_description']['2']['meta_title'] = 'Buy ' . $this->request->post['product_description']['2']['name'] . ' in online - shop Angel - moda';
+			$this->request->post['product_description']['1']['meta_description'] = 'Купить ' . $this->request->post['product_description']['1']['name'] . ' в интернет - магазине Angel - moda. Телефон: +79295885399. Звоните!';
+			$this->request->post['product_description']['2']['meta_description'] = 'Buy ' . $this->request->post['product_description']['2']['name'] . ' in online - shop Angel - moda. Phone: +79295885399. Call us!';			
+		}
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
 			$this->model_catalog_product->addProduct($this->request->post);

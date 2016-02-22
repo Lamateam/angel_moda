@@ -1,4 +1,5 @@
 <?php echo $header; ?>
+<?php echo $right_column; ?>
 
 
 <div class="container normal_page">

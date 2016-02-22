@@ -1,4 +1,5 @@
 <?php echo $header; ?>
+<?php echo $right_column; ?>
 
 <script src="catalog/view/javascript/jquery/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
 <link type="text/css" href="catalog/view/javascript/jquery/jquery-ui/jquery-ui.min.css" rel="stylesheet" media="screen" />

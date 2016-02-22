@@ -56,6 +56,8 @@ class ControllerBlogArticle extends Controller {
 		} else {
 			$article_id = 0;
 		}
+		
+		$data['right_column'] = $this->load->controller('information/right_column');
 
 		$this->load->model('blog/article');
 
