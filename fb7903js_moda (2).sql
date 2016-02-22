@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Фев 20 2016 г., 13:48
+-- Время создания: Фев 22 2016 г., 04:32
 -- Версия сервера: 5.5.47-0ubuntu0.14.04.1
 -- Версия PHP: 5.5.9-1ubuntu4.14
 
@@ -236,24 +236,18 @@ CREATE TABLE IF NOT EXISTS `ma_attribute` (
   `attribute_group_id` int(11) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`attribute_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
 -- Дамп данных таблицы `ma_attribute`
 --
 
 INSERT INTO `ma_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VALUES
-(1, 6, 1),
-(2, 6, 5),
-(3, 6, 3),
-(4, 3, 1),
-(5, 3, 2),
-(6, 3, 3),
-(7, 3, 4),
-(8, 3, 5),
-(9, 3, 6),
-(10, 3, 7),
-(11, 3, 8);
+(16, 7, 0),
+(15, 7, 0),
+(14, 7, 0),
+(13, 7, 0),
+(12, 7, 0);
 
 -- --------------------------------------------------------
 
@@ -273,28 +267,16 @@ CREATE TABLE IF NOT EXISTS `ma_attribute_description` (
 --
 
 INSERT INTO `ma_attribute_description` (`attribute_id`, `language_id`, `name`) VALUES
-(1, 1, 'Description'),
-(2, 1, 'No. of Cores'),
-(4, 1, 'test 1'),
-(5, 1, 'test 2'),
-(6, 1, 'test 3'),
-(7, 1, 'test 4'),
-(8, 1, 'test 5'),
-(9, 1, 'test 6'),
-(10, 1, 'test 7'),
-(11, 1, 'test 8'),
-(3, 1, 'Clockspeed'),
-(1, 2, 'Description'),
-(2, 2, 'No. of Cores'),
-(4, 2, 'test 1'),
-(5, 2, 'test 2'),
-(6, 2, 'test 3'),
-(7, 2, 'test 4'),
-(8, 2, 'test 5'),
-(9, 2, 'test 6'),
-(10, 2, 'test 7'),
-(11, 2, 'test 8'),
-(3, 2, 'Clockspeed');
+(16, 1, 'Рекомендации по уходу'),
+(14, 1, 'Особенности модели'),
+(13, 2, 'Materials'),
+(12, 2, 'Production'),
+(15, 2, 'Colour'),
+(15, 1, 'Цвет'),
+(14, 2, 'Model features'),
+(13, 1, 'Материалы'),
+(12, 1, 'Производство'),
+(16, 2, 'Recommendations for care');
 
 -- --------------------------------------------------------
 
@@ -306,17 +288,14 @@ CREATE TABLE IF NOT EXISTS `ma_attribute_group` (
   `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`attribute_group_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Дамп данных таблицы `ma_attribute_group`
 --
 
 INSERT INTO `ma_attribute_group` (`attribute_group_id`, `sort_order`) VALUES
-(3, 2),
-(4, 1),
-(5, 3),
-(6, 4);
+(7, 0);
 
 -- --------------------------------------------------------
 
@@ -336,14 +315,8 @@ CREATE TABLE IF NOT EXISTS `ma_attribute_group_description` (
 --
 
 INSERT INTO `ma_attribute_group_description` (`attribute_group_id`, `language_id`, `name`) VALUES
-(3, 1, 'Memory'),
-(4, 1, 'Technical'),
-(5, 1, 'Motherboard'),
-(6, 1, 'Processor'),
-(3, 2, 'Memory'),
-(4, 2, 'Technical'),
-(5, 2, 'Motherboard'),
-(6, 2, 'Processor');
+(7, 2, 'Attributes of product'),
+(7, 1, 'Атрибуты товара');
 
 -- --------------------------------------------------------
 
@@ -384,7 +357,7 @@ CREATE TABLE IF NOT EXISTS `ma_banner_image` (
   `end_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_html` int(11) NOT NULL,
   PRIMARY KEY (`banner_image_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=187 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=188 ;
 
 --
 -- Дамп данных таблицы `ma_banner_image`
@@ -402,7 +375,7 @@ INSERT INTO `ma_banner_image` (`banner_image_id`, `banner_id`, `link`, `image`, 
 (118, 7, 'http://google.com', 'catalog/slide5.png', 1, 0, '0000-00-00 00:00:00', 0),
 (176, 8, 'clips', 'catalog/Clips.jpg', 6, 0, '0000-00-00 00:00:00', 0),
 (177, 8, 'ean13', 'catalog/EAN13.jpg', 7, 0, '0000-00-00 00:00:00', 0),
-(108, 9, 'http://weblama.me/admin/index.php?route=design/banner/edit&amp;token=Kf38Jwaii9egW72Ttk2jCi1CF8lFV0PX&amp;banner_id=9', '', 0, 0, '0000-00-00 00:00:00', 1),
+(187, 9, 'http://weblama.me/admin/index.php?route=design/banner/edit&amp;token=Kf38Jwaii9egW72Ttk2jCi1CF8lFV0PX&amp;banner_id=9', 'catalog/118728-800w-900x350w.jpg', 0, 0, '0000-00-00 00:00:00', 1),
 (117, 7, '', 'catalog/slide5.png', 0, 0, '0000-00-00 00:00:00', 0),
 (178, 8, 'elisa-fanti', 'catalog/ElisaFanti.png', 8, 0, '0000-00-00 00:00:00', 0),
 (175, 8, 'cavalli-class', 'catalog/cavalli class.png', 5, 0, '0000-00-00 00:00:00', 0),
@@ -432,11 +405,11 @@ CREATE TABLE IF NOT EXISTS `ma_banner_image_description` (
 --
 
 INSERT INTO `ma_banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
-(108, 2, 9, '12'),
+(187, 2, 9, '12'),
 (120, 2, 6, 'HP Banner'),
 (184, 1, 8, 'Severi Darling'),
 (183, 2, 8, 'MET'),
-(108, 1, 9, '12'),
+(187, 1, 9, '12'),
 (183, 1, 8, 'MET'),
 (182, 2, 8, 'Marina Yachting'),
 (182, 1, 8, 'Marina Yachting'),
@@ -492,15 +465,7 @@ CREATE TABLE IF NOT EXISTS `ma_cart` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`cart_id`),
   KEY `cart_id` (`customer_id`,`session_id`,`product_id`,`recurring_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
-
---
--- Дамп данных таблицы `ma_cart`
---
-
-INSERT INTO `ma_cart` (`cart_id`, `customer_id`, `session_id`, `product_id`, `recurring_id`, `option`, `quantity`, `date_added`) VALUES
-(4, 7, 'g4lpu2q8loa36h8n229r0mvdm1', 51, 0, '[]', 2, '2016-02-10 20:55:22'),
-(6, 7, 'g4lpu2q8loa36h8n229r0mvdm1', 52, 0, '[]', 1, '2016-02-20 02:31:01');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 -- --------------------------------------------------------
 
@@ -522,7 +487,7 @@ CREATE TABLE IF NOT EXISTS `ma_category` (
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`category_id`),
   KEY `parent_id` (`parent_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=86 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=136 ;
 
 --
 -- Дамп данных таблицы `ma_category`
@@ -531,13 +496,14 @@ CREATE TABLE IF NOT EXISTS `ma_category` (
 INSERT INTO `ma_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `is_topsub`, `banner_id`, `date_added`, `date_modified`) VALUES
 (59, '', 0, 1, 1, 1, 1, 0, 0, '2016-01-11 14:46:59', '2016-01-14 13:20:16'),
 (60, '', 0, 1, 2, 2, 1, 0, 0, '2016-01-11 14:47:19', '2016-01-27 16:05:43'),
-(85, '', 0, 1, 1, 8, 1, 0, 0, '2016-02-11 00:47:09', '2016-02-11 00:48:59'),
+(85, '', 0, 1, 1, 8, 1, 0, 0, '2016-02-11 00:47:09', '2016-02-20 18:05:31'),
 (78, '', 0, 0, 1, 0, 0, 0, 0, '2016-02-03 17:53:48', '2016-02-03 17:53:48'),
+(86, '', 85, 0, 1, 0, 1, 0, 0, '2016-02-20 18:07:40', '2016-02-20 18:07:48'),
 (65, '', 0, 1, 1, 7, 1, 0, 0, '2016-01-11 14:49:07', '2016-01-14 13:21:42'),
 (80, '', 79, 0, 1, 0, 1, 0, 0, '2016-02-05 19:59:36', '2016-02-05 19:59:57'),
 (77, '', 0, 0, 1, 0, 0, 0, 0, '2016-01-20 14:29:09', '2016-02-03 17:56:26'),
-(68, '', 60, 0, 1, 1, 1, 0, 0, '2016-01-11 15:15:43', '2016-01-14 13:17:58'),
-(69, '', 60, 0, 1, 2, 1, 0, 0, '2016-01-11 15:16:21', '2016-01-14 13:19:14'),
+(68, '', 108, 0, 1, 1, 1, 0, 0, '2016-01-11 15:15:43', '2016-02-20 19:17:37'),
+(69, '', 108, 0, 1, 2, 1, 0, 0, '2016-01-11 15:16:21', '2016-02-20 19:17:49'),
 (72, '', 60, 0, 1, 0, 1, 1, 0, '2016-01-11 23:59:23', '2016-01-15 11:10:46'),
 (71, '', 60, 0, 1, 2, 1, 1, 0, '2016-01-11 23:53:56', '2016-01-15 11:11:17'),
 (73, '', 60, 0, 1, 1, 1, 1, 0, '2016-01-12 00:02:21', '2016-01-15 11:11:07'),
@@ -545,7 +511,56 @@ INSERT INTO `ma_category` (`category_id`, `image`, `parent_id`, `top`, `column`,
 (81, '', 59, 0, 1, 0, 1, 1, 0, '2016-02-08 14:15:46', '2016-02-09 15:30:30'),
 (82, '', 79, 0, 1, 0, 1, 0, 0, '2016-02-08 14:51:38', '2016-02-08 15:07:01'),
 (83, '', 79, 0, 1, 0, 1, 0, 0, '2016-02-08 15:11:28', '2016-02-08 15:11:28'),
-(84, '', 79, 0, 1, 0, 1, 0, 0, '2016-02-08 15:25:34', '2016-02-08 15:25:34');
+(84, '', 79, 0, 1, 0, 1, 0, 0, '2016-02-08 15:25:34', '2016-02-08 15:25:34'),
+(87, '', 85, 0, 1, 0, 1, 0, 0, '2016-02-20 18:10:35', '2016-02-20 18:10:35'),
+(88, '', 85, 0, 1, 0, 1, 0, 0, '2016-02-20 18:12:03', '2016-02-20 18:12:03'),
+(89, '', 85, 0, 1, 0, 1, 0, 0, '2016-02-20 18:14:50', '2016-02-20 18:14:50'),
+(90, '', 85, 0, 1, 0, 1, 0, 0, '2016-02-20 18:16:32', '2016-02-20 18:16:32'),
+(91, '', 85, 0, 1, 0, 1, 0, 0, '2016-02-20 18:19:09', '2016-02-20 18:19:09'),
+(92, '', 59, 0, 1, 0, 1, 1, 0, '2016-02-20 18:20:43', '2016-02-20 18:20:43'),
+(93, '', 59, 0, 1, 0, 1, 1, 0, '2016-02-20 18:21:22', '2016-02-20 18:21:34'),
+(94, '', 59, 0, 1, 1, 1, 0, 0, '2016-02-20 18:23:53', '2016-02-20 18:35:24'),
+(95, '', 94, 0, 1, 0, 1, 0, 0, '2016-02-20 18:35:01', '2016-02-20 18:35:01'),
+(96, '', 94, 0, 1, 0, 1, 0, 0, '2016-02-20 18:44:48', '2016-02-20 18:44:48'),
+(97, '', 94, 0, 1, 0, 1, 0, 0, '2016-02-20 18:46:24', '2016-02-20 18:46:24'),
+(98, '', 94, 0, 1, 0, 1, 0, 0, '2016-02-20 18:48:55', '2016-02-20 18:48:55'),
+(99, '', 94, 0, 1, 0, 1, 0, 0, '2016-02-20 18:52:10', '2016-02-20 18:52:10'),
+(100, '', 79, 0, 1, 0, 1, 0, 0, '2016-02-20 18:56:08', '2016-02-20 18:56:08'),
+(101, '', 79, 0, 1, 0, 1, 0, 0, '2016-02-20 18:58:06', '2016-02-20 18:58:06'),
+(102, '', 79, 0, 1, 0, 1, 0, 0, '2016-02-20 19:01:19', '2016-02-20 19:01:19'),
+(103, '', 79, 0, 1, 0, 1, 0, 0, '2016-02-20 19:03:55', '2016-02-20 19:03:55'),
+(104, '', 79, 0, 1, 0, 1, 0, 0, '2016-02-20 19:06:06', '2016-02-20 19:06:06'),
+(105, '', 79, 0, 1, 0, 1, 0, 0, '2016-02-20 19:09:42', '2016-02-20 19:09:42'),
+(106, '', 79, 0, 1, 0, 1, 0, 0, '2016-02-20 19:11:34', '2016-02-20 19:11:34'),
+(107, '', 79, 0, 1, 0, 1, 0, 0, '2016-02-20 19:13:04', '2016-02-20 19:13:04'),
+(108, '', 60, 0, 1, 0, 1, 0, 0, '2016-02-20 19:17:05', '2016-02-20 19:17:05'),
+(109, '', 60, 0, 1, 2, 1, 0, 0, '2016-02-20 19:20:21', '2016-02-20 19:28:15'),
+(110, '', 60, 0, 1, 1, 1, 0, 0, '2016-02-20 19:21:43', '2016-02-20 19:28:05'),
+(111, '', 109, 0, 1, 0, 1, 0, 0, '2016-02-20 19:24:09', '2016-02-20 19:24:09'),
+(112, '', 109, 0, 1, 0, 1, 0, 0, '2016-02-20 19:25:49', '2016-02-20 19:25:49'),
+(113, '', 110, 0, 1, 0, 1, 0, 0, '2016-02-20 19:27:36', '2016-02-20 19:27:36'),
+(114, '', 110, 0, 1, 0, 1, 0, 0, '2016-02-20 19:30:30', '2016-02-20 19:30:30'),
+(115, '', 110, 0, 1, 0, 1, 0, 0, '2016-02-20 19:32:48', '2016-02-20 19:32:48'),
+(116, '', 110, 0, 1, 0, 1, 0, 0, '2016-02-20 19:34:35', '2016-02-20 19:34:35'),
+(117, '', 110, 0, 1, 0, 1, 0, 0, '2016-02-20 19:36:40', '2016-02-20 19:36:40'),
+(118, '', 108, 0, 1, 0, 1, 0, 0, '2016-02-20 19:38:33', '2016-02-20 19:38:33'),
+(119, '', 108, 0, 1, 0, 1, 0, 0, '2016-02-20 19:40:07', '2016-02-20 19:40:07'),
+(120, '', 108, 0, 1, 0, 1, 0, 0, '2016-02-20 19:43:22', '2016-02-20 19:43:22'),
+(121, '', 108, 0, 1, 0, 1, 0, 0, '2016-02-20 19:45:28', '2016-02-20 19:45:28'),
+(122, '', 108, 0, 1, 0, 1, 0, 0, '2016-02-20 19:46:54', '2016-02-20 19:46:54'),
+(123, '', 108, 0, 1, 0, 1, 0, 0, '2016-02-20 19:48:53', '2016-02-20 19:48:53'),
+(124, '', 108, 0, 1, 0, 1, 0, 0, '2016-02-20 19:52:13', '2016-02-20 19:52:13'),
+(125, '', 108, 0, 1, 0, 1, 0, 0, '2016-02-20 19:53:44', '2016-02-20 19:53:44'),
+(126, '', 108, 0, 1, 0, 1, 0, 0, '2016-02-20 19:56:40', '2016-02-20 19:56:40'),
+(127, '', 108, 0, 1, 0, 1, 0, 0, '2016-02-20 19:58:08', '2016-02-20 19:58:08'),
+(128, '', 108, 0, 1, 0, 1, 0, 0, '2016-02-20 19:59:23', '2016-02-20 19:59:23'),
+(129, '', 108, 0, 1, 0, 1, 0, 0, '2016-02-20 20:00:52', '2016-02-20 20:00:52'),
+(130, '', 108, 0, 1, 0, 1, 0, 0, '2016-02-20 20:03:17', '2016-02-20 20:03:17'),
+(131, '', 108, 0, 1, 0, 1, 0, 0, '2016-02-20 20:04:37', '2016-02-20 20:04:37'),
+(132, '', 108, 0, 1, 0, 1, 0, 0, '2016-02-20 20:07:10', '2016-02-20 20:07:10'),
+(133, '', 108, 0, 1, 0, 1, 0, 0, '2016-02-20 20:08:34', '2016-02-20 20:08:34'),
+(134, '', 108, 0, 1, 0, 1, 0, 0, '2016-02-20 20:09:57', '2016-02-20 20:09:57'),
+(135, '', 108, 0, 1, 0, 1, 0, 0, '2016-02-20 20:11:14', '2016-02-20 20:11:14');
 
 -- --------------------------------------------------------
 
@@ -575,21 +590,20 @@ INSERT INTO `ma_category_description` (`category_id`, `language_id`, `name`, `de
 (78, 1, 'Товары на инфостраницах', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Товары на инфостраницах', '', ''),
 (65, 1, 'Распродажи', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'discount', '', ''),
 (77, 1, 'Хиты продаж', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Хиты продаж', '', ''),
-(68, 2, 'Underwear', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Женское нижнее бельё', '', ''),
-(69, 1, 'Носки', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Женские носки', '', ''),
+(68, 1, 'Нижнее бельё', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Женское нижнее бельё', '', ''),
+(69, 2, 'Socks', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Женские носки', '', ''),
 (72, 2, 'SALE', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'woman sale', '', ''),
 (71, 2, 'New this week', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'woman new', '', ''),
 (73, 1, 'Новая коллекция', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'woman new collection', '', ''),
 (71, 1, 'Новинки недели', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'woman new', '', ''),
 (59, 1, 'Мужчинам', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'man', '', ''),
 (60, 2, 'Women', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'woman', '', ''),
-(85, 1, 'Бижутерия', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Бижутерия | Angel-moda', '', ''),
-(85, 2, 'Jewellery', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Jewellery | Angel-moda', '', ''),
+(85, 1, 'Бижутерия', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Брендовая бижутерия, Италия | Купить элитные украшения в интернет магазине итальянской бижутерии Angel-Moda', 'Купить брендовую бижутерию, итальянские украшения в интернет магазине. Продажа элитной бижутерии по доступным ценам. Магазин брендовой бижутерии Angel-Moda. Принимаем заказы по тел. +7(929)580-08-10.', 'брендовая бижутерия, итальянские украшения, итальянская бижутерия, брендовые украшения, продажа, заказать, купить, цена, интернет магазин, angel-moda, Италия'),
 (65, 2, 'Overstock', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'discount', '', ''),
 (77, 2, 'Most popular', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Most popular', '', ''),
 (80, 2, 'Suits', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Angel-moda | Suits', '', ''),
-(68, 1, 'Нижнее бельё', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Женское нижнее бельё', '', ''),
-(69, 2, 'Socks', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Женские носки', '', ''),
+(68, 2, 'Underwear', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Женское нижнее бельё', '', ''),
+(69, 1, 'Носки', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Женские носки', '', ''),
 (72, 1, 'SALE', '&lt;p&gt;123&lt;/p&gt;', 'woman sale', '', ''),
 (73, 2, 'New collection', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'woman new collection', '', ''),
 (79, 2, 'Clothing', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Angel-moda | Clothing', '', ''),
@@ -603,7 +617,109 @@ INSERT INTO `ma_category_description` (`category_id`, `language_id`, `name`, `de
 (83, 1, 'Спортивная одежда', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Angel-moda | Мужчинам | Спортивная одежда', '', ''),
 (83, 2, 'Sport wear', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Angel-moda | Man | Sport wear', '', ''),
 (84, 1, 'Рубашки', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Angel-moda | Мужчинам | Рубашки', '', ''),
-(84, 2, 'Shirts', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Angel-moda | Man | Shirts', '', '');
+(84, 2, 'Shirts', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Angel-moda | Man | Shirts', '', ''),
+(85, 2, 'Jewellery', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Jewellery | Angel-moda', '', ''),
+(86, 2, 'Brooches', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Elegant brooches, Italy - price, catalog, photo | Buy luxury jewelry, brooches online store Angel-Moda', 'Buy elegant brooches - jewelry online store Angel-Moda. Brooches Italy - Luxury jewelry. We accept orders by phone. +7 (929) 580-08-10.', 'brooches, jewelry, luxury, buy, branded, price, shop, angel-moda'),
+(86, 1, 'Броши', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Элегантные броши, Италия  - цена, каталог, фото | Купить элитную бижутерию, броши  в интернет магазине Angel-Moda', ' Купить элегантные броши - бижутерия интернет магазина Angel-Moda. Броши Италия - элитная бижутерия. Принимаем заказы по тел. +7(929)580-08-10.', 'броши, бижутерия, элитная, купить, брендовая, цена, интернет магазин, angel-moda'),
+(87, 1, 'Кольца', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Брендовые кольца, Италия | Купить итальянские кольца с камнями — элитная бижутерия', 'Предлагаем купить итальянские кольца в интернет магазине Angel-Moda. Брендовые кольца, Италия. Элитные  бижутерия, кольца с камнями. Принимаем заказы по тел. +7(929)580-08-10.', 'кольца, бижутерия, продажа, купить, брендовая, цена, интернет магазин, angel-moda, заказать, итальянские, Италия, элитные'),
+(87, 2, 'Rings', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Brand Ring, Italy | Buy Italian rings with stones - Luxury jewelry', 'Offer to buy the Italian rings online store Angel-Moda. Brand Ring, Italy. Fine jewelry, rings with stones. We accept orders by phone. +7 (929) 580-08-10.', 'rings, jewelry, sale, buy, branded, price, shop, angel-moda, order, Italian, Italy, elite'),
+(88, 1, 'Комплекты', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Купить комплекты бижутерии в интернет магазине Angel-Moda', 'Бижутерия комплекты - купить по доступной цене. Комплекты бижутерии в интернет магазине  Angel-Moda.  Принимаем заказы по тел. +7(929)580-08-10.', 'комплекты, бижутерия, каталог, продажа, купить, брендовая, цена, интернет магазин, angel-moda'),
+(88, 2, 'kits', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Buy jewelry sets online store Angel-Moda', 'Jewelry kits - buy at an affordable price. jewelry kits online store Angel-Moda. We accept orders by phone. +7 (929) 580-08-10.', 'kits, jewelry, catalog, sale, buy, branded, price, shop, angel-moda'),
+(89, 1, 'Колье', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Женские колье, Италия — каталог с ценами | Купить женское колье, бижутерию в интернет магазине Angel-Moda', 'Женское колье - купить в интернет магазине Angel-Moda. Элитная бижутерия, колье по доступной цене. Смотреть каталог колье из Италии. Принимаем заказы по тел. +7(929)580-08-10.', 'колье, бижутерия, каталог, продажа, купить, брендовая, цена, интернет магазин, angel-moda, Италия, элитные'),
+(89, 2, 'Necklace', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Women''s necklace, Italy - catalog with prices | Buy women''s necklace, jewelry online store Angel-Moda', 'Women''s necklace - buy online store Angel-Moda. Luxurious jewelry, necklace at an affordable price. See catalog necklace from Italy. We accept orders by phone. +7 (929) 580-08-10.', '\r\n\r\nnecklace, jewelry, catalog, sale, buy, branded, price, shop, angel-moda, Italy, elite'),
+(90, 1, 'Серьги', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Итальянские серьги | Купить брендовые сережки из Италии в интернет магазине Angel-Moda', 'Предлагаем купить сережки в интернет магазине Angel-Moda. Брендовые серьги, Италия. Элитные серьги бижутерия - продажа. Принимаем заказы по тел. +7(929)580-08-10.\r\n', ''),
+(90, 2, 'Earrings', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Italian earrings | Buy branded earrings from Italy in the online store Angel-Moda', 'Offer to buy earrings online store Angel-Moda. Brand earring, Italy. Luxury jewelry earrings - for sale. We accept orders by phone. +7 (929) 580-08-10.', ''),
+(91, 1, 'Браслеты', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Итальянские браслеты — продажа | Купить брендовый браслет из Италии в интернет магазине Angel-Moda', 'Купить брендовый браслет в интернет магазине Angel-Moda. Итальянские браслеты - продажи, каталог, цены. Женские элитные браслеты. Принимаем заказы по тел. +7(929)580-08-10.', ''),
+(91, 2, 'Bracelets', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Italian bracelets - for sale | Buy branded bracelet from Italy in the online store Angel-Moda', 'Buy branded bracelet online store Angel-Moda. Italian bracelets - sale catalog prices. Women''s elite bracelets. We accept orders by phone. +7 (929) 580-08-10.', ''),
+(92, 1, 'Новая коллекция', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Новая коллекция', '', ''),
+(92, 2, 'New collection', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'New collection', '', ''),
+(93, 2, 'New this week', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'New this week', '', ''),
+(93, 1, 'Новинки недели', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Новинки недели', '', ''),
+(94, 2, 'accessories', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Angel-Moda Italian brand men''s belts | Buy pants men''s belt from Italy in the online store Angel-Moda', 'Buy men''s accessories online store Angel-Moda. Brand Men''s accessories Italy. We accept orders by phone. +7 (929) 580-08-10.', 'men''s accessories, buy, brand, price, shop, angel-moda, Italy, Italian'),
+(94, 1, 'Аксессуары', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Итальянские брендовые мужские ремни | Купить брючный мужской ремень из Италии в интернет магазине ', 'Купить мужские аксессуары в интернет магазине Angel-Moda. Брендовые мужские аксессуары Италия. Принимаем заказы по тел. +7(929)580-08-10.', 'мужская аксессуары, купить, брендовые, цена, интернет магазин, angel-moda, Италия, итальянский'),
+(95, 1, 'Головные уборы', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Итальянские брендовые мужские шапки - головные уборы в интернет магазине Angel-Moda', 'Купить мужские головные уборы - интернет магазин Angel-Moda. Брендовые итальянские мужские шапки по доступным ценам. Мужские шапки Италия. Принимаем заказы по тел. +7(929)580-08-10.', 'мужская шапки, головные уборы, купить, брендовые, цена, интернет магазин, angel-moda, Италия, итальянский'),
+(95, 2, 'Hats', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Italian brand men''s hats - hats online store Angel-Moda', 'Buy Men''s hats - Angel-Moda online shop. Brand Italian men''s hats at reasonable prices. Men''s hats Italy. We accept orders by phone. +7 (929) 580-08-10.', 'men''s caps, hats, buy, brand, price, shop, angel-moda, Italy, Italian'),
+(96, 1, 'Перчатки', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Итальянские мужские Перчатки - купить по доступным ценам | Angel-moda', 'Мужские перчатки - купить оптом и в розницу в интернет магазине ''Angel-moda''. Мужские аксессуары - большой ассортимент товаров из Италии по приемлемым ценам. Принимаем заказы по тел. +7(929)580-08-10.', 'мужские перчатки, аксессуары, брендовые, итальянский, из Италии, купить, цена, продажа, оптом'),
+(96, 2, 'gloves', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Italian men''s gloves - buy at affordable prices | Angel-moda', 'Men''s gloves - buy wholesale and retail online store ''Angel-moda''. Men''s Accessories - large range of goods from Italy at competitive prices. We accept orders by phone. +7 (929) 580-08-10.', 'men''s gloves, accessories, branded, Italian, from Italy, buy, price, sale, wholesale'),
+(97, 1, 'Ремни', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Брендовый мужской ремень | Купить брючный мужской ремень фирменный | Заказать мужские итальянские ремни | Интернет магазин Angel-Moda ', 'Брендовый мужской ремень - купить в интернет магазине Angel-Moda. Итальянские брючные ремни мужские. Заказать элитный ремень мужской Италия. Принимаем заказы по тел. +7(929)580-08-10.', 'мужской ремень, заказать, элитный, фирменный, брючный, купить, брендовая, цена, интернет магазин, angel-moda, итальянские, Италия'),
+(97, 2, 'Belts', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Branded men''s belt | Buy pants men''s belt brand | Order the Italian men''s belts | Online Shop Angel-Moda', 'Branded men''s belt - buy online store Angel-Moda. Italian men''s trouser belts. Order luxury belt male Italy. We accept orders by phone. +7 (929) 580-08-10.', 'men''s belt, order, elite, corporate, pants, buy branded, price, shop, angel-moda, Italian, Italy'),
+(98, 1, 'Сумки', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Итальянские мужские Сумки - купить по доступным ценам | Angel-moda', 'Мужские сумки - купить оптом и в розницу в интернет магазине ''Angel-moda''. Мужские аксессуары - большой ассортимент товаров из Италии по приемлемым ценам. Принимаем заказы по тел. +7(929)580-08-10.', 'мужские сумки, аксессуары, брендовые, итальянский, из Италии, купить, цена, продажа, оптом'),
+(98, 2, 'Bags', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Italian men''s Bags - buy at affordable prices | Angel-moda', 'Men''s bags - buy wholesale and retail online store ''Angel-moda''. Men''s Accessories - large range of goods from Italy at competitive prices. We accept orders by phone. +7 (929) 580-08-10.', 'men''s bags, accessories, branded, Italian, from Italy, buy, price, sale, wholesale'),
+(99, 1, 'Шарфы', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Шарф Италия мужской | Итальянские мужские шарфы | Купить мужской шарф брендовый | Интернет магазин Angel-Moda', 'Купить мужские брендовые шарфы - интернет магазин Angel-Moda. Итальянские мужские шарфы по доступным ценам. Принимаем заказы по тел. +7(929)580-08-10.', 'мужская шарфы, купить, брендовые, цена, интернет магазин, angel-moda, Италия, итальянский'),
+(99, 2, 'Scarves', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Italy Scarf men''s | Italian men''s scarves | Buy branded men''s scarf | Online Shop Angel-Moda', 'Buy men''s branded scarves - Online Shop Angel-Moda. Italian men''s scarves at affordable rates. We accept orders by phone. +7 (929) 580-08-10.', 'men''s scarves, buy, brand, price, shop, angel-moda, Italy, Italian'),
+(100, 1, 'Бермуды', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Итальянские мужские Бермуды - купить по доступным ценам | Angel-moda', 'Мужские бермуды - купить оптом и в розницу в интернет магазине ''Angel-moda''. Мужская одежда - большой ассортимент товаров из Италии по приемлемым ценам. Принимаем заказы по тел. +7(929)580-08-10.', 'мужские бермуды, одежда, брендовые, итальянский, из Италии, купить, цена, продажа, оптом'),
+(100, 2, 'Bermudas', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Italian men''s Bermuda - buy at affordable prices | Angel-moda', 'Men''s Bermuda - buy wholesale and retail online store ''Angel-moda''. Men''s clothing - large range of goods from Italy at competitive prices. We accept orders by phone. +7 (929) 580-08-10.', 'Men''s Bermuda, clothing, brand, Italian, from Italy, buy, price, sale, wholesale'),
+(101, 1, 'Жилеты', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Мужские жилеты утепленные | Брендовые  мужские зимние жилеты (пуховые) - купить в Angel-Moda ', 'Предлагаем купить брендовые мужские жилеты зимние, утепленные в магазине мужских жилетов Angel-Moda. Жилет пуховый мужской по доступной цене. Принимаем заказы по тел. +7(929)580-08-10.\r\n', 'мужской жилет, пуховый, купить, брендовые, зимний, утепленный,  интернет магазин, angel-moda, Италия, итальянский'),
+(101, 2, 'Vests', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Men''s insulated jackets | Brand men''s winter jackets (down) - buy in Angel-Moda', 'Offer to buy branded men''s winter jackets, insulated vests male in the store Angel-Moda. Vest feather male at an affordable price. We accept orders by phone. +7 (929) 580-08-10.', 'men''s vest, feather, buy, brand, winter, insulated, shop, angel-moda, Italy, Italian'),
+(102, 1, 'Футболки', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Брендовые итальянские мужские футболки  - продажа | Купить футболку мужскую в Интернет магазине Angel-Moda', 'Купить брендовую мужскую футболку в интернет магазине Angel-Moda. Итальянские мужские футболки по доступной цене. Принимаем заказы по тел. +7(929)580-08-10.', 'мужские футболки, купить, брендовые, цена, интернет магазин, angel-moda, Италия, итальянский\r\n'),
+(102, 2, 'T-shirts', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Brand Italian men''s shirts - sale | Buy a T-shirt internet shop men''s Angel-Moda', 'Buy branded shirts for men online store Angel-Moda. Italian men''s shirts at an affordable price. We accept orders by phone. +7 (929) 580-08-10.', 'men''s shirts, buy, brand, price, shop, angel-moda, Italy, Italian'),
+(103, 1, 'куртки ', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Итальянские мужские куртки |  Брендовые куртки - Италия ', 'Итальяснкую брендовую куртку мужскую купить в интернет магазине. Брендовые мужские куртки Италия. Принимаем заказы по тел. +7(929)580-08-10.', ''),
+(103, 2, 'jackets', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Italian men''s jackets | Brand Jackets - Italy', 'Italian branded Jackets buy in the online store. Brand men''s jackets Italy. We accept orders by phone. +7 (929) 580-08-10.', ''),
+(104, 1, 'Пальто', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Пальто мужское из Италии - продажа | Купить брендовое итальянское мужское пальто', 'Пальто брендовое мужское - купить в интернет магазине Angel-Moda. Итальянское мужские пальто - продажа, цена, описание. Мужские пальто из Италии. Принимаем заказы по тел. +7(929)580-08-10.', 'мужские пальто, купить, брендовые, цена, интернет магазин, angel-moda, Италия, итальянский'),
+(104, 2, 'Coat', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Coats male from Italy - for sale | Buy under brand Italian male coat', 'Coats male under brand - buy online store Angel-Moda. Italian men''s coat - sales, price, description. Men''s coats from Italy. We accept orders by phone. +7 (929) 580-08-10.', 'men''s coat, buy, brand, price, shop, angel-moda, Italy, Italian'),
+(105, 1, 'Джинсы', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Итальянские джинсы мужские | Купить брендовые мужские джинсы из Италии', 'Купить брендовые мужские джинсы в интернет магазине Angel-Moda. Джинсы из Италии мужские по доступным ценам. Продажа джинсов мужских. Принимаем заказы по тел. +7(929)580-08-10.', 'мужские джинсы, купить, брендовые, цена, интернет магазин, angel-moda, Италия, итальянский'),
+(105, 2, 'Jeans', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Italian men''s jeans | Buy branded men''s jeans from Italy', 'Buy branded mens jeans online store Angel-Moda. Jeans for men from Italy at affordable rates. Sale of men''s jeans. We accept orders by phone. +7 (929) 580-08-10.', 'men''s jeans, buy, brand, price, shop, angel-moda, Italy, Italian'),
+(106, 1, 'Пуховики', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Итальянские мужские пуховики - продажа | Купить мужской брендовую куртку, пуховик - Angel Moda', 'Купить куртку пуховик мужскую из Италии по доступной цене. Каталог мужских пуховиков брендовых - интернет магазин Angel-Moda. Принимаем заказы по тел. +7(929)580-08-10.', 'мужские пуховик, куртка пуховик, купить, брендовые, цена, интернет магазин, angel-moda, Италия, итальянский'),
+(106, 2, 'Jackets', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Italian men''s jackets - sale | Buy branded men''s jacket, down jacket - Angel Moda', 'Buy jacket down jacket male from Italy at an affordable price. Directory men''s down jacket brand - Angel-Moda online shop. We accept orders by phone. +7 (929) 580-08-10.', 'men''s jacket, coat jacket, buy, brand, price, shop, angel-moda, Italy, Italian'),
+(107, 1, 'Брюки', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Итальянские мужские Брюки - купить по доступным ценам | Angel-moda', 'Мужские брюки - купить оптом и в розницу в интернет магазине ''Angel-moda''. Мужская одежда - большой ассортимент товаров из Италии по приемлемым ценам. Принимаем заказы по тел. +7(929)580-08-10.', 'мужские брюки, одежда, брендовые, итальянский, из Италии, купить, цена, продажа, оптом'),
+(107, 2, 'Pants', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Italian men''s trousers - buy at affordable prices | Angel-moda', 'Men''s pants - buy wholesale and retail online store ''Angel-moda''. Men''s clothing - large range of goods from Italy at competitive prices. We accept orders by phone. +7 (929) 580-08-10.', 'men''s trousers, clothing, brand, Italian, from Italy, buy, price, sale, wholesale'),
+(108, 1, 'Одежда', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Итальянская женская одежда — купить в Москве | Интернет магазин брендовой женской одежды из Италии', 'Купить женскую одежду оптом и в розницу из Италии по доступным ценам. Магазин женской брендовой одежды онлайн &quot;Angel-Moda&quot;. Элегантная итальянская одежда для женщин - заказать через интернет. Принимаем заказы по тел. +7(929)580-08-10.', 'женская одежда из Италии, итальянская, брендовая, заказать, купить, продажа, цена, онлайн, интернет магазин, оптом, в розницу, элегантная, angel-moda, через интернет'),
+(108, 2, 'clothing', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Italian women''s clothing - buy in Moscow | Online store brand of women''s clothing from Italy', 'Buy women''s clothing wholesale and retail of Italy at reasonable prices. Shop women''s fashion apparel online &quot;Angel-Moda&quot;. Elegant Italian clothes for women - order via the Internet. We accept orders by phone. +7 (929) 580-08-10.', 'women''s clothing from Italy, italian, branded, order, purchase, sale, price, online, online store, wholesale, retail, elegant, angel-moda, via the Internet'),
+(109, 2, 'Footwear', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Brand women''s shoes | Buy Female footwear Internet shop online | Women''s shoes Italy - catalog with the prices, sale | Angel-Moda', 'Italian women''s shoes - buy online Online store &quot;Angel-Moda&quot;. Brand women''s shoes from Italy. Elegant shoes for women at reasonable prices. We accept orders by phone. +7 (929) 580-08-10.', 'branded shoes, elegant, Italian, Italy, women''s shoes, price, buy, shop, angel-moda'),
+(109, 1, 'Обувь', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Брендовая женская обувь | Купить обувь женскую в интернет магазине онлайн | Женская обувь Италия  - каталог с ценами, продажа | Angel-Moda', 'Итальянская женская обувь - купить в интернет магазине онлайн &quot;Angel-Moda&quot;. Брендовая женская обувь из Италии. Элегантная обувь для женщин по доступным ценам. Принимаем заказы по тел. +7(929)580-08-10.', 'брендовая обувь, элегантная, итальянская, Италия, женская обувь, цена, купить, интернет магазин, angel-moda'),
+(110, 2, 'accessories', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Shop women''s accessories | Buy branded women''s accessories | Online Shop Angel-Moda', 'Buy women''s fashion accessories online store Angel-Moda. Shop women''s accessories. We accept orders by phone. +7 (929) 580-08-10.', 'Women''s Accessories, buy, brand, price, shop, angel-moda, italian, italy'),
+(110, 1, 'Аксессуары', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Магазин женских аксессуаров | Купить брендовые женские аксессуары | Интернет магазин Angel-Moda', 'Купить женские брендовые аксессуары в интернет магазине Angel-Moda. Магазин женских аксессуаров. Принимаем заказы по тел. +7(929)580-08-10. ', 'женские аксессуары, купить, брендовые, цена, интернет магазин, angel-moda, итальянская, италия'),
+(111, 1, 'Туфли', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Брендовые женские туфли Италия | Купить итальянские туфли женские | Интернет магазин Angel-Moda', 'Предлагаем купить итальянские туфли в Москве. Туфли женские Италия - интернет магазин Angel-Moda. Продажа брендовых женских туфель на каблуке. Принимаем заказы по тел. +7(929)580-08-10.', 'туфли женские, итальянские, италия, продажа, купить, цена, интернет магазин, angel-moda, москва'),
+(111, 2, 'Shoes', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Brand women''s shoes Italy | Buy Italian shoes for women | Online Shop Angel-Moda', 'Offer to buy Italian shoes in Moscow. Women''s shoes Italy - Angel-Moda online shop. Sale of branded women''s shoes with heels. We accept orders by phone. +7 (929) 580-08-10.', 'Women''s shoes, Italian, Italy, sale, buy, price, shop, angel-moda, Moscow'),
+(112, 1, 'Сапоги', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Брендовые женские сапоги | Купить сапоги ботфорты женские | Интернет магазин Angel-Moda ', 'Купить женские сапоги ботфортыв интернет магазине Angel-Moda. Сапоги женские брендовые по доступной цене.  Принимаем заказы по тел. +7(929)580-08-10.', 'женские сапоги, ботфорты, купить, брендовая, цена, интернет магазин, angel-moda'),
+(112, 2, 'Boots', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Brand women''s boots | Buy boots boots for women | Online Shop Angel-Moda', 'Buy women''s boots boots online store Angel-Moda. Boots women''s brand at an affordable price. We accept orders by phone. +7 (929) 580-08-10.', 'women''s boots, boots, buy, branded, price, shop, angel-moda'),
+(113, 1, 'Головные уборы', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Итальянские шапки женские | Купить брендовую женскую шапку с шарфом | Женские зимние головные уборы  | Интернет магазин Angel-Moda ', 'Купить брендовую женскую шапку по доступной цене. Каталог женских головных уборов. Заказать женские шапки с шарфом. Принимаем заказы по тел. +7(929)580-08-10.', 'женские шапки, головные уборы, шарфы, купить, брендовая, цена, интернет магазин, angel-moda, заказать, итальянские, Италия'),
+(113, 2, 'Hats', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Italian women''s hats | Buy branded feminine hat with a scarf | Women''s winter hats | Online Shop Angel-Moda', 'Buy branded women''s cap at an affordable price. Catalog female hats. Order Women''s hats with a scarf. We accept orders by phone. +7 (929) 580-08-10.', 'Ladies caps, hats, scarves, buy branded, price, shop, angel-moda, order, Italian, Italy'),
+(114, 1, 'Шарфы', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Женские брендовые шарфы | Купить женский шарф в Москве | Интернет магазин Angel-Moda', 'Брендовые итальянские женские шарфы - интернет магазин Angel-Moda. Купить женский шарф в Москве по доступной цене. Принимаем заказы по тел. +7(929)580-08-10. ', 'женские шарфы, купить, брендовые, цена, интернет магазин, angel-moda, москва, итальянский'),
+(114, 2, 'Scarves', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Women branded scarves | Buy female scarf in Moscow | Online Shop Angel-Moda', 'Brand Italian women scarves - Online Shop Angel-Moda. Buy female scarf in Moscow at an affordable price. We accept orders by phone. +7 (929) 580-08-10.', 'Women''s scarves, buy, brand, price, shop, angel-moda, Moscow, Italian'),
+(115, 1, 'Перчатки', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Брендовые женские перчатки, Италия | Купить итальянские женские перчатки - цены, описание, фото  | Интернет магазин Angel-Moda', 'Брендовые перчатки женские - купить в интернет магазине Angel-Moda. Женские перчатки Италия. Принимаем заказы по тел. +7(929)580-08-10. ', 'женские перчатки, купить, брендовые, цена, интернет магазин, angel-moda, итальянский'),
+(115, 2, 'gloves', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Brand women''s gloves, Italy | Buy Italian women''s gloves - prices, description, photos | Online Shop Angel-Moda', 'Brand women''s gloves - buy online store Angel-Moda. Women gloves Italy. We accept orders by phone. +7 (929) 580-08-10.', 'women''s gloves, buy, brand, price, shop, angel-moda, Italian'),
+(116, 1, 'Сумки', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Брендовая женская сумка - продажа | Элитные итальянские женские сумки, оригинал | Купить женскую сумку из Италии в интернет магазине Angel-Moda', 'Продажа оригинальных женских сумок из Италии по доступным ценам. Купить брендовые элитные женские сумки в интернет магазине &quot;Angel-Moda&quot;. Смотреть каталог лучших итальянских женских сумок. Принимаем заказы по тел. +7(929)580-08-10.', 'сумки женские, брендовые, оригинал, купить, цена, продажа, каталог, италья, итальянская, брендовая сумка, элитные'),
+(116, 2, 'Bags', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Brand''s bag - for sale | Italian Luxury handbags, original | Buy handbags from Italy in the online store Angel-Moda', 'Sale of original handbags from Italy at an affordable price. Buy branded luxury handbags online store &quot;Angel-Moda&quot;. See the catalog of the best Italian women''s handbags. We accept orders by phone. +7 (929) 580-08-10.', 'women''s handbags, brand, original, buy, price, sale, catalog, italy, italian, branded bag, luxury'),
+(117, 1, 'Ремни', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Итальянские женские ремни и пояса | Купить женский брендовый ремень в интернет магазине Angel-Moda', 'Ремни женские брендовые - купить в интернет магазине Angel-Moda. Итальянские ремни женские по доступным ценам.  Принимаем заказы по тел. +7(929)580-08-10.', 'женский ремень, пояс, купить, брендовая, цена, интернет магазин, angel-moda, итальянские, Италия'),
+(117, 2, 'Belts', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Italian women''s belts | Buy branded women belt online store Angel-Moda', 'Belts female brand - buy online store Angel-Moda. Italian women''s belts at reasonable prices. We accept orders by phone. +7 (929) 580-08-10.', 'women belt, belt, buy branded, price, shop, angel-moda, Italian, Italy'),
+(118, 1, 'Платья', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Брендовые платья, Италия | Купить дорогое итальянское платье мировых брендов в интернет магазине Angel-Moda', 'Продажа брендовых платьев из Италии по доступным ценам. Посмотреть каталог женских платьев. Купить итальянское платье в интернет магазине &quot;Angel-moda&quot;. Принимаем заказы по тел. +7(929)580-08-10.', 'брендовые платья, италия, итальянские, купить, продажа, каталог, интернет магазин, цена, мировые бренды, дорогие'),
+(118, 2, 'Dresses', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Branded dresses, Italy | Buy an expensive Italian dress brands in the online store Angel-Moda', 'Sale of branded dresses from Italy at an affordable price. See the catalog of women''s dresses. Buy Italian dress online store &quot;Angel-moda&quot;. We accept orders by phone. +7 (929) 580-08-10.', 'brand dress, Italy, Italian, purchase, sale, catalog, online store, price, world brands, expensive'),
+(119, 1, 'Шорты', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Брендовые женские шорты | Купить женские итальянские шорты в интернет магазин Angel-Moda', 'Предлагаем купить шорты женские в интернет магазине Angel-Moda. Итальянский женский интернет магазин -шорты брендовые по доступной цене. Принимаем заказы по тел. +7(929)580-08-10.', 'женские шорты, одежда, брендовые, итальянский, из Италии, купить, цена, продажа, оптомженские шорты, купить, брендовые, цена, интернет магазин, angel-moda, итальянский'),
+(119, 2, 'Shorts', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Brand women''s shorts | Buy women''s Italian shorts online Angel-Moda Shop', 'Offer to buy shorts for women online store Angel-Moda. Italian women shop -shorts brand at an affordable price. We accept orders by phone. +7 (929) 580-08-10.', 'women''s shorts, clothing, brand, Italian, from Italy, buy, price, sale, optomzhenskie shorts, buy, brand, price, shop, angel-moda, Italian'),
+(120, 1, 'Рубашки', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Итальянские женские рубашки | Купить брендовую женскую рубашку из Италии', 'Итальянские рубашки женские - купить по доступной цене.  Интернет магазин брендовых рубашек Angel-Moda. Заказать женские рубашки Италия. Принимаем заказы по тел. +7(929)580-08-10.', 'женские рубашки, шарфы, купить, брендовая, цена, интернет магазин, angel-moda, заказать, итальянские, Италия'),
+(120, 2, 'shirts', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Italian women''s shirts | Buy branded women''s shirt from Italy', 'Italian women''s shirts - to buy at an affordable price. Online store branded shirts Angel-Moda. Order Women shirts Italy. We accept orders by phone. +7 (929) 580-08-10.', 'women''s shirts, scarves, buy branded, price, shop, angel-moda, order, Italian, Italy'),
+(121, 1, 'Юбки', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Брендовые юбки, Италия | Купить итальянскую юбку в интернет магазине Angel-Moda', 'Продажа юбок. Купить брендовую юбку до доступной цене. Интернет магазин женских юбок из Италии. Принимаем заказы по тел. +7(929)580-08-10.', 'женские юбки, купить, брендовые, цена, интернет магазин, angel-moda, итальянская, италия'),
+(121, 2, 'Skirts', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Brand handbags, Italy | Buy Italian skirt online store Angel-Moda', 'Selling skirts. Buy branded skirt to an affordable price. Online store of women''s skirts from Italy. We accept orders by phone. +7 (929) 580-08-10.', 'women''s skirts, to buy, brand, price, shop, angel-moda, italian, italy'),
+(122, 1, 'Джинсы', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Брендовые джинсы женские | Купить итальянские женские джинсы - каталог с ценами, продажа | Интернет магазин Angel-Moda', 'Купить женские джинсы фирменные в интернет магазине &quot;Angel-Moda&quot;. Итальянские брендовые женские джинсы по доступным ценам. Посмотреть каталог джинсов женских из Италии. Принимаем заказы по тел. +7(929)580-08-10.', 'женские джинсы, итальянская, Италия, цена, купить, интернет магазин, angel-moda, класстка, каталог'),
+(122, 2, 'Jeans', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Brand women''s jeans | Buy Italian women''s jeans - a catalog with the prices, sale | Online Shop Angel-Moda', 'Buy women''s jeans brand in the online store &quot;Angel-Moda&quot;. Italian brand women''s jeans at an affordable price. See the catalog of women''s jeans from Italy. We accept orders by phone. +7 (929) 580-08-10.', 'women''s jeans, Italian, Italy, price, buy, shop, angel-moda, klasstka directory'),
+(123, 1, 'Пальто', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Элегантные итальянские женские пальто - продажа | Купить женское брендовое пальто из Италии', 'Пальто женское Италия - купить по доступным ценам. продажа пальто женских. Элегантное женское пальто -  смотреть каталог. Принимаем заказы по тел. +7(929)580-08-10.', 'женские пальто, купить, брендовые, цена, интернет магазин, angel-moda, итальянская, италия, элегантное'),
+(123, 2, 'Coat', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Elegant Italian women''s coats - sale | Buy women''s coat under brand from Italy', 'Coat female Italy - to buy at reasonable prices. selling women''s coats. Elegant women''s coat - watch catalog. We accept orders by phone. +7 (929) 580-08-10.', 'women''s coats, buy, brand, price, shop, angel-moda, italian, italy, elegant'),
+(124, 1, 'Куртки', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Брендовые женские куртки, Италия | Купить итальянскую женскую куртку в интернет магазине Angel-Moda', 'Итальянские куртки женские известных брендов. Купить женскую куртку из Италии в Москве. Посмотреть каталог женских курток интернет магазина &quot;Angel-Moda&quot;. Принимаем заказы по тел. +7(929)580-08-10.', 'женские куртки, элегантные, продажа, цена, купить, итальянские куртки, Италия, каталог, интернет магазин, angel-moda, брендовые'),
+(124, 2, 'Jackets', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Brand women''s jackets, Italy | Buy Italian women''s jacket in the online store Angel-Moda', 'Italian women''s jackets of famous brands. Buy women''s jacket from Italy to Moscow. View the catalog Women''s coats online store &quot;Angel-Moda&quot;. We accept orders by phone. +7 (929) 580-08-10.', 'women''s jackets, elegant, selling, price, buy Italian Jacket, Italy, catalog, e-shop, angel-moda, brand'),
+(125, 1, 'Пуховики', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Итальянские женские пуховики, куртки - продажа | Купить брендовый женский пуховик из Италии', 'Купить брендовый пуховик женский по доступной цене. Итальянские пуховики женские в интернет магазине Angel-Moda. Продажа пуховиков женских из Италии. Принимаем заказы по тел. +7(929)580-08-10.', 'женский пуховик, пальто, купить, брендовые, цена, интернет магазин, angel-moda, итальянская, италия, продажа'),
+(125, 2, 'Jackets', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Italian women''s down jackets, jackets - sale | Buy branded women''s jacket from Italy', 'Buy branded jacket for women at an affordable price. Italian jackets for women online store Angel-Moda. Selling feather female from Italy. We accept orders by phone. +7 (929) 580-08-10.', 'Women''s down jacket, coat, buy, brand, price, shop, angel-moda, italian, italy, sale'),
+(126, 1, 'Спортивная одежда', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Женская спортивная одежда | Купить брендовую женскую спортивную одежду в интернет магазине Angel-Moda', 'Купить женскую спортивную одежду в интернет магазине Angel-Moda. Брендовая спортивная одежда. Женская спортивная одежда магазины. Принимаем заказы по тел. +7(929)580-08-10.', 'спортивная одежда, женская, купить, брендовые, цена, интернет магазин, angel-moda, итальянская, италия, продажа'),
+(126, 2, 'Sportswear', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Women''s sportswear | Buy branded women''s sportswear online store Angel-Moda', 'Buy Women''s sportswear online store Angel-Moda. Branded sportswear. Women''s sportswear shops. We accept orders by phone. +7 (929) 580-08-10.', 'sportswear, women''s, buy, brand, price, shop, angel-moda, italian, italy, sale'),
+(127, 1, 'Брюки', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Брюки женские, итальянские | Купить женские брюки из Италии в интернет магазине Angel-Moda', 'Женские брюки - цены, каталог, продажа. Купить брюки Италия женские в интернет магазине Angel-Moda. Брюки женские итальянские.  Принимаем заказы по тел. +7(929)580-08-10.', 'женские брюки, купить, брендовая, цена, интернет магазин, angel-moda, итальянские, Италия'),
+(127, 2, 'Pants', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Trousers for women, Italian | Buy women''s pants from Italy in the online store Angel-Moda', 'Women''s pants - prices, catalog sales. Buy pants Italy women online store Angel-Moda. Trousers for women Italian. We accept orders by phone. +7 (929) 580-08-10.', 'women''s pants, buy branded, price, shop, angel-moda, Italian, Italy'),
+(128, 1, 'Джемперы и кардиганы', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Итальянские джемпера в Москве | Купить женский кардиган, брендовый джемпер в интернет магазине Angel-Moda', 'Купить джемпер женский в интернет магазине Angel-Moda. Женские кардиганы по доступной цене. Итальянские джемпера для женщин в Москве. Принимаем заказы по тел. +7(929)580-08-10.', 'женский джемпер, кардиган итальянские, италия, продажа, купить, цена, интернет магазин, angel-moda, москва'),
+(128, 2, 'Sweaters and cardigans', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Italian jumper in Moscow | Buy Women''s cardigan sweater branded online store Angel-Moda', 'Buy Female jumpers online store Angel-Moda. Women cardigans at an affordable price. Italian sweaters for women in Moscow. We accept orders by phone. +7 (929) 580-08-10.', 'Women''s sweater, cardigan Italian, Italy, sale, buy, price, shop, angel-moda, Moscow'),
+(129, 1, 'Комбинезоны', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Брендовые женские комбинезоны, Италия | Купить женский комбинезон в интернет магазине Angel-Moda', 'Купить комбинезон женский в интернет магазине Angel-Moda. Каталог комбинезонов женских - цены, описание, фото. Комбинезоны  брендовые женские, Италия.', 'комбинезон, женский, каталог, купить, брендовые, цена, интернет магазин, angel-moda, итальянская, италия, продажа');
+INSERT INTO `ma_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
+(129, 2, 'Overalls', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Brand women''s overalls, Italy | Buy Women''s jumpsuit online store Angel-Moda', 'Buy jumpsuit women online store Angel-Moda. Catalog overalls female - prices, description, photos. Overalls female brand, Italy.', 'overall, female, catalog, buy, brand, price, shop, angel-moda, italian, italy, sale'),
+(130, 1, 'Топы', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Купить женский топ, Италия | Продажа женских спортивных топов в интернет магазине Angel-Moda', 'Предлагаем купить женский топ по доступной цене. Топы женские - интернет магазин Angel-Moda. Выбрать итальянские женские спортивные топы. Принимаем заказы по тел. +7(929)580-08-10. ', 'женские топы, спортивные топы, каталог, купить, брендовые, цена, интернет магазин, angel-moda, итальянская, италия, продажа'),
+(130, 2, 'Tops', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Buy female celebrity, Italy | Selling women''s sports tops online store Angel-Moda', 'Offer to buy ladies top at affordable price. Women''s tops - Angel-Moda online shop. Select the Italian women''s sports tops. We accept orders by phone. +7 (929) 580-08-10.', 'Women''s tops, sports tops, catalog, buy, brand, price, shop, angel-moda, italian, italy, sale'),
+(131, 1, 'Блузки', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Блузки женские брендовые — цена, описание, фото | Купить итальянские брендовые блузки | Интернет магазин женских блузок', 'Итальянские блузки женские - купить по доступной цене. Интернет магазин женских блузок Angel-Moda. Блузки женские брендовые. Принимаем заказы по тел. +7(929)580-08-10. ', 'женские блузки, купить, брендовые, цена, интернет магазин, angel-moda, итальянская, италия, продажа'),
+(131, 2, 'Shirts', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Blouses Women brand - price, description, photo | Buy Italian brand blouses | Online store of women''s blouses', 'Italian blouses for women - buy at an affordable price. Online store of women''s blouses Angel-Moda. Blouses Women brand. We accept orders by phone. +7 (929) 580-08-10.', 'women''s blouses, buy, brand, price, shop, angel-moda, italian, italy, sale'),
+(132, 1, 'Жилеты', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Жилет женский купить в Москве | Купить женские  жилеты в  Интернет магазине Angel-Moda', 'Жилеты женские - купить в интернет магазине Angel-Moda. Доступные цены на брендовые женские жилеты в Москве.  Принимаем заказы по тел. +7(929)580-08-10. ', 'женские жилеты, купить, брендовые, цена, интернет магазин, angel-moda, итальянская, италия, продажа'),
+(132, 2, 'Vests', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Women vests bought in Moscow | Buy Women vests internet store Angel-Moda', 'Women vests - Buy online store Angel-Moda. Affordable prices for brand-name women''s jackets in Moscow. We accept orders by phone. +7 (929) 580-08-10.', 'Women vests, buy, brand, price, shop, angel-moda, italian, italy, sale'),
+(133, 1, 'Футболки', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Брендовая женская футболка - купить в Москве | Интернет магазин женских футболок Angel-Moda', 'Женская футболка - купить в Москве по доступной цене. Интернет магазин брендовых женских футболок Angel-Moda. Закзать женскую футболку. Принимаем заказы по тел. +7(929)580-08-10.', 'женская футболка, купить, брендовая, цена, интернет магазин, angel-moda, заказать, итальянские, Италия'),
+(133, 2, 'T-shirts', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Brand women''s T-shirt - bought in Moscow | Online store of women''s T-shirts Angel-Moda', 'Women''s T-shirt - bought in Moscow at an affordable price. Online store brand of women''s T-shirts Angel-Moda. Zakzat women''s t-shirt. We accept orders by phone. +7 (929) 580-08-10.', 'Women''s T-shirt, buy branded, price, shop, angel-moda, order, Italian, Italy'),
+(134, 1, 'Пиджаки', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Магазин женских пиджаков,  Италия | Купить брендовые женские пиджаки  | Интернет магазин Angel-Moda', 'Брендовые женские пиджаки Италия. Купить пиджаки женские - интернет магазин Angel-Moda. Принимаем заказы по тел. +7(929)580-08-10. ', 'женские пиджаки, купить, брендовые, цена, интернет магазин, angel-moda, итальянская, италия'),
+(134, 2, 'Jackets', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Shop women''s jackets, Italy | Buy branded women''s jackets | Online Shop Angel-Moda', 'Brand women''s jackets Italy. Buy jackets for women - Angel-Moda online shop. We accept orders by phone. +7 (929) 580-08-10.', 'Women''s jackets, buy, brand, price, shop, angel-moda, italian, italy'),
+(135, 1, 'Туники', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Итальянские женские Туники - купить по доступным ценам | Angel-moda', 'женские одежда - купить оптом и в розницу в интернет магазине ''Angel-moda''. Женщинам - большой ассортимент товаров из Италии по приемлимым ценам. Принимаем заказы по тел. +7(929)580-08-10.', 'женские одежда, брендовые, итальянский, из Италии, купить, цена, продажа, оптом'),
+(135, 2, 'Tunics', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Italian Women''s Tunics - buy at affordable prices | Angel-moda', 'Women''s clothing - buy wholesale and retail online store ''Angel-moda''. Women - large range of goods from Italy at reasonable prices. We accept orders by phone. +7 (929) 580-08-10.', 'Women''s clothing, brand, Italian, from Italy, buy, price, sale, wholesale');
 
 -- --------------------------------------------------------
 
@@ -660,13 +776,14 @@ INSERT INTO `ma_category_path` (`category_id`, `path_id`, `level`) VALUES
 (72, 72, 1),
 (72, 60, 0),
 (69, 60, 0),
-(69, 69, 1),
+(69, 69, 2),
 (68, 60, 0),
-(68, 68, 1),
+(68, 68, 2),
 (77, 77, 0),
 (80, 80, 2),
 (59, 59, 0),
 (65, 65, 0),
+(86, 86, 1),
 (78, 78, 0),
 (85, 85, 0),
 (60, 60, 0),
@@ -674,7 +791,146 @@ INSERT INTO `ma_category_path` (`category_id`, `path_id`, `level`) VALUES
 (84, 84, 2),
 (84, 79, 1),
 (84, 59, 0),
-(83, 83, 2);
+(83, 83, 2),
+(86, 85, 0),
+(87, 85, 0),
+(87, 87, 1),
+(88, 85, 0),
+(88, 88, 1),
+(89, 85, 0),
+(89, 89, 1),
+(90, 85, 0),
+(90, 90, 1),
+(91, 85, 0),
+(91, 91, 1),
+(92, 59, 0),
+(92, 92, 1),
+(93, 59, 0),
+(93, 93, 1),
+(94, 59, 0),
+(94, 94, 1),
+(95, 59, 0),
+(95, 94, 1),
+(95, 95, 2),
+(96, 59, 0),
+(96, 94, 1),
+(96, 96, 2),
+(97, 59, 0),
+(97, 94, 1),
+(97, 97, 2),
+(98, 59, 0),
+(98, 94, 1),
+(98, 98, 2),
+(99, 59, 0),
+(99, 94, 1),
+(99, 99, 2),
+(100, 59, 0),
+(100, 79, 1),
+(100, 100, 2),
+(101, 59, 0),
+(101, 79, 1),
+(101, 101, 2),
+(102, 59, 0),
+(102, 79, 1),
+(102, 102, 2),
+(103, 59, 0),
+(103, 79, 1),
+(103, 103, 2),
+(104, 59, 0),
+(104, 79, 1),
+(104, 104, 2),
+(105, 59, 0),
+(105, 79, 1),
+(105, 105, 2),
+(106, 59, 0),
+(106, 79, 1),
+(106, 106, 2),
+(107, 59, 0),
+(107, 79, 1),
+(107, 107, 2),
+(108, 60, 0),
+(108, 108, 1),
+(68, 108, 1),
+(69, 108, 1),
+(109, 60, 0),
+(109, 109, 1),
+(110, 60, 0),
+(110, 110, 1),
+(111, 60, 0),
+(111, 109, 1),
+(111, 111, 2),
+(112, 60, 0),
+(112, 109, 1),
+(112, 112, 2),
+(113, 60, 0),
+(113, 110, 1),
+(113, 113, 2),
+(114, 60, 0),
+(114, 110, 1),
+(114, 114, 2),
+(115, 60, 0),
+(115, 110, 1),
+(115, 115, 2),
+(116, 60, 0),
+(116, 110, 1),
+(116, 116, 2),
+(117, 60, 0),
+(117, 110, 1),
+(117, 117, 2),
+(118, 60, 0),
+(118, 108, 1),
+(118, 118, 2),
+(119, 60, 0),
+(119, 108, 1),
+(119, 119, 2),
+(120, 60, 0),
+(120, 108, 1),
+(120, 120, 2),
+(121, 60, 0),
+(121, 108, 1),
+(121, 121, 2),
+(122, 60, 0),
+(122, 108, 1),
+(122, 122, 2),
+(123, 60, 0),
+(123, 108, 1),
+(123, 123, 2),
+(124, 60, 0),
+(124, 108, 1),
+(124, 124, 2),
+(125, 60, 0),
+(125, 108, 1),
+(125, 125, 2),
+(126, 60, 0),
+(126, 108, 1),
+(126, 126, 2),
+(127, 60, 0),
+(127, 108, 1),
+(127, 127, 2),
+(128, 60, 0),
+(128, 108, 1),
+(128, 128, 2),
+(129, 60, 0),
+(129, 108, 1),
+(129, 129, 2),
+(130, 60, 0),
+(130, 108, 1),
+(130, 130, 2),
+(131, 60, 0),
+(131, 108, 1),
+(131, 131, 2),
+(132, 60, 0),
+(132, 108, 1),
+(132, 132, 2),
+(133, 60, 0),
+(133, 108, 1),
+(133, 133, 2),
+(134, 60, 0),
+(134, 108, 1),
+(134, 134, 2),
+(135, 60, 0),
+(135, 108, 1),
+(135, 135, 2);
 
 -- --------------------------------------------------------
 
@@ -698,6 +954,7 @@ INSERT INTO `ma_category_to_layout` (`category_id`, `store_id`, `layout_id`) VAL
 (60, 0, 0),
 (85, 0, 0),
 (78, 0, 0),
+(86, 0, 0),
 (65, 0, 0),
 (80, 0, 0),
 (77, 0, 0),
@@ -710,7 +967,56 @@ INSERT INTO `ma_category_to_layout` (`category_id`, `store_id`, `layout_id`) VAL
 (81, 0, 0),
 (82, 0, 0),
 (83, 0, 0),
-(84, 0, 0);
+(84, 0, 0),
+(87, 0, 0),
+(88, 0, 0),
+(89, 0, 0),
+(90, 0, 0),
+(91, 0, 0),
+(92, 0, 0),
+(93, 0, 0),
+(94, 0, 0),
+(95, 0, 0),
+(96, 0, 0),
+(97, 0, 0),
+(98, 0, 0),
+(99, 0, 0),
+(100, 0, 0),
+(101, 0, 0),
+(102, 0, 0),
+(103, 0, 0),
+(104, 0, 0),
+(105, 0, 0),
+(106, 0, 0),
+(107, 0, 0),
+(108, 0, 0),
+(109, 0, 0),
+(110, 0, 0),
+(111, 0, 0),
+(112, 0, 0),
+(113, 0, 0),
+(114, 0, 0),
+(115, 0, 0),
+(116, 0, 0),
+(117, 0, 0),
+(118, 0, 0),
+(119, 0, 0),
+(120, 0, 0),
+(121, 0, 0),
+(122, 0, 0),
+(123, 0, 0),
+(124, 0, 0),
+(125, 0, 0),
+(126, 0, 0),
+(127, 0, 0),
+(128, 0, 0),
+(129, 0, 0),
+(130, 0, 0),
+(131, 0, 0),
+(132, 0, 0),
+(133, 0, 0),
+(134, 0, 0),
+(135, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -745,7 +1051,57 @@ INSERT INTO `ma_category_to_store` (`category_id`, `store_id`) VALUES
 (82, 0),
 (83, 0),
 (84, 0),
-(85, 0);
+(85, 0),
+(86, 0),
+(87, 0),
+(88, 0),
+(89, 0),
+(90, 0),
+(91, 0),
+(92, 0),
+(93, 0),
+(94, 0),
+(95, 0),
+(96, 0),
+(97, 0),
+(98, 0),
+(99, 0),
+(100, 0),
+(101, 0),
+(102, 0),
+(103, 0),
+(104, 0),
+(105, 0),
+(106, 0),
+(107, 0),
+(108, 0),
+(109, 0),
+(110, 0),
+(111, 0),
+(112, 0),
+(113, 0),
+(114, 0),
+(115, 0),
+(116, 0),
+(117, 0),
+(118, 0),
+(119, 0),
+(120, 0),
+(121, 0),
+(122, 0),
+(123, 0),
+(124, 0),
+(125, 0),
+(126, 0),
+(127, 0),
+(128, 0),
+(129, 0),
+(130, 0),
+(131, 0),
+(132, 0),
+(133, 0),
+(134, 0),
+(135, 0);
 
 -- --------------------------------------------------------
 
@@ -1151,8 +1507,8 @@ CREATE TABLE IF NOT EXISTS `ma_currency` (
 --
 
 INSERT INTO `ma_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-(1, 'Рубль', 'RUB', '', 'руб.', '0', 1.00000000, 1, '2016-02-19 21:45:14'),
-(2, 'Доллар', 'USD', '', '$', '0', 0.01290000, 1, '2016-02-19 17:46:34');
+(1, 'Рубль', 'RUB', '', ' руб.', '0', 1.00000000, 1, '2016-02-22 01:11:27'),
+(2, 'Доллар', 'USD', '', ' $', '0', 0.01300000, 1, '2016-02-21 12:54:38');
 
 -- --------------------------------------------------------
 
@@ -1219,7 +1575,7 @@ CREATE TABLE IF NOT EXISTS `ma_customer_activity` (
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`activity_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=45 ;
 
 --
 -- Дамп данных таблицы `ma_customer_activity`
@@ -1265,7 +1621,11 @@ INSERT INTO `ma_customer_activity` (`activity_id`, `customer_id`, `key`, `data`,
 (37, 7, 'login', '{"customer_id":"7","name":"\\u0414\\u0438\\u043c\\u0430 \\u0428\\u043c\\u0430\\u043a\\u043e\\u0432"}', '98.167.34.228', '2016-02-11 08:40:13'),
 (38, 7, 'login', '{"customer_id":"7","name":"\\u0414\\u0438\\u043c\\u0430 \\u0428\\u043c\\u0430\\u043a\\u043e\\u0432"}', '127.0.0.1', '2016-02-19 22:01:37'),
 (39, 7, 'login', '{"customer_id":"7","name":"\\u0414\\u0438\\u043c\\u0430 \\u0428\\u043c\\u0430\\u043a\\u043e\\u0432"}', '127.0.0.1', '2016-02-19 22:01:53'),
-(40, 7, 'login', '{"customer_id":"7","name":"\\u0414\\u0438\\u043c\\u0430 \\u0428\\u043c\\u0430\\u043a\\u043e\\u0432"}', '127.0.0.1', '2016-02-20 02:31:01');
+(40, 7, 'login', '{"customer_id":"7","name":"\\u0414\\u0438\\u043c\\u0430 \\u0428\\u043c\\u0430\\u043a\\u043e\\u0432"}', '127.0.0.1', '2016-02-20 02:31:01'),
+(41, 7, 'login', '{"customer_id":"7","name":"\\u0414\\u0438\\u043c\\u0430 \\u0428\\u043c\\u0430\\u043a\\u043e\\u0432"}', '127.0.0.1', '2016-02-20 20:44:39'),
+(42, 7, 'edit', '{"customer_id":"7","name":"\\u0414\\u0438\\u043c\\u0430 \\u0428\\u043c\\u0430\\u043a\\u043e\\u0432"}', '127.0.0.1', '2016-02-21 16:41:32'),
+(43, 7, 'login', '{"customer_id":"7","name":"\\u0414\\u0438\\u043c\\u0430 \\u0428\\u043c\\u0430\\u043a\\u043e\\u0432"}', '127.0.0.1', '2016-02-21 20:08:24'),
+(44, 7, 'login', '{"customer_id":"7","name":"\\u0414\\u0438\\u043c\\u0430 \\u0428\\u043c\\u0430\\u043a\\u043e\\u0432"}', '127.0.0.1', '2016-02-21 20:47:39');
 
 -- --------------------------------------------------------
 
@@ -1454,7 +1814,11 @@ CREATE TABLE IF NOT EXISTS `ma_customer_wishlist` (
 --
 
 INSERT INTO `ma_customer_wishlist` (`customer_id`, `product_id`, `date_added`) VALUES
-(7, 51, '2016-02-10 20:55:36');
+(7, 51, '2016-02-10 20:55:36'),
+(7, 65, '2016-02-21 20:47:39'),
+(7, 67, '2016-02-21 19:41:05'),
+(7, 52, '2016-02-21 20:51:03'),
+(7, 66, '2016-02-21 19:40:53');
 
 -- --------------------------------------------------------
 
@@ -1685,46 +2049,72 @@ CREATE TABLE IF NOT EXISTS `ma_filter` (
   `filter_group_id` int(11) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`filter_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=37 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=63 ;
 
 --
 -- Дамп данных таблицы `ma_filter`
 --
 
 INSERT INTO `ma_filter` (`filter_id`, `filter_group_id`, `sort_order`) VALUES
-(6, 2, 0),
-(5, 2, 0),
-(4, 2, 0),
-(7, 2, 0),
-(8, 2, 0),
-(9, 2, 0),
-(10, 2, 0),
-(11, 2, 0),
-(12, 2, 0),
-(13, 2, 0),
-(14, 2, 0),
-(15, 2, 0),
-(16, 2, 0),
-(17, 2, 0),
-(18, 2, 0),
-(19, 2, 0),
-(20, 2, 0),
-(21, 2, 0),
-(22, 2, 0),
-(23, 2, 0),
-(24, 2, 0),
-(25, 2, 0),
-(26, 2, 0),
-(27, 2, 0),
-(28, 2, 0),
-(29, 2, 0),
-(30, 2, 0),
-(31, 2, 0),
 (32, 2, 0),
-(33, 3, 0),
-(34, 3, 0),
+(31, 2, 0),
+(30, 2, 0),
+(29, 2, 0),
+(28, 2, 0),
+(27, 2, 0),
+(26, 2, 0),
+(25, 2, 0),
+(24, 2, 0),
+(23, 2, 0),
+(22, 2, 0),
+(21, 2, 0),
+(20, 2, 0),
+(19, 2, 0),
+(18, 2, 0),
+(17, 2, 0),
+(16, 2, 0),
+(15, 2, 0),
+(14, 2, 0),
+(13, 2, 0),
+(12, 2, 0),
+(11, 2, 0),
+(10, 2, 0),
+(9, 2, 0),
+(8, 2, 0),
+(7, 2, 0),
+(4, 2, 0),
+(5, 2, 0),
+(6, 2, 0),
+(36, 3, 0),
 (35, 3, 0),
-(36, 3, 0);
+(34, 3, 0),
+(33, 3, 0),
+(37, 2, 0),
+(38, 2, 0),
+(39, 2, 0),
+(40, 2, 0),
+(41, 2, 0),
+(42, 3, 0),
+(43, 3, 0),
+(44, 3, 0),
+(45, 3, 0),
+(46, 3, 0),
+(47, 3, 0),
+(48, 3, 0),
+(49, 3, 0),
+(50, 3, 0),
+(51, 3, 0),
+(52, 3, 0),
+(53, 3, 0),
+(54, 3, 0),
+(55, 3, 0),
+(56, 3, 0),
+(57, 3, 0),
+(58, 3, 0),
+(59, 3, 0),
+(60, 3, 0),
+(61, 3, 0),
+(62, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -1745,47 +2135,55 @@ CREATE TABLE IF NOT EXISTS `ma_filter_description` (
 --
 
 INSERT INTO `ma_filter_description` (`filter_id`, `language_id`, `filter_group_id`, `name`) VALUES
-(5, 2, 2, 'Orange'),
-(5, 1, 2, 'Оранжевый'),
+(24, 1, 2, 'Аквамарин'),
+(23, 2, 2, 'Sand-coloured'),
+(23, 1, 2, 'Песочный'),
+(22, 2, 2, 'Olive-green'),
+(22, 1, 2, 'Оливковый'),
+(21, 2, 2, 'Emerald-green'),
+(21, 1, 2, 'Изумрудный'),
+(20, 2, 2, 'Azure'),
+(20, 1, 2, 'Голубой'),
+(19, 2, 2, 'Indigo'),
+(19, 1, 2, 'Индиго'),
+(18, 2, 2, 'Lilac'),
+(18, 1, 2, 'Сиреневый'),
+(17, 2, 2, 'Raspberry-red'),
+(17, 1, 2, 'Малиновый'),
+(16, 2, 2, 'Brown'),
+(16, 1, 2, 'Коричневый'),
+(15, 2, 2, 'Ivory'),
+(15, 1, 2, 'Айвори'),
+(14, 2, 2, 'Grey'),
+(14, 1, 2, 'Серый'),
+(13, 2, 2, 'Black'),
+(13, 1, 2, 'Черный'),
+(12, 2, 2, 'White'),
+(12, 1, 2, 'Белый'),
+(11, 2, 2, 'Purple'),
+(11, 1, 2, 'Фиолетовый'),
+(10, 2, 2, 'Pink'),
+(10, 1, 2, 'Розовый'),
+(9, 2, 2, 'Green'),
+(9, 1, 2, 'Зеленый'),
+(8, 2, 2, 'Blue'),
+(8, 1, 2, 'Синий'),
+(7, 2, 2, 'Red'),
+(7, 1, 2, 'Красный'),
 (4, 2, 2, 'Beige'),
 (4, 1, 2, 'Бежевый'),
-(6, 1, 2, 'Желтый'),
+(5, 2, 2, 'Orange'),
+(5, 1, 2, 'Оранжевый'),
 (6, 2, 2, 'Yellow'),
-(7, 1, 2, 'Красный'),
-(7, 2, 2, 'Red'),
-(8, 1, 2, 'Синий'),
-(8, 2, 2, 'Blue'),
-(9, 1, 2, 'Зеленый'),
-(9, 2, 2, 'Green'),
-(10, 1, 2, 'Розовый'),
-(10, 2, 2, 'Pink'),
-(11, 1, 2, 'Фиолетовый'),
-(11, 2, 2, 'Purple'),
-(12, 1, 2, 'Белый'),
-(12, 2, 2, 'White'),
-(13, 1, 2, 'Черный'),
-(13, 2, 2, 'Black'),
-(14, 1, 2, 'Серый'),
-(14, 2, 2, 'Grey'),
-(15, 1, 2, 'Айвори'),
-(15, 2, 2, 'Ivory'),
-(16, 1, 2, 'Коричневый'),
-(16, 2, 2, 'Brown'),
-(17, 1, 2, 'Малиновый'),
-(17, 2, 2, 'Raspberry-red'),
-(18, 1, 2, 'Сиреневый'),
-(18, 2, 2, 'Lilac'),
-(19, 1, 2, 'Индиго'),
-(19, 2, 2, 'Indigo'),
-(20, 1, 2, 'Голубой'),
-(20, 2, 2, 'Azure'),
-(21, 1, 2, 'Изумрудный'),
-(21, 2, 2, 'Emerald-green'),
-(22, 1, 2, 'Оливковый'),
-(22, 2, 2, 'Olive-green'),
-(23, 1, 2, 'Песочный'),
-(23, 2, 2, 'Sand-coloured'),
-(24, 1, 2, 'Аквамарин'),
+(6, 1, 2, 'Желтый'),
+(36, 2, 3, 'L'),
+(36, 1, 3, 'L'),
+(35, 2, 3, 'M'),
+(35, 1, 3, 'M'),
+(34, 2, 3, 'S'),
+(34, 1, 3, 'S'),
+(33, 2, 3, 'XS'),
+(33, 1, 3, 'XS'),
 (24, 2, 2, 'Aquamarine'),
 (25, 1, 2, 'Шоколадный'),
 (25, 2, 2, 'Chocolate-brown'),
@@ -1803,14 +2201,58 @@ INSERT INTO `ma_filter_description` (`filter_id`, `language_id`, `filter_group_i
 (31, 2, 2, 'Gold'),
 (32, 1, 2, 'Серебряный'),
 (32, 2, 2, 'Silver'),
-(33, 1, 3, 'XS'),
-(33, 2, 3, 'XS'),
-(34, 1, 3, 'S'),
-(34, 2, 3, 'S'),
-(35, 1, 3, 'M'),
-(35, 2, 3, 'M'),
-(36, 1, 3, 'L'),
-(36, 2, 3, 'L');
+(37, 1, 2, 'Клетка'),
+(37, 2, 2, 'checkwork'),
+(38, 1, 2, 'Полоска'),
+(38, 2, 2, 'stripe'),
+(39, 1, 2, 'Горох'),
+(39, 2, 2, 'polka dot'),
+(40, 1, 2, 'Леопард'),
+(40, 2, 2, 'leopard'),
+(41, 1, 2, 'Зебра'),
+(41, 2, 2, 'zebra'),
+(42, 1, 3, 'XL'),
+(42, 2, 3, 'XL'),
+(43, 1, 3, 'XXL'),
+(43, 2, 3, 'XXL'),
+(44, 1, 3, '26'),
+(44, 2, 3, '26'),
+(45, 1, 3, '27'),
+(45, 2, 3, '27'),
+(46, 1, 3, '28'),
+(46, 2, 3, '28'),
+(47, 1, 3, '29'),
+(47, 2, 3, '29'),
+(48, 1, 3, '30'),
+(48, 2, 3, '30'),
+(49, 1, 3, '36'),
+(49, 2, 3, '36'),
+(50, 1, 3, '37'),
+(50, 2, 3, '37'),
+(51, 1, 3, '38'),
+(51, 2, 3, '38'),
+(52, 1, 3, '39'),
+(52, 2, 3, '39'),
+(53, 1, 3, '40'),
+(53, 2, 3, '40'),
+(54, 1, 3, '42'),
+(54, 2, 3, '42'),
+(55, 1, 3, '44'),
+(55, 2, 3, '44'),
+(56, 1, 3, '46'),
+(56, 2, 3, '46'),
+(57, 1, 3, '48'),
+(57, 2, 3, '48'),
+(58, 1, 3, '50'),
+(58, 2, 3, '50'),
+(59, 1, 3, '52'),
+(59, 2, 3, '52'),
+(60, 1, 3, '54'),
+(60, 2, 3, '54'),
+(61, 1, 3, '56'),
+(61, 2, 3, '56'),
+(62, 1, 3, '58'),
+(62, 2, 3, '58');
 
 -- --------------------------------------------------------
 
@@ -1850,9 +2292,9 @@ CREATE TABLE IF NOT EXISTS `ma_filter_group_description` (
 --
 
 INSERT INTO `ma_filter_group_description` (`filter_group_id`, `language_id`, `name`) VALUES
-(2, 2, 'Color'),
 (2, 1, 'Цвет'),
 (3, 1, 'Размер'),
+(2, 2, 'Color'),
 (3, 2, 'Size');
 
 -- --------------------------------------------------------
@@ -1959,13 +2401,11 @@ INSERT INTO `ma_information_description` (`information_id`, `language_id`, `titl
 (5, 1, 'Условия соглашения', '&lt;p&gt;\r\n	Terms &amp;amp; Conditions&lt;/p&gt;', 'Условия соглашения', '', ''),
 (3, 1, 'Политика Безопасности', '&lt;p&gt;\r\n	Privacy Policy&lt;/p&gt;', 'Политика Безопасности', '', ''),
 (7, 1, 'Доставка и оплата', '&lt;p&gt;Эта статья редактируется в админ-панели Каталог &amp;gt;&amp;gt; Статьи &amp;gt;&amp;gt; Доставка и оплата&lt;/p&gt;', 'delivery', '', ''),
-(8, 1, 'Обмен и возврат', '&lt;p&gt;&lt;span style=&quot;line-height: 17.1428394317627px;&quot;&gt;Эта статья редактируется в админ-панели Каталог &amp;gt;&amp;gt; Статьи &amp;gt;&amp;gt; Обмен и возврат&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'Обмен и возврат', '', ''),
 (9, 1, 'Программа лояльности', '&lt;p&gt;&lt;span style=&quot;line-height: 17.1428394317627px;&quot;&gt;Эта статья редактируется в админ-панели Каталог &amp;gt;&amp;gt; Статьи &amp;gt;&amp;gt; Программа лояльности&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'Программа лояльности', '', ''),
 (11, 1, 'Как выбрать размер', '&lt;p&gt;&lt;span style=&quot;font-family: ''Helvetica Neue'', Helvetica, Arial, sans-serif; line-height: 20px;&quot;&gt;Эта статья редактируется в админ-панели Каталог &amp;gt;&amp;gt; Статьи &amp;gt;&amp;gt; Как выбрать размер&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'Как выбрать размер', '', ''),
 (5, 2, 'Условия соглашения', '&lt;p&gt;\r\n	Terms &amp;amp; Conditions&lt;/p&gt;', 'Условия соглашения', '', ''),
 (3, 2, 'Политика Безопасности', '&lt;p&gt;\r\n	Privacy Policy&lt;/p&gt;', 'Политика Безопасности', '', ''),
 (7, 2, 'Доставка и оплата', '&lt;p&gt;Эта статья редактируется в админ-панели Каталог &amp;gt;&amp;gt; Статьи &amp;gt;&amp;gt; Доставка и оплата&lt;/p&gt;', 'delivery', '', ''),
-(8, 2, 'Обмен и возврат', '&lt;p&gt;&lt;span style=&quot;line-height: 17.1428394317627px;&quot;&gt;Эта статья редактируется в админ-панели Каталог &amp;gt;&amp;gt; Статьи &amp;gt;&amp;gt; Обмен и возврат&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'Обмен и возврат', '', ''),
 (9, 2, 'Программа лояльности', '&lt;p&gt;&lt;span style=&quot;line-height: 17.1428394317627px;&quot;&gt;Эта статья редактируется в админ-панели Каталог &amp;gt;&amp;gt; Статьи &amp;gt;&amp;gt; Программа лояльности&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'Программа лояльности', '', ''),
 (10, 2, 'Wholesailors', '&lt;p&gt;&lt;span style=&quot;line-height: 17.1428394317627px;&quot;&gt;Эта статья редактируется в админ-панели Каталог &amp;gt;&amp;gt; Статьи &amp;gt;&amp;gt; Оптовикам&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'Оптовикам', '', ''),
 (11, 2, 'Как выбрать размер', '&lt;p&gt;&lt;span style=&quot;font-family: ''Helvetica Neue'', Helvetica, Arial, sans-serif; line-height: 20px;&quot;&gt;Эта статья редактируется в админ-панели Каталог &amp;gt;&amp;gt; Статьи &amp;gt;&amp;gt; Как выбрать размер&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'Как выбрать размер', '', ''),
@@ -1977,12 +2417,14 @@ INSERT INTO `ma_information_description` (`information_id`, `language_id`, `titl
 (14, 2, 'Contacts', '&lt;div class=&quot;row row_contact&quot;&gt;\r\n  &lt;div class=&quot;col-sm-5&quot;&gt;\r\n  	&lt;h2&gt;OUR HEAD OFFICE&lt;/h2&gt;\r\n\r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Our Address&lt;/span&gt;\r\n  		&lt;br&gt;\r\n  		&lt;span&gt;47924, Rimini (Italy), Via Coriano 58, blocco 92F, shop and office &quot;Angels&quot;&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n\r\n  	&lt;p&gt;   \r\n  		&lt;span class=&quot;headings&quot;&gt;Сontact number&lt;/span&gt;\r\n  		&lt;br&gt;   \r\n  		&lt;a class=&quot;phone&quot; href=&quot;tel:+393 292 94 14 10&quot; title=&quot;Our phone in Rimini&quot;&gt;(+39) 32-929-41-41-0&lt;/a&gt;\r\n  	&lt;/p&gt;\r\n\r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;E-mail&lt;/span&gt;&lt;br&gt;\r\n  		&lt;a class=&quot;mail&quot; href=&quot;mailto:angels-777@libero.it&quot; title=&quot;Our e-mail&quot;&gt;angels-777@libero.it&lt;/a&gt;\r\n  	&lt;/p&gt;  \r\n\r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Opening hours&lt;/span&gt;&lt;br&gt;\r\n  		&lt;span&gt;9:00 - 17:00, Saturday - closed\r\n       &lt;br&gt;\r\n\r\nSunday from 9:00 - 14:00&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n\r\n  	&lt;ul class=&quot;social_buttons&quot;&gt;\r\n  		&lt;li&gt;&lt;a title=&quot;ВКонтакте&quot; class=&quot;vk&quot; href=&quot;http://vk.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Facebook&quot; class=&quot;fb&quot; href=&quot;https://www.facebook.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Twitter&quot; class=&quot;tw&quot; href=&quot;https://twitter.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;\r\n  					&lt;a title=&quot;Instagram&quot; class=&quot;instagram&quot; href=&quot;https://www.instagram.com/angelsitalia/&quot;&gt;&lt;/a&gt;\r\n  					&lt;/li&gt;   											\r\n  	&lt;/ul&gt;\r\n  &lt;/div&gt;\r\n  &lt;div class=&quot;col-sm-7&quot;&gt;\r\n  	&lt;div class=&quot;map&quot;&gt;\r\n  			&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2868.244035603958!2d12.578954151053255!3d44.03701413544219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132cc2f96bd310d5%3A0x64c013d0a104b5cc!2sGrosRimini!5e0!3m2!1sru!2sru!4v1455810544744&quot; width=&quot;100%&quot; height=&quot;350&quot; frameborder=&quot;0&quot; style=&quot;border:0&quot; allowfullscreen&gt;&lt;/iframe&gt;\r\n  	&lt;/div&gt;\r\n  &lt;/div&gt;\r\n&lt;/div&gt;  \r\n\r\n&lt;div class=&quot;row row_contact&quot;&gt;\r\n  &lt;div class=&quot;col-sm-5&quot;&gt;\r\n  	&lt;h2&gt;OUR OFFICE IN MOSCOW&lt;/h2&gt;\r\n\r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Our Address&lt;/span&gt;\r\n  		&lt;br&gt;\r\n  		&lt;span&gt;119361, Moscow, Bolshaya Ochakovskaya house 3&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n\r\n  	&lt;p&gt;   \r\n  		&lt;span class=&quot;headings&quot;&gt;Сontact number&lt;/span&gt;\r\n  		&lt;br&gt;   \r\n  		&lt;a class=&quot;phone&quot; href=&quot;tel:+7-929-588-53-99&quot; title=&quot;Phone in Moscow&quot;&gt;+7-929-588-53-99&lt;/a&gt;\r\n  	&lt;/p&gt;\r\n\r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;E-mail&lt;/span&gt;&lt;br&gt;\r\n  		&lt;a class=&quot;mail&quot; href=&quot;mailto:order@angel-moda.com&quot; title=&quot;Our e-mail&quot;&gt;order@angel-moda.com&lt;/a&gt;\r\n  	&lt;/p&gt;  \r\n\r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Opening hours&lt;/span&gt;&lt;br&gt;\r\n  		&lt;span&gt;10:00 - 20:00, seven days a week\r\n  		&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n  																	\r\n  	&lt;ul class=&quot;social_buttons&quot;&gt;\r\n  		&lt;li&gt;&lt;a title=&quot;ВКонтакте&quot; class=&quot;vk&quot; href=&quot;http://vk.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Facebook&quot; class=&quot;fb&quot; href=&quot;https://www.facebook.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Twitter&quot; class=&quot;tw&quot; href=&quot;https://twitter.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;\r\n  					&lt;a title=&quot;Instagram&quot; class=&quot;instagram&quot; href=&quot;https://www.instagram.com/angelsitalia/&quot;&gt;&lt;/a&gt;\r\n  					&lt;/li&gt;   											\r\n  	&lt;/ul&gt;\r\n  &lt;/div&gt;\r\n  &lt;div class=&quot;col-sm-7&quot;&gt;\r\n  	&lt;div class=&quot;map&quot;&gt;\r\n  			&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2248.9789915269603!2d37.4648578514218!3d55.68935300425584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54dcb0fcfbc71%3A0x26317bd63dcdf0b2!2z0JHQvtC70YzRiNCw0Y8g0J7Rh9Cw0LrQvtCy0YHQutCw0Y8g0YPQuy4sIDMsINCc0L7RgdC60LLQsCwgMTE5MzYx!5e0!3m2!1sru!2sru!4v1455812964975&quot; width=&quot;100%&quot; height=&quot;350&quot; frameborder=&quot;0&quot; style=&quot;border:0&quot; allowfullscreen&gt;&lt;/iframe&gt;\r\n  	&lt;/div&gt;\r\n  &lt;/div&gt;\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;row row_contact&quot;&gt;\r\n  &lt;div class=&quot;col-sm-5&quot;&gt;\r\n  	&lt;h2&gt;Shop in Taganrog&lt;/h2&gt;\r\n\r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Our Address&lt;/span&gt;\r\n  		&lt;br&gt;\r\n  		&lt;span&gt;347924, Taganrog, Dzerzhinskogo Street 191, the store &quot;Angel&quot;&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n\r\n  	&lt;p&gt;   \r\n  		&lt;span class=&quot;headings&quot;&gt;Сontact number&lt;/span&gt;\r\n  		&lt;br&gt;   \r\n  		&lt;a class=&quot;phone&quot; href=&quot;tel:+7-928-125-81-25&quot; title=&quot;Phone in Taganrog&quot;&gt;+7-928-125-81-25&lt;/a&gt;\r\n  	&lt;/p&gt;\r\n\r\n  \r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Opening hours&lt;/span&gt;&lt;br&gt;\r\n  		&lt;span&gt;10:00 - 20:00, seven days a week\r\n  		&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n  																	\r\n  	&lt;ul class=&quot;social_buttons&quot;&gt;\r\n  		&lt;li&gt;&lt;a title=&quot;ВКонтакте&quot; class=&quot;vk&quot; href=&quot;http://vk.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Facebook&quot; class=&quot;fb&quot; href=&quot;https://www.facebook.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Twitter&quot; class=&quot;tw&quot; href=&quot;https://twitter.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;\r\n  					&lt;a title=&quot;Instagram&quot; class=&quot;instagram&quot; href=&quot;https://www.instagram.com/angelsitalia/&quot;&gt;&lt;/a&gt;\r\n  					&lt;/li&gt;   											\r\n  	&lt;/ul&gt;\r\n  &lt;/div&gt;\r\n  &lt;div class=&quot;col-sm-7&quot;&gt;\r\n  	&lt;div class=&quot;map&quot;&gt;\r\n  			&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2707.7619192481375!2d38.91552885114773!3d47.26035861972279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e15841e84c2b7f%3A0x7d677e172e361428!2z0K3QvdC20LXQuw!5e0!3m2!1sru!2sru!4v1455813286060&quot; width=&quot;100%&quot; height=&quot;350px&quot; frameborder=&quot;0&quot; style=&quot;border:0&quot; allowfullscreen&gt;&lt;/iframe&gt;\r\n  	&lt;/div&gt;\r\n  &lt;/div&gt;\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;row row_contact&quot;&gt;\r\n  &lt;div class=&quot;col-sm-5&quot;&gt;\r\n  	&lt;h2&gt;Shop in Taganrog&lt;/h2&gt;\r\n\r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Our Address&lt;/span&gt;\r\n  		&lt;br&gt;\r\n  		&lt;span&gt;347900, Taganrog, Lermontovskiy lane 13, a shop &quot;Angel Elite&quot;&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n\r\n  	&lt;p&gt;   \r\n  		&lt;span class=&quot;headings&quot;&gt;Сontact number&lt;/span&gt;\r\n  		&lt;br&gt;   \r\n  		&lt;a class=&quot;phone&quot; href=&quot;tel:+7-928-125-81-25&quot; title=&quot;Phone in Taganrog&quot;&gt;+7-928-125-81-25&lt;/a&gt;\r\n  	&lt;/p&gt;\r\n\r\n  \r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Opening hours&lt;/span&gt;&lt;br&gt;\r\n  		&lt;span&gt;10:00 - 20:00, seven days a week\r\n  		&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n  																	\r\n  	&lt;ul class=&quot;social_buttons&quot;&gt;\r\n  		&lt;li&gt;&lt;a title=&quot;ВКонтакте&quot; class=&quot;vk&quot; href=&quot;http://vk.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Facebook&quot; class=&quot;fb&quot; href=&quot;https://www.facebook.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Twitter&quot; class=&quot;tw&quot; href=&quot;https://twitter.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;\r\n  					&lt;a title=&quot;Instagram&quot; class=&quot;instagram&quot; href=&quot;https://www.instagram.com/angelsitalia/&quot;&gt;&lt;/a&gt;\r\n  					&lt;/li&gt;   											\r\n  	&lt;/ul&gt;\r\n  &lt;/div&gt;\r\n  &lt;div class=&quot;col-sm-7&quot;&gt;\r\n  	&lt;div class=&quot;map&quot;&gt;\r\n  		&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.1713008540655!2d38.92815085114625!3d47.21323042295951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3fd3888b90c09%3A0xf2e5687b1ab7bfe6!2z0JvQtdGA0LzQvtC90YLQvtCy0YHQutC40Lkg0L_QtdGALiwgMTMsINCi0LDQs9Cw0L3RgNC-0LMsINCg0L7RgdGC0L7QstGB0LrQsNGPINC-0LHQuy4sIDM0NzkwMA!5e0!3m2!1sru!2sru!4v1455813181542&quot; width=&quot;100%&quot; height=&quot;350px&quot; frameborder=&quot;0&quot; style=&quot;border:0&quot; allowfullscreen&gt;&lt;/iframe&gt;\r\n  	&lt;/div&gt;\r\n  &lt;/div&gt;\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;row row_contact&quot;&gt;\r\n  &lt;div class=&quot;col-sm-5&quot;&gt;\r\n  	&lt;h2&gt;Shop in Taganrog&lt;/h2&gt;\r\n\r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Our Address&lt;/span&gt;\r\n  		&lt;br&gt;\r\n  		&lt;span&gt;347942, Taganrog, SEC Marmalade, Peace Square 7, shop &quot;Angels&quot;&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n\r\n  	&lt;p&gt;   \r\n  		&lt;span class=&quot;headings&quot;&gt;Сontact number&lt;/span&gt;\r\n  		&lt;br&gt;   \r\n  		&lt;a class=&quot;phone&quot; href=&quot;tel:+7-928-125-81-25&quot; title=&quot;Phone in Taganrog&quot;&gt;+7-928-125-81-25&lt;/a&gt;\r\n  	&lt;/p&gt;\r\n\r\n  \r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Opening hours&lt;/span&gt;&lt;br&gt;\r\n  		&lt;span&gt;10:00 - 20:00, seven days a week\r\n  		&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n  																	\r\n  	&lt;ul class=&quot;social_buttons&quot;&gt;\r\n  		&lt;li&gt;&lt;a title=&quot;ВКонтакте&quot; class=&quot;vk&quot; href=&quot;http://vk.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Facebook&quot; class=&quot;fb&quot; href=&quot;https://www.facebook.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Twitter&quot; class=&quot;tw&quot; href=&quot;https://twitter.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;\r\n  					&lt;a title=&quot;Instagram&quot; class=&quot;instagram&quot; href=&quot;https://www.instagram.com/angelsitalia/&quot;&gt;&lt;/a&gt;\r\n  					&lt;/li&gt;   											\r\n  	&lt;/ul&gt;\r\n  &lt;/div&gt;\r\n  &lt;div class=&quot;col-sm-7&quot;&gt;\r\n  	&lt;div class=&quot;map&quot;&gt;\r\n  		&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2709.9522898708833!2d38.89641715114645!3d47.21751582266538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3fd5e267a4b0b%3A0xf8eabd82ae9bf1f7!2z0JzQsNGA0LzQtdC70LDQtA!5e0!3m2!1sru!2sru!4v1455813597627&quot; width=&quot;100%&quot; height=&quot;350px&quot; frameborder=&quot;0&quot; style=&quot;border:0&quot; allowfullscreen&gt;&lt;/iframe&gt;\r\n  	&lt;/div&gt;\r\n  &lt;/div&gt;\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;row contact_row_form&quot;&gt; &lt;h2 class=&quot;col-xs-12&quot;&gt;У вас есть вопросы?&lt;br&gt; Задайте их нам!&lt;/h2&gt;   							&lt;div class=&quot;col15-lg-9 col-md-8 col-sm-12&quot;&gt;    &lt;div class=&quot;row&quot;&gt;       &lt;div class=&quot;col-xs-5&quot;&gt;           &lt;span&gt;Ваше имя&lt;/span&gt;       &lt;/div&gt;   										&lt;div class=&quot;col-xs-7&quot;&gt;           &lt;input class=&quot;form-control&quot; placeholder=&quot;Ваше имя&quot; name=&quot;name&quot; id=&quot;contact_name&quot;&gt;       &lt;/div&gt;   								 &lt;/div&gt;   																									 &lt;div class=&quot;row&quot;&gt;       &lt;div class=&quot;col-xs-5&quot;&gt;           &lt;span&gt;Сontact number&lt;/span&gt;       &lt;/div&gt;   										&lt;div class=&quot;col-xs-7&quot;&gt;           &lt;input class=&quot;form-control phone&quot; placeholder=&quot;Сontact number&quot; name=&quot;phone&quot; id=&quot;contact_phone&quot;&gt;       &lt;/div&gt;   								 &lt;/div&gt;   																									 &lt;div class=&quot;row&quot;&gt;       &lt;div class=&quot;col-xs-5&quot;&gt;           &lt;span&gt;E-mail&lt;/span&gt;       &lt;/div&gt;   										&lt;div class=&quot;col-xs-7&quot;&gt;           &lt;input class=&quot;form-control&quot; placeholder=&quot;E-mail&quot; name=&quot;mail&quot; id=&quot;contact_mail&quot;&gt;       &lt;/div&gt;   								 &lt;/div&gt;   																									 &lt;div class=&quot;row&quot;&gt;       &lt;div class=&quot;col-xs-5&quot;&gt;           &lt;span&gt;Ваш вопрос&lt;/span&gt;       &lt;/div&gt;   										&lt;div class=&quot;col-xs-7&quot;&gt;           &lt;textarea class=&quot;form-control&quot; placeholder=&quot;Ваш вопрос&quot; name=&quot;name&quot; id=&quot;contact_text&quot;&gt;&lt;/textarea&gt;       &lt;/div&gt;   								 &lt;/div&gt;   								 &lt;div class=&quot;row&quot;&gt;       &lt;div class=&quot;col-xs-5&quot;&gt;     &lt;/div&gt;   										&lt;div class=&quot;col-xs-7&quot;&gt;           &lt;button class=&quot;btn btn-primary contact_send&quot;&gt;Отправить&lt;/button&gt;       &lt;/div&gt;   								 &lt;/div&gt;   																	 &lt;/div&gt;   					&lt;/div&gt;', 'Контакты', '', ''),
 (13, 1, 'Письмо директору', '&lt;h2&gt;Мы ежедневно подбираем для Вас эксклюзивные товары по лучшей цене&lt;/h2&gt;\r\n&lt;p&gt;Чтобы сделать предложение наиболее выгодным для Вас, мы доставляем товары напрямую от производителей ведущих марок мира. В качестве гарантий, покупателю предоставляются Купоны номиналом в размере разницы между стоимостью приобретенного Участником Товара, соответствующего условиям Гарантии и стоимостью аналогичного Товара в другом Магазине.&lt;/p&gt;\r\n&lt;p&gt;Мы с радостью ответим на все Ваши вопросы в любое время дня и ночи. Наша клиентская служба работает круглосуточно, без выходных. Мы обеспечиваем Вам максимально комфортный шопинг!&lt;/p&gt;\r\n&lt;div class=&quot;row contact_row_form&quot;&gt;              &lt;h2 class=&quot;col-xs-12&quot;&gt;Отправьте письмо директору&lt;/h2&gt;\r\n              &lt;div class=&quot;col15-lg-12 col-md-12&quot;&gt;                 &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                        &lt;span&gt;Ваше имя&lt;/span&gt;                    &lt;/div&gt;\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                        &lt;input class=&quot;form-control&quot; placeholder=&quot;Ваше имя&quot; name=&quot;name&quot; id=&quot;contact_name&quot;&gt;                    &lt;/div&gt;\r\n                 &lt;/div&gt;\r\n                                                   &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                        &lt;span&gt;Контактный телефон&lt;/span&gt;                    &lt;/div&gt;\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                        &lt;input class=&quot;form-control phone&quot; placeholder=&quot;Контактный телефон&quot; name=&quot;phone&quot; id=&quot;contact_phone&quot;&gt;                    &lt;/div&gt;\r\n                 &lt;/div&gt;\r\n                                                   &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                        &lt;span&gt;Электронная почта&lt;/span&gt;                    &lt;/div&gt;\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                        &lt;input class=&quot;form-control&quot; placeholder=&quot;Электронная почта&quot; name=&quot;mail&quot; id=&quot;contact_mail&quot;&gt;                    &lt;/div&gt;\r\n                 &lt;/div&gt;\r\n                                                   &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                        &lt;span&gt;Ваш вопрос&lt;/span&gt;                    &lt;/div&gt;\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                        &lt;textarea class=&quot;form-control&quot; placeholder=&quot;Ваш вопрос&quot; name=&quot;name&quot; id=&quot;contact_text&quot;&gt;&lt;/textarea&gt;                    &lt;/div&gt;\r\n                 &lt;/div&gt;\r\n                 &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                                            &lt;/div&gt;\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                        &lt;button class=&quot;btn btn-primary contact_send&quot;&gt;Отправить&lt;/button&gt;                    &lt;/div&gt;\r\n                 &lt;/div&gt;\r\n                                   &lt;/div&gt;\r\n          &lt;/div&gt;', 'Письмо директору', '', ''),
 (13, 2, 'Письмо директору', '&lt;h2&gt; Every day we select for you exclusive products at the best price &lt;/h2&gt;\r\n\r\n\r\n\r\n\r\n&lt;p&gt; To make an offer to the most profitable for you, we deliver the products directly from the manufacturers of leading brands in the world. As a guarantee, the customer Discounts are available in denominations equal to the difference between the acquisition cost of the goods participant, as warranted and the cost of similar goods in other stores. &lt;/p&gt;\r\n\r\n\r\n\r\n\r\n&lt;p&gt; We are happy to answer all your questions at any time of the day or night. Our customer service works around the clock, seven days a week. We provide you the most comfortable shopping! &lt;/p&gt;\r\n\r\n\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;row contact_row_form&quot;&gt;\r\n\r\n              &lt;h2 class=&quot;col-xs-12&quot;&gt;Send a letter to the Director&lt;/h2&gt;\r\n\r\n\r\n\r\n\r\n              &lt;div class=&quot;col15-lg-12 col-md-12&quot;&gt;\r\n\r\n                 &lt;div class=&quot;row&quot;&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n\r\n                        &lt;span&gt;Your name&lt;/span&gt;\r\n\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n\r\n                        &lt;input class=&quot;form-control&quot; placeholder=&quot;Your name&quot; name=&quot;name&quot; id=&quot;contact_name&quot;&gt;\r\n\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n                 \r\n\r\n                 \r\n\r\n                 &lt;div class=&quot;row&quot;&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n\r\n                        &lt;span&gt;Contact phone&lt;/span&gt;\r\n\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n\r\n                        &lt;input class=&quot;form-control phone&quot; placeholder=&quot;Contact phone&quot; name=&quot;phone&quot; id=&quot;contact_phone&quot;&gt;\r\n\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n                 \r\n\r\n                 \r\n\r\n                 &lt;div class=&quot;row&quot;&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n\r\n                        &lt;span&gt;E-mail&lt;/span&gt;\r\n\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n\r\n                        &lt;input class=&quot;form-control&quot; placeholder=&quot;E-mail&quot; name=&quot;mail&quot; id=&quot;contact_mail&quot;&gt;\r\n\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n                 \r\n\r\n                 \r\n\r\n                 &lt;div class=&quot;row&quot;&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n\r\n                        &lt;span&gt;Your question&lt;/span&gt;\r\n\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n\r\n                        &lt;textarea class=&quot;form-control&quot; placeholder=&quot;Your question&quot; name=&quot;name&quot; id=&quot;contact_text&quot;&gt;&lt;/textarea&gt;\r\n\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n                 &lt;div class=&quot;row&quot;&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n\r\n                        \r\n\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n\r\n                        &lt;button class=&quot;btn btn-primary contact_send&quot;&gt;Send&lt;/button&gt;\r\n\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n              &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n          &lt;/div&gt;', 'Письмо директору', '', ''),
-(12, 1, 'Шоп-туры', '&lt;h2&gt;Мы ежедневно подбираем для Вас эксклюзивные товары по лучшей цене&lt;/h2&gt;\r\n\r\n&lt;p&gt;Чтобы сделать предложение наиболее выгодным для Вас, мы доставляем товары напрямую от производителей ведущих марок мира. В качестве гарантий, покупателю предоставляются Купоны номиналом в размере разницы между стоимостью приобретенного Участником Товара, соответствующего условиям Гарантии и стоимостью аналогичного Товара в другом Магазине.&lt;/p&gt;\r\n\r\n&lt;p&gt;Мы с радостью ответим на все Ваши вопросы в любое время дня и ночи. Наша клиентская служба работает круглосуточно, без выходных. Мы обеспечиваем Вам максимально комфортный шопинг!&lt;/p&gt;\r\n\r\n  &lt;div class=&quot;row contact_row_form shop_tour&quot;&gt;              &lt;h2 class=&quot;col-xs-12&quot;&gt;Отправьте заявку на шопинг-тур&lt;/h2&gt;\r\n\r\n              &lt;div class=&quot;col15-lg-12 col-md-12&quot;&gt;                 &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                        &lt;span&gt;Ваше имя&lt;/span&gt;                    &lt;/div&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                        &lt;input class=&quot;form-control&quot; placeholder=&quot;Ваше имя&quot; name=&quot;name&quot; id=&quot;contact_name&quot;&gt;                    &lt;/div&gt;\r\n\r\n                 &lt;/div&gt;\r\n\r\n                                                   &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                        &lt;span&gt;Контактный телефон&lt;/span&gt;                    &lt;/div&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                        &lt;input class=&quot;form-control phone&quot; placeholder=&quot;Контактный телефон&quot; name=&quot;phone&quot; id=&quot;contact_phone&quot;&gt;                    &lt;/div&gt;\r\n\r\n                 &lt;/div&gt;\r\n\r\n                                                   &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                        &lt;span&gt;E-mail&lt;/span&gt;                    &lt;/div&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                        &lt;input class=&quot;form-control&quot; placeholder=&quot;E-mail&quot; name=&quot;mail&quot; id=&quot;contact_mail&quot;&gt;                    &lt;/div&gt;\r\n\r\n                 &lt;/div&gt;\r\n\r\n                                  &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                        &lt;span&gt;Дата начала&lt;/span&gt;                    &lt;/div&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                        &lt;input class=&quot;form-control date&quot; placeholder=&quot;Выберите дату&quot; name=&quot;date_start&quot; id=&quot;date_start&quot;&gt;                                           &lt;/div&gt;\r\n\r\n                 &lt;/div&gt;\r\n\r\n                                   &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                        &lt;span&gt;Дата окончания&lt;/span&gt;                    &lt;/div&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                                 &lt;input class=&quot;form-control date&quot; placeholder=&quot;Выберите дату&quot; name=&quot;date_end&quot; id=&quot;date_end&quot;&gt;                                                                   &lt;/div&gt;\r\n\r\n                 &lt;/div&gt;\r\n\r\n                                                   &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                        &lt;span&gt;Ваши вопросы или комментарии&lt;/span&gt;                    &lt;/div&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                        &lt;textarea class=&quot;form-control&quot; placeholder=&quot;Ваши вопросы или комментарии&quot; name=&quot;name&quot; id=&quot;contact_text&quot;&gt;&lt;/textarea&gt;                    &lt;/div&gt;\r\n\r\n                 &lt;/div&gt;\r\n\r\n                 &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                                            &lt;/div&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                        &lt;button class=&quot;btn btn-primary shop_tour&quot;&gt;Отправить&lt;/button&gt;                    &lt;/div&gt;\r\n\r\n                 &lt;/div&gt;\r\n\r\n                               &lt;/div&gt;\r\n\r\n          &lt;/div&gt;', 'Шоп-туры', '', '');
+(12, 1, 'Шоп-туры', '&lt;h2&gt;Мы ежедневно подбираем для Вас эксклюзивные товары по лучшей цене&lt;/h2&gt;\r\n\r\n&lt;p&gt;Чтобы сделать предложение наиболее выгодным для Вас, мы доставляем товары напрямую от производителей ведущих марок мира. В качестве гарантий, покупателю предоставляются Купоны номиналом в размере разницы между стоимостью приобретенного Участником Товара, соответствующего условиям Гарантии и стоимостью аналогичного Товара в другом Магазине.&lt;/p&gt;\r\n\r\n&lt;p&gt;Мы с радостью ответим на все Ваши вопросы в любое время дня и ночи. Наша клиентская служба работает круглосуточно, без выходных. Мы обеспечиваем Вам максимально комфортный шопинг!&lt;/p&gt;\r\n\r\n  &lt;div class=&quot;row contact_row_form shop_tour&quot;&gt;              &lt;h2 class=&quot;col-xs-12&quot;&gt;Отправьте заявку на шопинг-тур&lt;/h2&gt;\r\n\r\n              &lt;div class=&quot;col15-lg-12 col-md-12&quot;&gt;                 &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                        &lt;span&gt;Ваше имя&lt;/span&gt;                    &lt;/div&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                        &lt;input class=&quot;form-control&quot; placeholder=&quot;Ваше имя&quot; name=&quot;name&quot; id=&quot;contact_name&quot;&gt;                    &lt;/div&gt;\r\n\r\n                 &lt;/div&gt;\r\n\r\n                                                   &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                        &lt;span&gt;Контактный телефон&lt;/span&gt;                    &lt;/div&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                        &lt;input class=&quot;form-control phone&quot; placeholder=&quot;Контактный телефон&quot; name=&quot;phone&quot; id=&quot;contact_phone&quot;&gt;                    &lt;/div&gt;\r\n\r\n                 &lt;/div&gt;\r\n\r\n                                                   &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                        &lt;span&gt;E-mail&lt;/span&gt;                    &lt;/div&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                        &lt;input class=&quot;form-control&quot; placeholder=&quot;E-mail&quot; name=&quot;mail&quot; id=&quot;contact_mail&quot;&gt;                    &lt;/div&gt;\r\n\r\n                 &lt;/div&gt;\r\n\r\n                                  &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                        &lt;span&gt;Дата начала&lt;/span&gt;                    &lt;/div&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                        &lt;input class=&quot;form-control date&quot; placeholder=&quot;Выберите дату&quot; name=&quot;date_start&quot; id=&quot;date_start&quot;&gt;                                           &lt;/div&gt;\r\n\r\n                 &lt;/div&gt;\r\n\r\n                                   &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                        &lt;span&gt;Дата окончания&lt;/span&gt;                    &lt;/div&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                                 &lt;input class=&quot;form-control date&quot; placeholder=&quot;Выберите дату&quot; name=&quot;date_end&quot; id=&quot;date_end&quot;&gt;                                                                   &lt;/div&gt;\r\n\r\n                 &lt;/div&gt;\r\n\r\n                                                   &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                        &lt;span&gt;Ваши вопросы или комментарии&lt;/span&gt;                    &lt;/div&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                        &lt;textarea class=&quot;form-control&quot; placeholder=&quot;Ваши вопросы или комментарии&quot; name=&quot;name&quot; id=&quot;contact_text&quot;&gt;&lt;/textarea&gt;                    &lt;/div&gt;\r\n\r\n                 &lt;/div&gt;\r\n\r\n                 &lt;div class=&quot;row&quot;&gt;                    &lt;div class=&quot;col-xs-5&quot;&gt;                                            &lt;/div&gt;\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;                        &lt;button class=&quot;btn btn-primary shop_tour&quot;&gt;Отправить&lt;/button&gt;                    &lt;/div&gt;\r\n\r\n                 &lt;/div&gt;\r\n\r\n                               &lt;/div&gt;\r\n\r\n          &lt;/div&gt;', 'Шоп-туры', '', ''),
+(12, 2, 'Шоп-туры', '&lt;h2&gt;Мы ежедневно подбираем для Вас эксклюзивные товары по лучшей цене&lt;/h2&gt;\r\n\r\n\r\n\r\n\r\n\r\n&lt;p&gt;Чтобы сделать предложение наиболее выгодным для Вас, мы доставляем товары напрямую от производителей ведущих марок мира. В качестве гарантий, покупателю предоставляются Купоны номиналом в размере разницы между стоимостью приобретенного Участником Товара, соответствующего условиям Гарантии и стоимостью аналогичного Товара в другом Магазине.&lt;/p&gt;\r\n\r\n\r\n\r\n\r\n\r\n&lt;p&gt;Мы с радостью ответим на все Ваши вопросы в любое время дня и ночи. Наша клиентская служба работает круглосуточно, без выходных. Мы обеспечиваем Вам максимально комфортный шопинг!&lt;/p&gt;\r\n\r\n\r\n\r\n\r\n\r\n  &lt;div class=&quot;row contact_row_form shop_tour&quot;&gt;\r\n              &lt;h2 class=&quot;col-xs-12&quot;&gt;Send request to the shopping tour!&lt;/h2&gt;\r\n\r\n\r\n\r\n\r\n\r\n              &lt;div class=&quot;col15-lg-12 col-md-12&quot;&gt;\r\n                 &lt;div class=&quot;row&quot;&gt;\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n                        &lt;span&gt;Your name&lt;/span&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n                        &lt;input class=&quot;form-control&quot; placeholder=&quot;Your name&quot; name=&quot;name&quot; id=&quot;contact_name&quot;&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 \r\n                 \r\n                 &lt;div class=&quot;row&quot;&gt;\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n                        &lt;span&gt;Contact phone&lt;/span&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n                        &lt;input class=&quot;form-control phone&quot; placeholder=&quot;Contact phone&quot; name=&quot;phone&quot; id=&quot;contact_phone&quot;&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 \r\n                 \r\n                 &lt;div class=&quot;row&quot;&gt;\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n                        &lt;span&gt;E-mail&lt;/span&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n                        &lt;input class=&quot;form-control&quot; placeholder=&quot;E-mail&quot; name=&quot;mail&quot; id=&quot;contact_mail&quot;&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 \r\n                 &lt;div class=&quot;row&quot;&gt;\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n                        &lt;span&gt;Date start&lt;/span&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n                        &lt;input class=&quot;form-control date&quot; placeholder=&quot;Select date&quot; name=&quot;date_start&quot; id=&quot;date_start&quot;&gt;\r\n                       \r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 \r\n \r\n                 &lt;div class=&quot;row&quot;&gt;\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n                        &lt;span&gt;Date end&lt;/span&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n         \r\n                        &lt;input class=&quot;form-control date&quot; placeholder=&quot;Select date&quot; name=&quot;date_end&quot; id=&quot;date_end&quot;&gt;\r\n                        \r\n                       \r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 \r\n                 \r\n                 &lt;div class=&quot;row&quot;&gt;\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n                        &lt;span&gt;Your question or comments&lt;/span&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n                        &lt;textarea class=&quot;form-control&quot; placeholder=&quot;Your question or comments&quot; name=&quot;name&quot; id=&quot;contact_text&quot;&gt;&lt;/textarea&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 &lt;div class=&quot;row&quot;&gt;\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n                        \r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n                        &lt;button class=&quot;btn btn-primary shop_tour&quot;&gt;Send&lt;/button&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n                 \r\n              &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n          &lt;/div&gt;', 'Шоп-туры', '', '');
 INSERT INTO `ma_information_description` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(12, 2, 'Шоп-туры', '&lt;h2&gt;Мы ежедневно подбираем для Вас эксклюзивные товары по лучшей цене&lt;/h2&gt;\r\n\r\n\r\n\r\n\r\n\r\n&lt;p&gt;Чтобы сделать предложение наиболее выгодным для Вас, мы доставляем товары напрямую от производителей ведущих марок мира. В качестве гарантий, покупателю предоставляются Купоны номиналом в размере разницы между стоимостью приобретенного Участником Товара, соответствующего условиям Гарантии и стоимостью аналогичного Товара в другом Магазине.&lt;/p&gt;\r\n\r\n\r\n\r\n\r\n\r\n&lt;p&gt;Мы с радостью ответим на все Ваши вопросы в любое время дня и ночи. Наша клиентская служба работает круглосуточно, без выходных. Мы обеспечиваем Вам максимально комфортный шопинг!&lt;/p&gt;\r\n\r\n\r\n\r\n\r\n\r\n  &lt;div class=&quot;row contact_row_form shop_tour&quot;&gt;\r\n              &lt;h2 class=&quot;col-xs-12&quot;&gt;Send request to the shopping tour!&lt;/h2&gt;\r\n\r\n\r\n\r\n\r\n\r\n              &lt;div class=&quot;col15-lg-12 col-md-12&quot;&gt;\r\n                 &lt;div class=&quot;row&quot;&gt;\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n                        &lt;span&gt;Your name&lt;/span&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n                        &lt;input class=&quot;form-control&quot; placeholder=&quot;Your name&quot; name=&quot;name&quot; id=&quot;contact_name&quot;&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 \r\n                 \r\n                 &lt;div class=&quot;row&quot;&gt;\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n                        &lt;span&gt;Contact phone&lt;/span&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n                        &lt;input class=&quot;form-control phone&quot; placeholder=&quot;Contact phone&quot; name=&quot;phone&quot; id=&quot;contact_phone&quot;&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 \r\n                 \r\n                 &lt;div class=&quot;row&quot;&gt;\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n                        &lt;span&gt;E-mail&lt;/span&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n                        &lt;input class=&quot;form-control&quot; placeholder=&quot;E-mail&quot; name=&quot;mail&quot; id=&quot;contact_mail&quot;&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 \r\n                 &lt;div class=&quot;row&quot;&gt;\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n                        &lt;span&gt;Date start&lt;/span&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n                        &lt;input class=&quot;form-control date&quot; placeholder=&quot;Select date&quot; name=&quot;date_start&quot; id=&quot;date_start&quot;&gt;\r\n                       \r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 \r\n \r\n                 &lt;div class=&quot;row&quot;&gt;\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n                        &lt;span&gt;Date end&lt;/span&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n         \r\n                        &lt;input class=&quot;form-control date&quot; placeholder=&quot;Select date&quot; name=&quot;date_end&quot; id=&quot;date_end&quot;&gt;\r\n                        \r\n                       \r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 \r\n                 \r\n                 &lt;div class=&quot;row&quot;&gt;\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n                        &lt;span&gt;Your question or comments&lt;/span&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n                        &lt;textarea class=&quot;form-control&quot; placeholder=&quot;Your question or comments&quot; name=&quot;name&quot; id=&quot;contact_text&quot;&gt;&lt;/textarea&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                 &lt;div class=&quot;row&quot;&gt;\r\n                    &lt;div class=&quot;col-xs-5&quot;&gt;\r\n                        \r\n                    &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n                    &lt;div class=&quot;col-xs-7&quot;&gt;\r\n                        &lt;button class=&quot;btn btn-primary shop_tour&quot;&gt;Send&lt;/button&gt;\r\n                    &lt;/div&gt;\r\n\r\n\r\n                 &lt;/div&gt;\r\n\r\n\r\n                 \r\n              &lt;/div&gt;\r\n\r\n\r\n\r\n\r\n\r\n          &lt;/div&gt;', 'Шоп-туры', '', ''),
 (14, 1, 'Контакты', '&lt;div class=&quot;row row_contact&quot;&gt;\r\n  &lt;div class=&quot;col-sm-5&quot;&gt;\r\n  	&lt;h2&gt;НАШ ГОЛОВНОЙ ОФИС&lt;/h2&gt;\r\n\r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Наш Адрес&lt;/span&gt;\r\n  		&lt;br&gt;\r\n  		&lt;span&gt;47924, Римини (Италия) Rimini, Via Coriano 58, blocco 92/F, магазин и офис Angels&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n\r\n  	&lt;p&gt;   \r\n  		&lt;span class=&quot;headings&quot;&gt;Контактный телефон&lt;/span&gt;\r\n  		&lt;br&gt;   \r\n  		&lt;a class=&quot;phone&quot; href=&quot;tel:+393 292 94 14 10&quot; title=&quot;Наш телефон в Rimini&quot;&gt;(+39) 32-929-41-41-0&lt;/a&gt;\r\n  	&lt;/p&gt;\r\n\r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Электронная почта&lt;/span&gt;&lt;br&gt;\r\n  		&lt;a class=&quot;mail&quot; href=&quot;mailto:angels-777@libero.it&quot; title=&quot;Наш почтовый ящик&quot;&gt;angels-777@libero.it&lt;/a&gt;\r\n  	&lt;/p&gt;  \r\n\r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Часы работы&lt;/span&gt;&lt;br&gt;\r\n  		&lt;span&gt;с 9:00 – 17:00, суббота – выходной&lt;br&gt;\r\n\r\nВоскресенье с 9:00 – 14:00&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n\r\n  	&lt;ul class=&quot;social_buttons&quot;&gt;\r\n  		&lt;li&gt;&lt;a title=&quot;ВКонтакте&quot; class=&quot;vk&quot; href=&quot;http://vk.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Facebook&quot; class=&quot;fb&quot; href=&quot;https://www.facebook.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Twitter&quot; class=&quot;tw&quot; href=&quot;https://twitter.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;\r\n  					&lt;a title=&quot;Instagram&quot; class=&quot;instagram&quot; href=&quot;https://www.instagram.com/angelsitalia/&quot;&gt;&lt;/a&gt;\r\n  					&lt;/li&gt;   											\r\n  	&lt;/ul&gt;\r\n  &lt;/div&gt;\r\n  &lt;div class=&quot;col-sm-7&quot;&gt;\r\n  	&lt;div class=&quot;map&quot;&gt;\r\n  			&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2868.244035603958!2d12.578954151053255!3d44.03701413544219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132cc2f96bd310d5%3A0x64c013d0a104b5cc!2sGrosRimini!5e0!3m2!1sru!2sru!4v1455810544744&quot; width=&quot;100%&quot; height=&quot;350&quot; frameborder=&quot;0&quot; style=&quot;border:0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;\r\n  	&lt;/div&gt;\r\n  &lt;/div&gt;\r\n&lt;/div&gt;  \r\n\r\n&lt;div class=&quot;row row_contact&quot;&gt;\r\n  &lt;div class=&quot;col-sm-5&quot;&gt;\r\n  	&lt;h2&gt;НАШЕ ПРЕДСТАВИТЕЛЬСТВО В МОСКВЕ&lt;/h2&gt;\r\n\r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Наш Адрес&lt;/span&gt;\r\n  		&lt;br&gt;\r\n  		&lt;span&gt;119361, Москва, улица Большая Очаковская дом 3&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n\r\n  	&lt;p&gt;   \r\n  		&lt;span class=&quot;headings&quot;&gt;Контактный телефон&lt;/span&gt;\r\n  		&lt;br&gt;   \r\n  		&lt;a class=&quot;phone&quot; href=&quot;tel:+7-929-588-53-99&quot; title=&quot;Телефон в Москве&quot;&gt;+7-929-588-53-99&lt;/a&gt;\r\n  	&lt;/p&gt;\r\n\r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Электронная почта&lt;/span&gt;&lt;br&gt;\r\n  		&lt;a class=&quot;mail&quot; href=&quot;mailto:order@angel-moda.com&quot; title=&quot;Наш почтовый ящик&quot;&gt;order@angel-moda.com&lt;/a&gt;\r\n  	&lt;/p&gt;  \r\n\r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Часы работы&lt;/span&gt;&lt;br&gt;\r\n  		&lt;span&gt; с 10:00 – 20:00, без выходных\r\n  		&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n  																	\r\n  	&lt;ul class=&quot;social_buttons&quot;&gt;\r\n  		&lt;li&gt;&lt;a title=&quot;ВКонтакте&quot; class=&quot;vk&quot; href=&quot;http://vk.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Facebook&quot; class=&quot;fb&quot; href=&quot;https://www.facebook.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Twitter&quot; class=&quot;tw&quot; href=&quot;https://twitter.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;\r\n  					&lt;a title=&quot;Instagram&quot; class=&quot;instagram&quot; href=&quot;https://www.instagram.com/angelsitalia/&quot;&gt;&lt;/a&gt;\r\n  					&lt;/li&gt;   											\r\n  	&lt;/ul&gt;\r\n  &lt;/div&gt;\r\n  &lt;div class=&quot;col-sm-7&quot;&gt;\r\n  	&lt;div class=&quot;map&quot;&gt;\r\n  			&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2248.9789915269603!2d37.4648578514218!3d55.68935300425584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54dcb0fcfbc71%3A0x26317bd63dcdf0b2!2z0JHQvtC70YzRiNCw0Y8g0J7Rh9Cw0LrQvtCy0YHQutCw0Y8g0YPQuy4sIDMsINCc0L7RgdC60LLQsCwgMTE5MzYx!5e0!3m2!1sru!2sru!4v1455812964975&quot; width=&quot;100%&quot; height=&quot;350&quot; frameborder=&quot;0&quot; style=&quot;border:0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;\r\n  	&lt;/div&gt;\r\n  &lt;/div&gt;\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;row row_contact&quot;&gt;\r\n  &lt;div class=&quot;col-sm-5&quot;&gt;\r\n  	&lt;h2&gt;Магазин В Таганроге&lt;/h2&gt;\r\n\r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Наш Адрес&lt;/span&gt;\r\n  		&lt;br&gt;\r\n  		&lt;span&gt;347924, Таганрог, улица Дзержинского 191, магазин «Энжел»&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n\r\n  	&lt;p&gt;   \r\n  		&lt;span class=&quot;headings&quot;&gt;Контактный телефон&lt;/span&gt;\r\n  		&lt;br&gt;   \r\n  		&lt;a class=&quot;phone&quot; href=&quot;tel:+7-928-125-81-25&quot; title=&quot;Телефон в Таганроге&quot;&gt;+7-928-125-81-25&lt;/a&gt;\r\n  	&lt;/p&gt;\r\n\r\n  \r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Часы работы&lt;/span&gt;&lt;br&gt;\r\n  		&lt;span&gt; с 10:00 – 20:00, без выходных\r\n  		&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n  																	\r\n  	&lt;ul class=&quot;social_buttons&quot;&gt;\r\n  		&lt;li&gt;&lt;a title=&quot;ВКонтакте&quot; class=&quot;vk&quot; href=&quot;http://vk.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Facebook&quot; class=&quot;fb&quot; href=&quot;https://www.facebook.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Twitter&quot; class=&quot;tw&quot; href=&quot;https://twitter.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;\r\n  					&lt;a title=&quot;Instagram&quot; class=&quot;instagram&quot; href=&quot;https://www.instagram.com/angelsitalia/&quot;&gt;&lt;/a&gt;\r\n  					&lt;/li&gt;   											\r\n  	&lt;/ul&gt;\r\n  &lt;/div&gt;\r\n  &lt;div class=&quot;col-sm-7&quot;&gt;\r\n  	&lt;div class=&quot;map&quot;&gt;\r\n  			&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2707.7619192481375!2d38.91552885114773!3d47.26035861972279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e15841e84c2b7f%3A0x7d677e172e361428!2z0K3QvdC20LXQuw!5e0!3m2!1sru!2sru!4v1455813286060&quot; width=&quot;100%&quot; height=&quot;350px&quot; frameborder=&quot;0&quot; style=&quot;border:0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;\r\n  	&lt;/div&gt;\r\n  &lt;/div&gt;\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;row row_contact&quot;&gt;\r\n  &lt;div class=&quot;col-sm-5&quot;&gt;\r\n  	&lt;h2&gt;Магазин В Таганроге&lt;/h2&gt;\r\n\r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Наш Адрес&lt;/span&gt;\r\n  		&lt;br&gt;\r\n  		&lt;span&gt;347900, Таганрог, переулок Лермонтовский 13, магазин «Энжел Элит»&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n\r\n  	&lt;p&gt;   \r\n  		&lt;span class=&quot;headings&quot;&gt;Контактный телефон&lt;/span&gt;\r\n  		&lt;br&gt;   \r\n  		&lt;a class=&quot;phone&quot; href=&quot;tel:+7-928-125-81-25&quot; title=&quot;Телефон в Таганроге&quot;&gt;+7-928-125-81-25&lt;/a&gt;\r\n  	&lt;/p&gt;\r\n\r\n  \r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Часы работы&lt;/span&gt;&lt;br&gt;\r\n  		&lt;span&gt; с 10:00 – 20:00, без выходных\r\n  		&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n  																	\r\n  	&lt;ul class=&quot;social_buttons&quot;&gt;\r\n  		&lt;li&gt;&lt;a title=&quot;ВКонтакте&quot; class=&quot;vk&quot; href=&quot;http://vk.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Facebook&quot; class=&quot;fb&quot; href=&quot;https://www.facebook.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Twitter&quot; class=&quot;tw&quot; href=&quot;https://twitter.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;\r\n  					&lt;a title=&quot;Instagram&quot; class=&quot;instagram&quot; href=&quot;https://www.instagram.com/angelsitalia/&quot;&gt;&lt;/a&gt;\r\n  					&lt;/li&gt;   											\r\n  	&lt;/ul&gt;\r\n  &lt;/div&gt;\r\n  &lt;div class=&quot;col-sm-7&quot;&gt;\r\n  	&lt;div class=&quot;map&quot;&gt;\r\n  		&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.1713008540655!2d38.92815085114625!3d47.21323042295951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3fd3888b90c09%3A0xf2e5687b1ab7bfe6!2z0JvQtdGA0LzQvtC90YLQvtCy0YHQutC40Lkg0L_QtdGALiwgMTMsINCi0LDQs9Cw0L3RgNC-0LMsINCg0L7RgdGC0L7QstGB0LrQsNGPINC-0LHQuy4sIDM0NzkwMA!5e0!3m2!1sru!2sru!4v1455813181542&quot; width=&quot;100%&quot; height=&quot;350px&quot; frameborder=&quot;0&quot; style=&quot;border:0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;\r\n  	&lt;/div&gt;\r\n  &lt;/div&gt;\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;row row_contact&quot;&gt;\r\n  &lt;div class=&quot;col-sm-5&quot;&gt;\r\n  	&lt;h2&gt;Магазин В Таганроге&lt;/h2&gt;\r\n\r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Наш Адрес&lt;/span&gt;\r\n  		&lt;br&gt;\r\n  		&lt;span&gt;347942, Таганрог, ТРЦ Мармелад, Площадь Мира 7, магазин “Angels”&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n\r\n  	&lt;p&gt;   \r\n  		&lt;span class=&quot;headings&quot;&gt;Контактный телефон&lt;/span&gt;\r\n  		&lt;br&gt;   \r\n  		&lt;a class=&quot;phone&quot; href=&quot;tel:+7-928-125-81-25&quot; title=&quot;Телефон в Таганроге&quot;&gt;+7-928-125-81-25&lt;/a&gt;\r\n  	&lt;/p&gt;\r\n\r\n  \r\n  	&lt;p&gt;\r\n  		&lt;span class=&quot;headings&quot;&gt;Часы работы&lt;/span&gt;&lt;br&gt;\r\n  		&lt;span&gt; с 10:00 – 20:00, без выходных\r\n  		&lt;/span&gt;\r\n  	&lt;/p&gt;\r\n  																	\r\n  	&lt;ul class=&quot;social_buttons&quot;&gt;\r\n  		&lt;li&gt;&lt;a title=&quot;ВКонтакте&quot; class=&quot;vk&quot; href=&quot;http://vk.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Facebook&quot; class=&quot;fb&quot; href=&quot;https://www.facebook.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;&lt;a title=&quot;Twitter&quot; class=&quot;tw&quot; href=&quot;https://twitter.com/angelsitalia&quot;&gt;&lt;/a&gt;&lt;/li&gt;   												&lt;li&gt;\r\n  					&lt;a title=&quot;Instagram&quot; class=&quot;instagram&quot; href=&quot;https://www.instagram.com/angelsitalia/&quot;&gt;&lt;/a&gt;\r\n  					&lt;/li&gt;   											\r\n  	&lt;/ul&gt;\r\n  &lt;/div&gt;\r\n  &lt;div class=&quot;col-sm-7&quot;&gt;\r\n  	&lt;div class=&quot;map&quot;&gt;\r\n  		&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2709.9522898708833!2d38.89641715114645!3d47.21751582266538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3fd5e267a4b0b%3A0xf8eabd82ae9bf1f7!2z0JzQsNGA0LzQtdC70LDQtA!5e0!3m2!1sru!2sru!4v1455813597627&quot; width=&quot;100%&quot; height=&quot;350px&quot; frameborder=&quot;0&quot; style=&quot;border:0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;\r\n  	&lt;/div&gt;\r\n  &lt;/div&gt;\r\n&lt;/div&gt;\r\n\r\n\r\n\r\n\r\n&lt;div class=&quot;row contact_row_form&quot;&gt; &lt;h2 class=&quot;col-xs-12&quot;&gt;У вас есть вопросы?&lt;br&gt; Задайте их нам!&lt;/h2&gt;   							&lt;div class=&quot;col15-lg-9 col-md-8 col-sm-12&quot;&gt;    &lt;div class=&quot;row&quot;&gt;       &lt;div class=&quot;col-xs-5&quot;&gt;           &lt;span&gt;Ваше имя&lt;/span&gt;       &lt;/div&gt;   										&lt;div class=&quot;col-xs-7&quot;&gt;           &lt;input class=&quot;form-control&quot; placeholder=&quot;Ваше имя&quot; name=&quot;name&quot; id=&quot;contact_name&quot;&gt;       &lt;/div&gt;   								 &lt;/div&gt;   																									 &lt;div class=&quot;row&quot;&gt;       &lt;div class=&quot;col-xs-5&quot;&gt;           &lt;span&gt;Контактный телефон&lt;/span&gt;       &lt;/div&gt;   										&lt;div class=&quot;col-xs-7&quot;&gt;           &lt;input class=&quot;form-control phone&quot; placeholder=&quot;Контактный телефон&quot; name=&quot;phone&quot; id=&quot;contact_phone&quot;&gt;       &lt;/div&gt;   								 &lt;/div&gt;   																									 &lt;div class=&quot;row&quot;&gt;       &lt;div class=&quot;col-xs-5&quot;&gt;           &lt;span&gt;Электронная почта&lt;/span&gt;       &lt;/div&gt;   										&lt;div class=&quot;col-xs-7&quot;&gt;           &lt;input class=&quot;form-control&quot; placeholder=&quot;Электронная почта&quot; name=&quot;mail&quot; id=&quot;contact_mail&quot;&gt;       &lt;/div&gt;   								 &lt;/div&gt;   																									 &lt;div class=&quot;row&quot;&gt;       &lt;div class=&quot;col-xs-5&quot;&gt;           &lt;span&gt;Ваш вопрос&lt;/span&gt;       &lt;/div&gt;   										&lt;div class=&quot;col-xs-7&quot;&gt;           &lt;textarea class=&quot;form-control&quot; placeholder=&quot;Ваш вопрос&quot; name=&quot;name&quot; id=&quot;contact_text&quot;&gt;&lt;/textarea&gt;       &lt;/div&gt;   								 &lt;/div&gt;   								 &lt;div class=&quot;row&quot;&gt;       &lt;div class=&quot;col-xs-5&quot;&gt;     &lt;/div&gt;   										&lt;div class=&quot;col-xs-7&quot;&gt;           &lt;button class=&quot;btn btn-primary contact_send&quot;&gt;Отправить&lt;/button&gt;       &lt;/div&gt;   								 &lt;/div&gt;   																	 &lt;/div&gt;   					&lt;/div&gt;', 'Контакты', '', ''),
 (16, 2, 'Brands', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Бренды | Магазин брендовой одежды из Италии — Angel-Moda', '', ''),
-(16, 1, 'Бренды', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Бренды | Магазин брендовой одежды из Италии — Angel-Moda', '', '');
+(16, 1, 'Бренды', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Бренды | Магазин брендовой одежды из Италии — Angel-Moda', '', ''),
+(8, 1, 'Обмен и возврат', '&lt;ul&gt;\r\n  &lt;li&gt;В соответствии с законом РФ «О защите прав потребителей» покупатель вправе отказаться от товара в любое время до его передачи, а после передачи товара – в течение 14 дней.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Возврат товара надлежащего качества возможен лишь при условии сохранения его потребительских свойств и товарного вида (отсутствие следов эксплуатации и носки, наличие оригинальной и неповрежденной упаковки и ярлыков).&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Возврат осуществляется на основании заполненного &lt;a href=&quot;/return_blanc.pdf&quot;&gt;заявления&lt;/a&gt;&lt;a href=&quot;/return_blanc.pdf&quot;&gt; &lt;/a&gt;и товарного чека, подтверждающего факт и условия покупки.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Срок возврата денежных средств зависит от способа возврата и составляет не более 10 дней с даты поступления возвращенного товара на склад Продавца вместе с заполненным Покупателем &lt;a href=&quot;/return_blanc.pdf&quot;&gt;заявлением на возврат&lt;/a&gt;.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Информация о гарантийном сроке на конкретную модель, предоставляемая производителем, прилагается к товару.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Возврат товара надлежащего качества возможен лишь при условии сохранения его потребительских свойств и товарного вида (отсутствие следов эксплуатации и носки, наличие оригинальной и неповрежденной упаковки и ярлыков).&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Для рассмотрения заявки на возврат Вам необходимо выслать товар и пакет документов: заполненное заявление на возврат&lt;/li&gt;\r\n  &lt;li&gt;\r\n    (прилагается к каждому заказу), копию паспорта, товарный чек на адрес: 119361 Москва, улица Большая Очаковская 3, офис 244.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Товар с браком/неверной комплектации должен быть возвращен нам с оригинальными ярлыками и в оригинальной упаковке.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    В случае возврата товара ненадлежащего качества, мы берем на себя расходы по пересылке товара обратно нам.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Если возвращаемый товар был предоплачен, возврат осуществляется на ту карту, с которой была предоплата или на тот кошелек, на который был выставлен счет.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Потребитель не вправе отказаться от товара надлежащего качества, имеющего индивидуально-определенные свойства, если указанный товар может быть использован исключительно приобретающим его потребителем.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Обращаем Ваше внимание, что подлинные цвета изделий могут отличаться от цветов и оттенков на сайте, в зависимости от цветопередачи вашего монитора.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Просим вас, внимательно ознакомиться с общепринятыми стандартами в таблице размеров, чтобы удостовериться в размере приобретаемого товара в интернет-магазине Angel Moda.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Рассмотрение Вашего заявления и возврат денежных средств осуществляется в течение 10 банковских/рабочих дней с момента поступления комплекта возврата и всех необходимых документов (перечисленных выше) продавцу. Пожалуйста, сохраняйте квитанцию об отправке товара до момента получения уведомления о том, что Ваш возврат поступил продавцу.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;h2&gt;\r\n  Способы возврата денежных средств&lt;/h2&gt;\r\n&lt;p&gt;\r\n  Если Вы производили оплату наличными курьеру, тогда возврат денежных средств производится почтовым переводом на адрес почтового отделения, указанного в заявлении.&lt;/p&gt;\r\n&lt;p&gt;\r\n  Если Вы производили оплату банковской картой, тогда возврат денежных средств производится на ваш счет.&lt;/p&gt;\r\n&lt;p&gt;\r\n  Товары надлежащего качества, которые нельзя обменять (вернуть), перечислены в Перечне, утвержденном постановлением Правительства РФ от 19 января 1998 г. № 55. Приводим его полностью.&lt;/p&gt;\r\n&lt;ul&gt;\r\n  &lt;li&gt;\r\n    Товары для профилактики и лечения заболеваний в домашних условиях (предметы санитарии и гигиены из металла, резины, текстиля и других материалов, инструменты, приборы и аппаратура медицинские, средства гигиены полости рта, линзы очковые, предметы по уходу за детьми), лекарственные препараты.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Предметы личной гигиены (зубные щетки, расчески, заколки, бигуди для волос, парики, шиньоны и другие аналогичные товары).&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Парфюмерно-косметические товары.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Текстильные товары (хлопчатобумажные, льняные, шелковые, шерстяные и синтетические ткани, товары из нетканых материалов типа тканей — ленты, тесьма, кружево и другие); кабельная продукция (провода, шнуры, кабели); строительные и отделочные материалы (линолеум, пленка, ковровые покрытия и другие) и другие товары, отпускаемые на метраж.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Швейные и трикотажные изделия (белье, чулочно-носочные изделия).&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Изделия и материалы, контактирующие с пищевыми продуктами, из полимерных материалов, в том числе для разового использования (посуда и принадлежности столовые и кухонные, емкости и упаковочные материалы для хранения и транспортирования пищевых продуктов).&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Товары бытовой химии, пестициды и агрохимикаты.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Мебель бытовая (мебельные гарнитуры и комплекты)&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Изделия из драгоценных металлов с драгоценными камнями, из драгоценных металлов со вставками из полудрагоценных и синтетических камней, ограненные драгоценные камни.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Автомобили и мотовелотовары, прицепы и номерные агрегаты к ним; мобильные средства малой механизации сельскохозяйственных работ; прогулочные суда и иные плав.средства бытового назначения.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Технически сложные товары бытового назначения, на которые установлены гарантийные сроки (станки металлорежущие и деревообрабатывающие бытовые; электробытовые машины и приборы; бытовая радиоэлектронная аппаратура; бытовая вычислительная и множительная техника; фото- и киноаппаратура; телефонные аппараты и факсимильная аппаратура; электромузыкальные инструменты; игрушки электронные, бытовое газовое оборудование и устройства).&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Гражданское оружие, основные части гражданского и служебного огнестрельного оружия, патроны к нему.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Животные и растения.&lt;/li&gt;\r\n  &lt;li&gt;\r\n    Непериодические издания (книги, брошюры, альбомы, картографические и нотные издания, листовые изоиздания, календари, буклеты, открытки, издания, воспроизведенные на технических носителях информации).&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', 'Обмен и возврат', '', ''),
+(8, 2, 'Exchange &amp; Returns', '&lt;Ul&gt;\r\n  &lt;Li&gt;\r\n    In accordance with the RF Law &quot;On protection of consumers'' buyer has the right to refuse the goods at any time before the transfer and after the transfer of goods - within 14 days &lt;/ li&gt;.\r\n  &lt;Li&gt;\r\n    Return of goods of good quality is possible only under condition of preservation of the product''s functionality and presentation (no traces of exploitation and socks, the presence of the original, undamaged packaging and labels). &lt;/ Li&gt;\r\n  &lt;Li&gt;\r\n    Returns are based on the completed application &lt;a href=&quot;/return_blanc.pdf&quot;&gt; &lt;/a&gt; &lt;a href=&quot;/return_blanc.pdf&quot;&gt; &lt;/a&gt; and sales receipt, confirming the fact and conditions of purchase. &lt;/ Li&gt;\r\n  &lt;Li&gt;\r\n    The term of refund depends on the method return and is not more than 10 days from the date of receipt of the returned goods to the warehouse of the Seller together with the Buyer filled &lt;a href=&quot;/return_blanc.pdf&quot;&gt; application for refund &lt;/a&gt;. &lt;/ Li&gt;\r\n  &lt;Li&gt;\r\n    Details of the warranty period on the particular model, provided by the manufacturer, is attached to the product. &lt;/ Li&gt;\r\n  &lt;Li&gt;\r\n    Return of goods of good quality is possible only under condition of preservation of the product''s functionality and presentation (no traces of exploitation and socks, the presence of the original, undamaged packaging and labels). &lt;/ Li&gt;\r\n  &lt;Li&gt;\r\n    For the consideration of the application for a refund you must send the goods and documents: a completed application for a refund &lt;/ li&gt;\r\n  &lt;Li&gt;\r\n    (Supplied with each order), copy of your passport, purchase receipt to the address: 119361, Moscow, Bolshaya Ochakovskaya 3, office 244 &lt;/ li&gt;.\r\n  &lt;Li&gt;\r\n    Goods with marriage / incorrect configuration must be returned to us with the original labels and in their original packaging. &lt;/ Li&gt;\r\n  &lt;Li&gt;\r\n    In the case of returning the goods of improper quality, we take on the costs of sending the goods back to us. &lt;/ Li&gt;\r\n  &lt;Li&gt;\r\n    If the returned product was is prepaid, return is carried out on the map, which was the prepayment or the purse, which was billed. &lt;/ Li&gt;\r\n  &lt;Li&gt;\r\n    The consumer is not entitled to refuse the goods of good quality, having individually defined properties if the specified goods may be used only to acquire it by the consumer. &lt;/ Li&gt;\r\n  &lt;Li&gt;\r\n    Please note that the original color of products may differ from the colors and shades on the site, depending on the color of your monitor. &lt;/ Li&gt;\r\n  &lt;Li&gt;\r\n    We ask you to carefully read the generally accepted standards in the size of the table to make sure the amount of purchased goods in the online store Angel Moda. &lt;/ Li&gt;\r\n  &lt;Li&gt;\r\n    Review your application and refund shall be made within 10 business / working days from receipt of the kit and return all required documents (listed above) to the seller. Please keep the receipt of dispatch to the receipt of the notification that your return arrived seller. &lt;/ Li&gt;\r\n&lt;/ Ul&gt;\r\n&lt;H2&gt;\r\n  Methods return of funds &lt;/ h2&gt;\r\n&lt;P&gt;\r\n  If you pay cash to the courier, then refund is made by postal order to the address of the post office, said in a statement. &lt;/ P&gt;\r\n&lt;P&gt;\r\n  If you pay by credit card, then the refund is made to your account. &lt;/ P&gt;\r\n&lt;P&gt;\r\n  Goods of good quality, which can not be exchanged (returned), are listed in the list approved by the RF Government Decree of 19 January 1998 number 55. Here is it completely. &lt;/ P&gt;\r\n&lt;Ul&gt;\r\n  &lt;Li&gt;\r\n    Products for the prevention and treatment of diseases in the home (sanitary and hygiene of metal, rubber, textiles and other materials, tools, medical instruments and apparatus, tools oral hygiene, Spectacle lenses, subjects of child care), pharmaceuticals. &lt; / li&gt;\r\n  &lt;Li&gt;\r\n    personal hygiene items (toothbrushes, combs, barrettes, hair curlers, wigs, hairpieces and other similar products). &lt;/ li&gt;\r\n  &lt;Li&gt;\r\n    Perfume and beauty products. &lt;/ Li&gt;\r\n  &lt;Li&gt;\r\n    Textile products (cotton, linen, silk, wool and synthetic fabrics, non-woven products such as fabrics - tape ribbons, lace, etc.); cable products (wires, cords, cables); building and finishing materials (linoleum, film, carpet and others) and other products, take-footage. &lt;/ li&gt;\r\n  &lt;Li&gt;\r\n    Sewing and knitwear (underwear, hosiery). &lt;/ Li&gt;\r\n  &lt;Li&gt;\r\n    Products and materials in contact with food products, made of polymer materials, including single-use (dishes and accessories tableware and kitchenware, containers and packing materials for storage and transportation of food products). &lt;/ Li&gt;\r\n  &lt;Li&gt;\r\n    Household chemicals, pesticides and agricultural chemicals. &lt;/ Li&gt;\r\n  &lt;Li&gt;\r\n    Household furniture (furniture sets and kits) &lt;/ li&gt;\r\n  &lt;Li&gt;\r\n    Articles of precious metals with precious stones, precious metals with inserts of semi-precious and synthetic stones, faceted gemstones. &lt;/ Li&gt;\r\n  &lt;Li&gt;\r\n    Cars and motovelotovary, trailers and number units to them; mobile small-scale mechanization of agricultural work; pleasure craft and other plav.sredstva domestic purposes. &lt;/ li&gt;\r\n  &lt;Li&gt;\r\n    Technically complex products, household purpose for which the warranty periods set (Metal-cutting machine and wood, household, household electrical machines and appliances; household electronic equipment, household computer and copying equipment, photo and video equipment, telephones and facsimile equipment, electronic musical instruments, electronic toys, household gas appliances and devices). &lt;/ li&gt;\r\n  &lt;Li&gt;\r\n    Civil weapons, the main part of the civil service and fire weapons, ammo for it. &lt;/ Li&gt;\r\n  &lt;Li&gt;\r\n    Animals and plants. &lt;/ Li&gt;\r\n  &lt;Li&gt;\r\n    Non-recurrent publications (books, brochures, albums, maps and printed music, sheet publications, calendars, booklets, postcards, publications, reproduced on the technical media of information). &lt;/ Li&gt;\r\n&lt;/ Ul&gt;\r\n', 'Обмен и возврат', '', '');
 
 -- --------------------------------------------------------
 
@@ -2439,7 +2881,7 @@ CREATE TABLE IF NOT EXISTS `ma_option` (
   `type` varchar(32) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`option_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Дамп данных таблицы `ma_option`
@@ -2456,7 +2898,9 @@ INSERT INTO `ma_option` (`option_id`, `type`, `sort_order`) VALUES
 (9, 'time', 8),
 (10, 'datetime', 9),
 (11, 'select', 10),
-(12, 'date', 11);
+(12, 'date', 11),
+(13, 'radio', 2),
+(14, 'radio', 1);
 
 -- --------------------------------------------------------
 
@@ -2497,7 +2941,11 @@ INSERT INTO `ma_option_description` (`option_id`, `language_id`, `name`) VALUES
 (9, 2, 'Time'),
 (10, 2, 'Date &amp; Time'),
 (12, 2, 'Delivery Date'),
-(11, 2, 'Size');
+(11, 2, 'Size'),
+(13, 2, 'Color'),
+(14, 1, 'Размер'),
+(13, 1, 'Цвет'),
+(14, 2, 'Size');
 
 -- --------------------------------------------------------
 
@@ -2511,7 +2959,7 @@ CREATE TABLE IF NOT EXISTS `ma_option_value` (
   `image` varchar(255) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`option_value_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=108 ;
 
 --
 -- Дамп данных таблицы `ma_option_value`
@@ -2531,7 +2979,66 @@ INSERT INTO `ma_option_value` (`option_value_id`, `option_id`, `image`, `sort_or
 (24, 2, '', 2),
 (46, 11, '', 1),
 (47, 11, '', 2),
-(48, 11, '', 3);
+(48, 11, '', 3),
+(69, 13, '', 0),
+(57, 13, '', 0),
+(56, 13, '', 0),
+(55, 13, '', 0),
+(54, 13, '', 0),
+(53, 13, '', 0),
+(52, 13, '', 0),
+(51, 13, '', 0),
+(50, 13, '', 0),
+(58, 13, '', 0),
+(59, 13, '', 0),
+(60, 13, '', 0),
+(68, 13, '', 0),
+(67, 13, '', 0),
+(66, 13, '', 0),
+(65, 13, '', 0),
+(64, 13, '', 0),
+(63, 13, '', 0),
+(62, 13, '', 0),
+(61, 13, '', 0),
+(49, 13, '', 0),
+(70, 13, '', 0),
+(71, 13, '', 0),
+(72, 13, '', 0),
+(73, 13, '', 0),
+(74, 13, '', 0),
+(75, 13, '', 0),
+(76, 13, '', 0),
+(77, 13, '', 0),
+(78, 13, '', 0),
+(79, 13, '', 0),
+(80, 13, '', 0),
+(81, 13, '', 0),
+(82, 13, '', 0),
+(83, 14, '', 0),
+(84, 14, '', 0),
+(85, 14, '', 0),
+(86, 14, '', 0),
+(87, 14, '', 0),
+(88, 14, '', 0),
+(89, 14, '', 0),
+(90, 14, '', 0),
+(91, 14, '', 0),
+(92, 14, '', 0),
+(93, 14, '', 0),
+(94, 14, '', 0),
+(95, 14, '', 0),
+(96, 14, '', 0),
+(97, 14, '', 0),
+(98, 14, '', 0),
+(99, 14, '', 0),
+(100, 14, '', 0),
+(101, 14, '', 0),
+(102, 14, '', 0),
+(103, 14, '', 0),
+(104, 14, '', 0),
+(105, 14, '', 0),
+(106, 14, '', 0),
+(107, 14, '', 0);
 
 -- --------------------------------------------------------
 
@@ -2579,7 +3086,125 @@ INSERT INTO `ma_option_value_description` (`option_value_id`, `language_id`, `op
 (24, 2, 2, 'Checkbox 2'),
 (48, 2, 11, 'Large'),
 (47, 2, 11, 'Medium'),
-(46, 2, 11, 'Small');
+(46, 2, 11, 'Small'),
+(54, 1, 13, 'Коралловый'),
+(53, 2, 13, 'Cyan'),
+(53, 1, 13, 'Бирюзовый'),
+(52, 2, 13, 'Maroon'),
+(52, 1, 13, 'Бордовый'),
+(51, 2, 13, 'Terra-cotta'),
+(50, 2, 13, 'Gold'),
+(51, 1, 13, 'Терракотовый'),
+(50, 1, 13, 'Золотой'),
+(58, 2, 13, 'Sand-coloured'),
+(58, 1, 13, 'Песочный'),
+(59, 2, 13, 'Olive-green'),
+(59, 1, 13, 'Оливковый'),
+(60, 2, 13, 'Emerald-green'),
+(60, 1, 13, 'Изумрудный'),
+(68, 2, 13, 'Black'),
+(68, 1, 13, 'Черный'),
+(67, 2, 13, 'Grey'),
+(67, 1, 13, 'Серый'),
+(66, 2, 13, 'Ivory'),
+(66, 1, 13, 'Айвори'),
+(65, 2, 13, 'Brown'),
+(64, 2, 13, 'Raspberry-red'),
+(65, 1, 13, 'Коричневый'),
+(64, 1, 13, 'Малиновый'),
+(63, 2, 13, 'Lilac'),
+(63, 1, 13, 'Сиреневый'),
+(62, 2, 13, 'Indigo'),
+(62, 1, 13, 'Индиго'),
+(61, 2, 13, 'Azure'),
+(61, 1, 13, 'Голубой'),
+(49, 2, 13, 'Silver'),
+(49, 1, 13, 'Серебряный'),
+(70, 2, 13, 'Purple'),
+(70, 1, 13, 'Фиолетовый'),
+(71, 2, 13, 'Pink'),
+(71, 1, 13, 'Розовый'),
+(72, 2, 13, 'Green'),
+(72, 1, 13, 'Зеленый'),
+(73, 2, 13, 'Blue'),
+(73, 1, 13, 'Синий'),
+(74, 2, 13, 'Red'),
+(74, 1, 13, 'Красный'),
+(75, 2, 13, 'Beige'),
+(75, 1, 13, 'Бежевый'),
+(76, 2, 13, 'Orange'),
+(76, 1, 13, 'Оранжевый'),
+(77, 2, 13, 'Yellow'),
+(77, 1, 13, 'Желтый'),
+(83, 2, 14, 'L'),
+(83, 1, 14, 'L'),
+(84, 2, 14, 'M'),
+(84, 1, 14, 'M'),
+(85, 2, 14, 'S'),
+(85, 1, 14, 'S'),
+(86, 2, 14, 'XS'),
+(86, 1, 14, 'XS'),
+(87, 2, 14, 'XL'),
+(87, 1, 14, 'XL'),
+(88, 2, 14, 'XXL'),
+(88, 1, 14, 'XXL'),
+(89, 2, 14, '26'),
+(89, 1, 14, '26'),
+(90, 2, 14, '27'),
+(90, 1, 14, '27'),
+(91, 2, 14, '28'),
+(91, 1, 14, '28'),
+(92, 2, 14, '29'),
+(92, 1, 14, '29'),
+(93, 2, 14, '30'),
+(93, 1, 14, '30'),
+(94, 2, 14, '36'),
+(94, 1, 14, '36'),
+(95, 2, 14, '37'),
+(95, 1, 14, '37'),
+(96, 2, 14, '38'),
+(96, 1, 14, '38'),
+(97, 2, 14, '39'),
+(97, 1, 14, '39'),
+(98, 2, 14, '40'),
+(98, 1, 14, '40'),
+(99, 2, 14, '42'),
+(99, 1, 14, '42'),
+(100, 2, 14, '44'),
+(100, 1, 14, '44'),
+(101, 2, 14, '46'),
+(101, 1, 14, '46'),
+(102, 2, 14, '48'),
+(102, 1, 14, '48'),
+(103, 2, 14, '50'),
+(103, 1, 14, '50'),
+(104, 2, 14, '52'),
+(104, 1, 14, '52'),
+(105, 2, 14, '54'),
+(105, 1, 14, '54'),
+(106, 2, 14, '56'),
+(106, 1, 14, '56'),
+(107, 2, 14, '58'),
+(107, 1, 14, '58'),
+(78, 2, 13, 'checkwork'),
+(78, 1, 13, 'Клетка'),
+(79, 2, 13, 'stripe'),
+(79, 1, 13, 'Полоска'),
+(80, 2, 13, 'polka dot'),
+(80, 1, 13, 'Горох'),
+(81, 2, 13, 'leopard'),
+(81, 1, 13, 'Леопард'),
+(82, 2, 13, 'zebra'),
+(82, 1, 13, 'Зебра'),
+(54, 2, 13, 'Coralline '),
+(55, 1, 13, 'Хаки'),
+(55, 2, 13, 'Khaki'),
+(56, 1, 13, 'Шоколадный'),
+(56, 2, 13, 'Chocolate-brown'),
+(57, 1, 13, 'Аквамарин'),
+(57, 2, 13, 'Aquamarine'),
+(69, 1, 13, 'Белый'),
+(69, 2, 13, 'White');
 
 -- --------------------------------------------------------
 
@@ -2919,24 +3544,19 @@ CREATE TABLE IF NOT EXISTS `ma_product` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=63 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=68 ;
 
 --
 -- Дамп данных таблицы `ma_product`
 --
 
 INSERT INTO `ma_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`) VALUES
-(52, 'xxs', '', '', '', '', '', '', '', 1, 7, 'catalog/main_2_1.jpg', 11, 1, 12345678.0000, 0, 0, '2016-01-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 27, '2016-01-20 14:34:56', '2016-02-20 00:15:45'),
-(53, 'Сумка Angels', '', '', '', '', '', '', '', 1, 7, 'catalog/DSC06435.jpg', 13, 1, 7280.0000, 0, 9, '2016-02-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 4, '2016-02-11 11:23:53', '2016-02-11 11:36:45'),
-(51, 'XS', '', '', '', '', '', '', '', 0, 7, 'catalog/main_2_1.jpg', 11, 1, 100000.0000, 0, 0, '2016-01-14', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 40, '2016-01-14 13:08:53', '2016-02-20 00:15:29'),
-(55, 'XS', '1', '', '', '', '', '', '', 0, 7, 'catalog/main_2_1.jpg', 11, 1, 100000.0000, 0, 0, '2016-01-14', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 0, '2016-02-20 00:53:46', '0000-00-00 00:00:00'),
-(56, 'XS', '2', '', '', '', '', '', '', 0, 7, 'catalog/main_2_1.jpg', 11, 1, 100000.0000, 0, 0, '2016-01-14', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 0, '2016-02-20 00:53:50', '0000-00-00 00:00:00'),
-(57, 'XS', '3', '', '', '', '', '', '', 0, 7, 'catalog/main_2_1.jpg', 11, 1, 100000.0000, 0, 0, '2016-01-14', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 0, '2016-02-20 00:53:54', '0000-00-00 00:00:00'),
-(58, 'XS', '4', '', '', '', '', '', '', 0, 7, 'catalog/main_2_1.jpg', 11, 1, 100000.0000, 0, 0, '2016-01-14', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 0, '2016-02-20 00:53:57', '0000-00-00 00:00:00'),
-(59, 'xxs', '5', '', '', '', '', '', '', 1, 7, 'catalog/main_2_1.jpg', 11, 1, 12345678.0000, 0, 0, '2016-01-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 0, '2016-02-20 00:56:01', '2016-02-20 00:57:41'),
-(60, 'xxs', '6', '', '', '', '', '', '', 1, 7, 'catalog/main_2_1.jpg', 11, 1, 12345678.0000, 0, 0, '2016-01-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 0, '2016-02-20 00:56:04', '0000-00-00 00:00:00'),
-(61, 'xxs', '7', '', '', '', '', '', '', 1, 7, 'catalog/main_2_1.jpg', 11, 1, 12345678.0000, 0, 0, '2016-01-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 0, '2016-02-20 00:56:08', '0000-00-00 00:00:00'),
-(62, 'xxs', '8', '', '', '', '', '', '', 1, 7, 'catalog/main_2_1.jpg', 11, 1, 12345678.0000, 0, 0, '2016-01-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 0, 0, '2016-02-20 00:56:12', '2016-02-20 00:57:00');
+(52, 'xxs', '', '', '', '', '', '', '', 1, 7, 'catalog/main_2_1.jpg', 11, 1, 12348.0000, 0, 0, '2016-01-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 68, '2016-01-20 14:34:56', '2016-02-22 00:51:57'),
+(67, 'xxs', '5', '', '', '', '', '', '', 1, 7, 'catalog/main_2_1.jpg', 11, 1, 12348.0000, 0, 0, '2016-01-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 4, '2016-02-21 16:09:53', '2016-02-21 17:07:52'),
+(66, 'xxs', '4', '', '', '', '', '', '', 1, 7, 'catalog/main_2_1.jpg', 11, 1, 12348.0000, 0, 0, '2016-01-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 4, '2016-02-21 16:09:50', '2016-02-21 17:07:59'),
+(65, 'xxs', '3', '', '', '', '', '', '', 1, 7, 'catalog/86.jpg', 11, 1, 1634.0000, 0, 0, '2016-01-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 332, '2016-02-21 16:09:47', '2016-02-22 04:12:06'),
+(63, 'xxs', '1', '', '', '', '', '', '', 1, 7, 'catalog/main_2_1.jpg', 11, 1, 12348.0000, 0, 0, '2016-01-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 5, '2016-02-21 16:09:42', '2016-02-21 17:08:12'),
+(64, 'xxs', '2', '', '', '', '', '', '', 1, 7, 'catalog/main_2_1.jpg', 11, 1, 12348.0000, 0, 0, '2016-01-20', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 1, '2016-02-21 16:09:45', '2016-02-21 17:08:17');
 
 -- --------------------------------------------------------
 
@@ -2951,6 +3571,22 @@ CREATE TABLE IF NOT EXISTS `ma_product_attribute` (
   `text` text NOT NULL,
   PRIMARY KEY (`product_id`,`attribute_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `ma_product_attribute`
+--
+
+INSERT INTO `ma_product_attribute` (`product_id`, `attribute_id`, `language_id`, `text`) VALUES
+(65, 16, 1, 'ваываыавы '),
+(65, 15, 2, 'red'),
+(65, 15, 1, 'красный'),
+(65, 14, 2, 'sadfdsaf'),
+(65, 14, 1, 'ываыв'),
+(65, 13, 2, 'dfsafads'),
+(65, 13, 1, 'ывфа'),
+(65, 12, 2, 'China'),
+(65, 12, 1, 'Китай'),
+(65, 16, 2, 'dfsfdasfs');
 
 -- --------------------------------------------------------
 
@@ -2976,30 +3612,18 @@ CREATE TABLE IF NOT EXISTS `ma_product_description` (
 --
 
 INSERT INTO `ma_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(51, 1, 'Fly-girl для женщин', '&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;br&gt;&lt;/p&gt;', '', 'Товар от Fly-girl для женщин', '', ''),
-(51, 2, 'Товар от Fly-girl для женщин', '&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;b&gt;Пьер-Жорж Латекоэ́р&lt;/b&gt;&amp;nbsp;(&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA&quot; title=&quot;Французский язык&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;фр.&lt;/a&gt;&amp;nbsp;&lt;i&gt;&lt;span lang=&quot;fr&quot; xml:lang=&quot;fr&quot;&gt;Pierre-Georges Latécoère&lt;/span&gt;&lt;/i&gt;;&amp;nbsp;&lt;span style=&quot;white-space: nowrap;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/25_%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%D0%B0&quot; title=&quot;25 августа&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;25&amp;nbsp;августа&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/1883_%D0%B3%D0%BE%D0%B4&quot; title=&quot;1883 год&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;1883&lt;/a&gt;&lt;/span&gt;,&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%BD%D1%8C%D0%B5%D1%80-%D0%B4%D0%B5-%D0%91%D0%B8%D0%B3%D0%BE%D1%80&quot; title=&quot;Баньер-де-Бигор&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Баньер-де-Бигор&lt;/a&gt;, департамент&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D1%80%D1%85%D0%BD%D0%B8%D0%B5_%D0%9F%D0%B8%D1%80%D0%B5%D0%BD%D0%B5%D0%B8&quot; title=&quot;Верхние Пиренеи&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Верхние Пиренеи&lt;/a&gt;&amp;nbsp;—&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/10_%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%D0%B0&quot; title=&quot;10 августа&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;10 августа&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/1943_%D0%B3%D0%BE%D0%B4&quot; title=&quot;1943 год&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;1943&lt;/a&gt;,&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6&quot; title=&quot;Париж&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Париж&lt;/a&gt;) —&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D1%8F&quot; title=&quot;Франция&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;французский&lt;/a&gt;&amp;nbsp;предприниматель и авиатор.&lt;/p&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;/p&gt;&lt;div id=&quot;toc&quot; class=&quot;toc&quot; style=&quot;border: 1px solid rgb(170, 170, 170); padding: 7px; font-size: 13px; display: table; zoom: 1; color: rgb(37, 37, 37); font-family: sans-serif; background-color: rgb(249, 249, 249);&quot;&gt;&lt;div id=&quot;toctitle&quot; style=&quot;direction: ltr; text-align: center;&quot;&gt;&lt;h2 style=&quot;font-family: sans-serif; font-weight: bold; line-height: 1.3; color: black; margin: 1em 0px 0.25em; font-size: 13px; overflow: hidden; padding: 0px; border: none; display: inline; background: none;&quot;&gt;Содержание&lt;/h2&gt;&amp;nbsp;&lt;span class=&quot;toctoggle&quot; style=&quot;-webkit-user-select: none;&quot;&gt;&amp;nbsp;[&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#&quot; id=&quot;togglelink&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;убрать&lt;/a&gt;]&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;ul style=&quot;margin: 0.3em 0px; list-style-type: none; padding: 0px; list-style-image: none;&quot;&gt;&lt;li class=&quot;toclevel-1 tocsection-1&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D0.BF.D1.80.D0.B5.D0.B4.D0.BF.D1.80.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.BE.D0.B9_.D0.B4.D0.B5.D1.8F.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Начало предпринимательской деятельности&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-2&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D0.B5.D0.BB.D1.8C_.D0.BF.D0.BE.D1.87.D1.82.D0.BE.D0.B2.D1.8B.D1.85_.D0.B0.D0.B2.D0.B8.D0.B0.D0.BB.D0.B8.D0.BD.D0.B8.D0.B9&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Создатель почтовых авиалиний&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-3&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.9F.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C_.D0.B3.D0.B8.D0.B4.D1.80.D0.BE.D0.BF.D0.BB.D0.B0.D0.BD.D0.BE.D0.B2&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Производитель гидропланов&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-4&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.93.D0.BE.D1.81.D1.83.D0.B4.D0.B0.D1.80.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BD.D0.B0.D0.B3.D1.80.D0.B0.D0.B4.D1.8B&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Государственные награды&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-5&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Примечания&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;/p&gt;&lt;h2 style=&quot;font-family: ''Linux Libertine'', Georgia, Times, serif; line-height: 1.3; color: black; margin: 1em 0px 0.25em; font-size: 1.5em; overflow: hidden; padding: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(170, 170, 170); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;mw-headline&quot; id=&quot;.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D0.BF.D1.80.D0.B5.D0.B4.D0.BF.D1.80.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.BE.D0.B9_.D0.B4.D0.B5.D1.8F.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8&quot;&gt;Начало предпринимательской деятельности&lt;/span&gt;&lt;span class=&quot;mw-editsection&quot; style=&quot;-webkit-user-select: none; font-size: small; margin-left: 1em; vertical-align: baseline; line-height: 1em; display: inline-block; white-space: nowrap; unicode-bidi: -webkit-isolate; font-family: sans-serif;&quot;&gt;&lt;span class=&quot;mw-editsection-bracket&quot; style=&quot;margin-right: 0.25em; color: rgb(85, 85, 85);&quot;&gt;[&lt;/span&gt;&lt;a href=&quot;https://ru.wikipedia.org/w/index.php?title=%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6&amp;amp;veaction=edit&amp;amp;vesection=1&quot; title=&quot;Редактировать раздел «Начало предпринимательской деятельности»&quot; class=&quot;mw-editsection-visualeditor&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;править&lt;/a&gt;&lt;span class=&quot;mw-editsection-divider&quot; style=&quot;color: rgb(85, 85, 85);&quot;&gt;&amp;nbsp;|&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://ru.wikipedia.org/w/index.php?title=%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6&amp;amp;action=edit&amp;amp;section=1&quot; title=&quot;Редактировать раздел «Начало предпринимательской деятельности»&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;править вики-текст&lt;/a&gt;&lt;span class=&quot;mw-editsection-bracket&quot; style=&quot;margin-left: 0.25em; color: rgb(85, 85, 85);&quot;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;Родился в семье Габриэля Латекоэра, основавшего в 1872 году деревообрабатывающее предприятие на юге Франции. Окончил&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6&quot; title=&quot;Париж&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;парижскую&lt;/a&gt;&amp;nbsp;Центральную школу искусств и промышленности&lt;span id=&quot;cite_ref-asso_3-0&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-asso-3&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[3]&lt;/a&gt;&lt;/span&gt;.&lt;/p&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;После смерти отца в 1905 году, Пьер-Жорж Латекоэр берёт в свои руки управление семейным предприятием и вскоре расширяет его, начав производство рельсового транспорта. Сперва производит трамваи для окрестных городов, а затем ему удаётся получить заказ на&amp;nbsp;&lt;span style=&quot;white-space: nowrap;&quot;&gt;10&amp;nbsp;000&lt;/span&gt;&amp;nbsp;товарных вагонов для&amp;nbsp;&lt;i&gt;Южной железнодорожной компании&lt;/i&gt;&amp;nbsp;(&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA&quot; title=&quot;Французский язык&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;фр.&lt;/a&gt;&amp;nbsp;&lt;i&gt;&lt;span lang=&quot;fr&quot; xml:lang=&quot;fr&quot;&gt;Compagnie des chemins de fer du midi&lt;/span&gt;&lt;/i&gt;). Для того, чтобы выполнить заказ, ему приходится построить второй завод в&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D0%BB%D1%83%D0%B7%D0%B0&quot; title=&quot;Тулуза&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Тулузе&lt;/a&gt;&lt;span id=&quot;cite_ref-asso_3-1&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-asso-3&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[3]&lt;/a&gt;&lt;/span&gt;.&lt;/p&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;С началом&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B2%D0%B0%D1%8F_%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B2%D0%BE%D0%B9%D0%BD%D0%B0&quot; title=&quot;Первая мировая война&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Первой мировой войны&lt;/a&gt;, несмотря на освобождение от воинской службы по зрению, идёт добровольцем в артиллерию, но через 4 месяца оказывается демобилизован. На заводе в Тулузе налаживает производство снарядов, а в Баньер-де-Бигор —&amp;nbsp;полевых кухонь. В 1917 году получает заказ на производство 1000 самолётов&amp;nbsp;&lt;i&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/Salmson&quot; title=&quot;Salmson&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Salmson&lt;/a&gt;&lt;/i&gt;, и до подписания&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B2%D0%BE%D0%B5_%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B8%D1%80%D0%B8%D0%B5&quot; title=&quot;Первое компьенское перемирие&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;перемирия&lt;/a&gt;&amp;nbsp;успевает поставить 800 из них&lt;span id=&quot;cite_ref-asso_3-2&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-asso-3&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[3]&lt;/a&gt;&lt;/span&gt;&lt;span id=&quot;cite_ref-larousse_4-0&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-larousse-4&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[4]&lt;/a&gt;&lt;/span&gt;.&lt;/p&gt;', '', 'Товар от Fly-girl для женщин', '', ''),
-(53, 1, 'Сумка Angels', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'sumka-guess', '', ''),
-(53, 2, 'Angels Handbag', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', '123', '', ''),
-(52, 2, 'Хит №1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Хит №1', '', ''),
-(52, 1, 'Хит №1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Хит №1', '', ''),
-(55, 1, 'Fly-girl для женщин', '&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;br&gt;&lt;/p&gt;', '', 'Товар от Fly-girl для женщин', '', ''),
-(55, 2, 'Товар от Fly-girl для женщин', '&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;b&gt;Пьер-Жорж Латекоэ́р&lt;/b&gt;&amp;nbsp;(&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA&quot; title=&quot;Французский язык&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;фр.&lt;/a&gt;&amp;nbsp;&lt;i&gt;&lt;span lang=&quot;fr&quot; xml:lang=&quot;fr&quot;&gt;Pierre-Georges Latécoère&lt;/span&gt;&lt;/i&gt;;&amp;nbsp;&lt;span style=&quot;white-space: nowrap;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/25_%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%D0%B0&quot; title=&quot;25 августа&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;25&amp;nbsp;августа&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/1883_%D0%B3%D0%BE%D0%B4&quot; title=&quot;1883 год&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;1883&lt;/a&gt;&lt;/span&gt;,&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%BD%D1%8C%D0%B5%D1%80-%D0%B4%D0%B5-%D0%91%D0%B8%D0%B3%D0%BE%D1%80&quot; title=&quot;Баньер-де-Бигор&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Баньер-де-Бигор&lt;/a&gt;, департамент&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D1%80%D1%85%D0%BD%D0%B8%D0%B5_%D0%9F%D0%B8%D1%80%D0%B5%D0%BD%D0%B5%D0%B8&quot; title=&quot;Верхние Пиренеи&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Верхние Пиренеи&lt;/a&gt;&amp;nbsp;—&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/10_%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%D0%B0&quot; title=&quot;10 августа&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;10 августа&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/1943_%D0%B3%D0%BE%D0%B4&quot; title=&quot;1943 год&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;1943&lt;/a&gt;,&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6&quot; title=&quot;Париж&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Париж&lt;/a&gt;) —&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D1%8F&quot; title=&quot;Франция&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;французский&lt;/a&gt;&amp;nbsp;предприниматель и авиатор.&lt;/p&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;/p&gt;&lt;div id=&quot;toc&quot; class=&quot;toc&quot; style=&quot;border: 1px solid rgb(170, 170, 170); padding: 7px; font-size: 13px; display: table; zoom: 1; color: rgb(37, 37, 37); font-family: sans-serif; background-color: rgb(249, 249, 249);&quot;&gt;&lt;div id=&quot;toctitle&quot; style=&quot;direction: ltr; text-align: center;&quot;&gt;&lt;h2 style=&quot;font-family: sans-serif; font-weight: bold; line-height: 1.3; color: black; margin: 1em 0px 0.25em; font-size: 13px; overflow: hidden; padding: 0px; border: none; display: inline; background: none;&quot;&gt;Содержание&lt;/h2&gt;&amp;nbsp;&lt;span class=&quot;toctoggle&quot; style=&quot;-webkit-user-select: none;&quot;&gt;&amp;nbsp;[&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#&quot; id=&quot;togglelink&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;убрать&lt;/a&gt;]&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;ul style=&quot;margin: 0.3em 0px; list-style-type: none; padding: 0px; list-style-image: none;&quot;&gt;&lt;li class=&quot;toclevel-1 tocsection-1&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D0.BF.D1.80.D0.B5.D0.B4.D0.BF.D1.80.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.BE.D0.B9_.D0.B4.D0.B5.D1.8F.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Начало предпринимательской деятельности&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-2&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D0.B5.D0.BB.D1.8C_.D0.BF.D0.BE.D1.87.D1.82.D0.BE.D0.B2.D1.8B.D1.85_.D0.B0.D0.B2.D0.B8.D0.B0.D0.BB.D0.B8.D0.BD.D0.B8.D0.B9&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Создатель почтовых авиалиний&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-3&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.9F.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C_.D0.B3.D0.B8.D0.B4.D1.80.D0.BE.D0.BF.D0.BB.D0.B0.D0.BD.D0.BE.D0.B2&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Производитель гидропланов&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-4&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.93.D0.BE.D1.81.D1.83.D0.B4.D0.B0.D1.80.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BD.D0.B0.D0.B3.D1.80.D0.B0.D0.B4.D1.8B&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Государственные награды&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-5&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Примечания&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;/p&gt;&lt;h2 style=&quot;font-family: ''Linux Libertine'', Georgia, Times, serif; line-height: 1.3; color: black; margin: 1em 0px 0.25em; font-size: 1.5em; overflow: hidden; padding: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(170, 170, 170); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;mw-headline&quot; id=&quot;.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D0.BF.D1.80.D0.B5.D0.B4.D0.BF.D1.80.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.BE.D0.B9_.D0.B4.D0.B5.D1.8F.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8&quot;&gt;Начало предпринимательской деятельности&lt;/span&gt;&lt;span class=&quot;mw-editsection&quot; style=&quot;-webkit-user-select: none; font-size: small; margin-left: 1em; vertical-align: baseline; line-height: 1em; display: inline-block; white-space: nowrap; unicode-bidi: -webkit-isolate; font-family: sans-serif;&quot;&gt;&lt;span class=&quot;mw-editsection-bracket&quot; style=&quot;margin-right: 0.25em; color: rgb(85, 85, 85);&quot;&gt;[&lt;/span&gt;&lt;a href=&quot;https://ru.wikipedia.org/w/index.php?title=%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6&amp;amp;veaction=edit&amp;amp;vesection=1&quot; title=&quot;Редактировать раздел «Начало предпринимательской деятельности»&quot; class=&quot;mw-editsection-visualeditor&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;править&lt;/a&gt;&lt;span class=&quot;mw-editsection-divider&quot; style=&quot;color: rgb(85, 85, 85);&quot;&gt;&amp;nbsp;|&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://ru.wikipedia.org/w/index.php?title=%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6&amp;amp;action=edit&amp;amp;section=1&quot; title=&quot;Редактировать раздел «Начало предпринимательской деятельности»&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;править вики-текст&lt;/a&gt;&lt;span class=&quot;mw-editsection-bracket&quot; style=&quot;margin-left: 0.25em; color: rgb(85, 85, 85);&quot;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;Родился в семье Габриэля Латекоэра, основавшего в 1872 году деревообрабатывающее предприятие на юге Франции. Окончил&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6&quot; title=&quot;Париж&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;парижскую&lt;/a&gt;&amp;nbsp;Центральную школу искусств и промышленности&lt;span id=&quot;cite_ref-asso_3-0&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-asso-3&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[3]&lt;/a&gt;&lt;/span&gt;.&lt;/p&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;После смерти отца в 1905 году, Пьер-Жорж Латекоэр берёт в свои руки управление семейным предприятием и вскоре расширяет его, начав производство рельсового транспорта. Сперва производит трамваи для окрестных городов, а затем ему удаётся получить заказ на&amp;nbsp;&lt;span style=&quot;white-space: nowrap;&quot;&gt;10&amp;nbsp;000&lt;/span&gt;&amp;nbsp;товарных вагонов для&amp;nbsp;&lt;i&gt;Южной железнодорожной компании&lt;/i&gt;&amp;nbsp;(&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA&quot; title=&quot;Французский язык&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;фр.&lt;/a&gt;&amp;nbsp;&lt;i&gt;&lt;span lang=&quot;fr&quot; xml:lang=&quot;fr&quot;&gt;Compagnie des chemins de fer du midi&lt;/span&gt;&lt;/i&gt;). Для того, чтобы выполнить заказ, ему приходится построить второй завод в&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D0%BB%D1%83%D0%B7%D0%B0&quot; title=&quot;Тулуза&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Тулузе&lt;/a&gt;&lt;span id=&quot;cite_ref-asso_3-1&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-asso-3&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[3]&lt;/a&gt;&lt;/span&gt;.&lt;/p&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;С началом&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B2%D0%B0%D1%8F_%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B2%D0%BE%D0%B9%D0%BD%D0%B0&quot; title=&quot;Первая мировая война&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Первой мировой войны&lt;/a&gt;, несмотря на освобождение от воинской службы по зрению, идёт добровольцем в артиллерию, но через 4 месяца оказывается демобилизован. На заводе в Тулузе налаживает производство снарядов, а в Баньер-де-Бигор —&amp;nbsp;полевых кухонь. В 1917 году получает заказ на производство 1000 самолётов&amp;nbsp;&lt;i&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/Salmson&quot; title=&quot;Salmson&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Salmson&lt;/a&gt;&lt;/i&gt;, и до подписания&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B2%D0%BE%D0%B5_%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B8%D1%80%D0%B8%D0%B5&quot; title=&quot;Первое компьенское перемирие&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;перемирия&lt;/a&gt;&amp;nbsp;успевает поставить 800 из них&lt;span id=&quot;cite_ref-asso_3-2&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-asso-3&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[3]&lt;/a&gt;&lt;/span&gt;&lt;span id=&quot;cite_ref-larousse_4-0&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-larousse-4&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[4]&lt;/a&gt;&lt;/span&gt;.&lt;/p&gt;', '', 'Товар от Fly-girl для женщин', '', ''),
-(56, 1, 'Fly-girl для женщин', '&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;br&gt;&lt;/p&gt;', '', 'Товар от Fly-girl для женщин', '', '');
-INSERT INTO `ma_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(56, 2, 'Товар от Fly-girl для женщин', '&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;b&gt;Пьер-Жорж Латекоэ́р&lt;/b&gt;&amp;nbsp;(&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA&quot; title=&quot;Французский язык&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;фр.&lt;/a&gt;&amp;nbsp;&lt;i&gt;&lt;span lang=&quot;fr&quot; xml:lang=&quot;fr&quot;&gt;Pierre-Georges Latécoère&lt;/span&gt;&lt;/i&gt;;&amp;nbsp;&lt;span style=&quot;white-space: nowrap;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/25_%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%D0%B0&quot; title=&quot;25 августа&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;25&amp;nbsp;августа&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/1883_%D0%B3%D0%BE%D0%B4&quot; title=&quot;1883 год&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;1883&lt;/a&gt;&lt;/span&gt;,&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%BD%D1%8C%D0%B5%D1%80-%D0%B4%D0%B5-%D0%91%D0%B8%D0%B3%D0%BE%D1%80&quot; title=&quot;Баньер-де-Бигор&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Баньер-де-Бигор&lt;/a&gt;, департамент&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D1%80%D1%85%D0%BD%D0%B8%D0%B5_%D0%9F%D0%B8%D1%80%D0%B5%D0%BD%D0%B5%D0%B8&quot; title=&quot;Верхние Пиренеи&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Верхние Пиренеи&lt;/a&gt;&amp;nbsp;—&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/10_%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%D0%B0&quot; title=&quot;10 августа&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;10 августа&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/1943_%D0%B3%D0%BE%D0%B4&quot; title=&quot;1943 год&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;1943&lt;/a&gt;,&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6&quot; title=&quot;Париж&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Париж&lt;/a&gt;) —&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D1%8F&quot; title=&quot;Франция&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;французский&lt;/a&gt;&amp;nbsp;предприниматель и авиатор.&lt;/p&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;/p&gt;&lt;div id=&quot;toc&quot; class=&quot;toc&quot; style=&quot;border: 1px solid rgb(170, 170, 170); padding: 7px; font-size: 13px; display: table; zoom: 1; color: rgb(37, 37, 37); font-family: sans-serif; background-color: rgb(249, 249, 249);&quot;&gt;&lt;div id=&quot;toctitle&quot; style=&quot;direction: ltr; text-align: center;&quot;&gt;&lt;h2 style=&quot;font-family: sans-serif; font-weight: bold; line-height: 1.3; color: black; margin: 1em 0px 0.25em; font-size: 13px; overflow: hidden; padding: 0px; border: none; display: inline; background: none;&quot;&gt;Содержание&lt;/h2&gt;&amp;nbsp;&lt;span class=&quot;toctoggle&quot; style=&quot;-webkit-user-select: none;&quot;&gt;&amp;nbsp;[&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#&quot; id=&quot;togglelink&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;убрать&lt;/a&gt;]&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;ul style=&quot;margin: 0.3em 0px; list-style-type: none; padding: 0px; list-style-image: none;&quot;&gt;&lt;li class=&quot;toclevel-1 tocsection-1&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D0.BF.D1.80.D0.B5.D0.B4.D0.BF.D1.80.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.BE.D0.B9_.D0.B4.D0.B5.D1.8F.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Начало предпринимательской деятельности&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-2&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D0.B5.D0.BB.D1.8C_.D0.BF.D0.BE.D1.87.D1.82.D0.BE.D0.B2.D1.8B.D1.85_.D0.B0.D0.B2.D0.B8.D0.B0.D0.BB.D0.B8.D0.BD.D0.B8.D0.B9&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Создатель почтовых авиалиний&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-3&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.9F.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C_.D0.B3.D0.B8.D0.B4.D1.80.D0.BE.D0.BF.D0.BB.D0.B0.D0.BD.D0.BE.D0.B2&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Производитель гидропланов&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-4&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.93.D0.BE.D1.81.D1.83.D0.B4.D0.B0.D1.80.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BD.D0.B0.D0.B3.D1.80.D0.B0.D0.B4.D1.8B&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Государственные награды&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-5&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Примечания&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;/p&gt;&lt;h2 style=&quot;font-family: ''Linux Libertine'', Georgia, Times, serif; line-height: 1.3; color: black; margin: 1em 0px 0.25em; font-size: 1.5em; overflow: hidden; padding: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(170, 170, 170); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;mw-headline&quot; id=&quot;.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D0.BF.D1.80.D0.B5.D0.B4.D0.BF.D1.80.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.BE.D0.B9_.D0.B4.D0.B5.D1.8F.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8&quot;&gt;Начало предпринимательской деятельности&lt;/span&gt;&lt;span class=&quot;mw-editsection&quot; style=&quot;-webkit-user-select: none; font-size: small; margin-left: 1em; vertical-align: baseline; line-height: 1em; display: inline-block; white-space: nowrap; unicode-bidi: -webkit-isolate; font-family: sans-serif;&quot;&gt;&lt;span class=&quot;mw-editsection-bracket&quot; style=&quot;margin-right: 0.25em; color: rgb(85, 85, 85);&quot;&gt;[&lt;/span&gt;&lt;a href=&quot;https://ru.wikipedia.org/w/index.php?title=%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6&amp;amp;veaction=edit&amp;amp;vesection=1&quot; title=&quot;Редактировать раздел «Начало предпринимательской деятельности»&quot; class=&quot;mw-editsection-visualeditor&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;править&lt;/a&gt;&lt;span class=&quot;mw-editsection-divider&quot; style=&quot;color: rgb(85, 85, 85);&quot;&gt;&amp;nbsp;|&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://ru.wikipedia.org/w/index.php?title=%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6&amp;amp;action=edit&amp;amp;section=1&quot; title=&quot;Редактировать раздел «Начало предпринимательской деятельности»&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;править вики-текст&lt;/a&gt;&lt;span class=&quot;mw-editsection-bracket&quot; style=&quot;margin-left: 0.25em; color: rgb(85, 85, 85);&quot;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;Родился в семье Габриэля Латекоэра, основавшего в 1872 году деревообрабатывающее предприятие на юге Франции. Окончил&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6&quot; title=&quot;Париж&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;парижскую&lt;/a&gt;&amp;nbsp;Центральную школу искусств и промышленности&lt;span id=&quot;cite_ref-asso_3-0&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-asso-3&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[3]&lt;/a&gt;&lt;/span&gt;.&lt;/p&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;После смерти отца в 1905 году, Пьер-Жорж Латекоэр берёт в свои руки управление семейным предприятием и вскоре расширяет его, начав производство рельсового транспорта. Сперва производит трамваи для окрестных городов, а затем ему удаётся получить заказ на&amp;nbsp;&lt;span style=&quot;white-space: nowrap;&quot;&gt;10&amp;nbsp;000&lt;/span&gt;&amp;nbsp;товарных вагонов для&amp;nbsp;&lt;i&gt;Южной железнодорожной компании&lt;/i&gt;&amp;nbsp;(&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA&quot; title=&quot;Французский язык&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;фр.&lt;/a&gt;&amp;nbsp;&lt;i&gt;&lt;span lang=&quot;fr&quot; xml:lang=&quot;fr&quot;&gt;Compagnie des chemins de fer du midi&lt;/span&gt;&lt;/i&gt;). Для того, чтобы выполнить заказ, ему приходится построить второй завод в&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D0%BB%D1%83%D0%B7%D0%B0&quot; title=&quot;Тулуза&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Тулузе&lt;/a&gt;&lt;span id=&quot;cite_ref-asso_3-1&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-asso-3&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[3]&lt;/a&gt;&lt;/span&gt;.&lt;/p&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;С началом&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B2%D0%B0%D1%8F_%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B2%D0%BE%D0%B9%D0%BD%D0%B0&quot; title=&quot;Первая мировая война&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Первой мировой войны&lt;/a&gt;, несмотря на освобождение от воинской службы по зрению, идёт добровольцем в артиллерию, но через 4 месяца оказывается демобилизован. На заводе в Тулузе налаживает производство снарядов, а в Баньер-де-Бигор —&amp;nbsp;полевых кухонь. В 1917 году получает заказ на производство 1000 самолётов&amp;nbsp;&lt;i&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/Salmson&quot; title=&quot;Salmson&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Salmson&lt;/a&gt;&lt;/i&gt;, и до подписания&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B2%D0%BE%D0%B5_%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B8%D1%80%D0%B8%D0%B5&quot; title=&quot;Первое компьенское перемирие&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;перемирия&lt;/a&gt;&amp;nbsp;успевает поставить 800 из них&lt;span id=&quot;cite_ref-asso_3-2&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-asso-3&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[3]&lt;/a&gt;&lt;/span&gt;&lt;span id=&quot;cite_ref-larousse_4-0&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-larousse-4&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[4]&lt;/a&gt;&lt;/span&gt;.&lt;/p&gt;', '', 'Товар от Fly-girl для женщин', '', ''),
-(57, 1, 'Fly-girl для женщин', '&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;br&gt;&lt;/p&gt;', '', 'Товар от Fly-girl для женщин', '', ''),
-(57, 2, 'Товар от Fly-girl для женщин', '&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;b&gt;Пьер-Жорж Латекоэ́р&lt;/b&gt;&amp;nbsp;(&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA&quot; title=&quot;Французский язык&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;фр.&lt;/a&gt;&amp;nbsp;&lt;i&gt;&lt;span lang=&quot;fr&quot; xml:lang=&quot;fr&quot;&gt;Pierre-Georges Latécoère&lt;/span&gt;&lt;/i&gt;;&amp;nbsp;&lt;span style=&quot;white-space: nowrap;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/25_%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%D0%B0&quot; title=&quot;25 августа&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;25&amp;nbsp;августа&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/1883_%D0%B3%D0%BE%D0%B4&quot; title=&quot;1883 год&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;1883&lt;/a&gt;&lt;/span&gt;,&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%BD%D1%8C%D0%B5%D1%80-%D0%B4%D0%B5-%D0%91%D0%B8%D0%B3%D0%BE%D1%80&quot; title=&quot;Баньер-де-Бигор&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Баньер-де-Бигор&lt;/a&gt;, департамент&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D1%80%D1%85%D0%BD%D0%B8%D0%B5_%D0%9F%D0%B8%D1%80%D0%B5%D0%BD%D0%B5%D0%B8&quot; title=&quot;Верхние Пиренеи&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Верхние Пиренеи&lt;/a&gt;&amp;nbsp;—&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/10_%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%D0%B0&quot; title=&quot;10 августа&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;10 августа&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/1943_%D0%B3%D0%BE%D0%B4&quot; title=&quot;1943 год&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;1943&lt;/a&gt;,&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6&quot; title=&quot;Париж&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Париж&lt;/a&gt;) —&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D1%8F&quot; title=&quot;Франция&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;французский&lt;/a&gt;&amp;nbsp;предприниматель и авиатор.&lt;/p&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;/p&gt;&lt;div id=&quot;toc&quot; class=&quot;toc&quot; style=&quot;border: 1px solid rgb(170, 170, 170); padding: 7px; font-size: 13px; display: table; zoom: 1; color: rgb(37, 37, 37); font-family: sans-serif; background-color: rgb(249, 249, 249);&quot;&gt;&lt;div id=&quot;toctitle&quot; style=&quot;direction: ltr; text-align: center;&quot;&gt;&lt;h2 style=&quot;font-family: sans-serif; font-weight: bold; line-height: 1.3; color: black; margin: 1em 0px 0.25em; font-size: 13px; overflow: hidden; padding: 0px; border: none; display: inline; background: none;&quot;&gt;Содержание&lt;/h2&gt;&amp;nbsp;&lt;span class=&quot;toctoggle&quot; style=&quot;-webkit-user-select: none;&quot;&gt;&amp;nbsp;[&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#&quot; id=&quot;togglelink&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;убрать&lt;/a&gt;]&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;ul style=&quot;margin: 0.3em 0px; list-style-type: none; padding: 0px; list-style-image: none;&quot;&gt;&lt;li class=&quot;toclevel-1 tocsection-1&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D0.BF.D1.80.D0.B5.D0.B4.D0.BF.D1.80.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.BE.D0.B9_.D0.B4.D0.B5.D1.8F.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Начало предпринимательской деятельности&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-2&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D0.B5.D0.BB.D1.8C_.D0.BF.D0.BE.D1.87.D1.82.D0.BE.D0.B2.D1.8B.D1.85_.D0.B0.D0.B2.D0.B8.D0.B0.D0.BB.D0.B8.D0.BD.D0.B8.D0.B9&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Создатель почтовых авиалиний&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-3&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.9F.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C_.D0.B3.D0.B8.D0.B4.D1.80.D0.BE.D0.BF.D0.BB.D0.B0.D0.BD.D0.BE.D0.B2&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Производитель гидропланов&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-4&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.93.D0.BE.D1.81.D1.83.D0.B4.D0.B0.D1.80.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BD.D0.B0.D0.B3.D1.80.D0.B0.D0.B4.D1.8B&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Государственные награды&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-5&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Примечания&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;/p&gt;&lt;h2 style=&quot;font-family: ''Linux Libertine'', Georgia, Times, serif; line-height: 1.3; color: black; margin: 1em 0px 0.25em; font-size: 1.5em; overflow: hidden; padding: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(170, 170, 170); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;mw-headline&quot; id=&quot;.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D0.BF.D1.80.D0.B5.D0.B4.D0.BF.D1.80.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.BE.D0.B9_.D0.B4.D0.B5.D1.8F.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8&quot;&gt;Начало предпринимательской деятельности&lt;/span&gt;&lt;span class=&quot;mw-editsection&quot; style=&quot;-webkit-user-select: none; font-size: small; margin-left: 1em; vertical-align: baseline; line-height: 1em; display: inline-block; white-space: nowrap; unicode-bidi: -webkit-isolate; font-family: sans-serif;&quot;&gt;&lt;span class=&quot;mw-editsection-bracket&quot; style=&quot;margin-right: 0.25em; color: rgb(85, 85, 85);&quot;&gt;[&lt;/span&gt;&lt;a href=&quot;https://ru.wikipedia.org/w/index.php?title=%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6&amp;amp;veaction=edit&amp;amp;vesection=1&quot; title=&quot;Редактировать раздел «Начало предпринимательской деятельности»&quot; class=&quot;mw-editsection-visualeditor&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;править&lt;/a&gt;&lt;span class=&quot;mw-editsection-divider&quot; style=&quot;color: rgb(85, 85, 85);&quot;&gt;&amp;nbsp;|&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://ru.wikipedia.org/w/index.php?title=%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6&amp;amp;action=edit&amp;amp;section=1&quot; title=&quot;Редактировать раздел «Начало предпринимательской деятельности»&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;править вики-текст&lt;/a&gt;&lt;span class=&quot;mw-editsection-bracket&quot; style=&quot;margin-left: 0.25em; color: rgb(85, 85, 85);&quot;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;Родился в семье Габриэля Латекоэра, основавшего в 1872 году деревообрабатывающее предприятие на юге Франции. Окончил&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6&quot; title=&quot;Париж&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;парижскую&lt;/a&gt;&amp;nbsp;Центральную школу искусств и промышленности&lt;span id=&quot;cite_ref-asso_3-0&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-asso-3&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[3]&lt;/a&gt;&lt;/span&gt;.&lt;/p&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;После смерти отца в 1905 году, Пьер-Жорж Латекоэр берёт в свои руки управление семейным предприятием и вскоре расширяет его, начав производство рельсового транспорта. Сперва производит трамваи для окрестных городов, а затем ему удаётся получить заказ на&amp;nbsp;&lt;span style=&quot;white-space: nowrap;&quot;&gt;10&amp;nbsp;000&lt;/span&gt;&amp;nbsp;товарных вагонов для&amp;nbsp;&lt;i&gt;Южной железнодорожной компании&lt;/i&gt;&amp;nbsp;(&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA&quot; title=&quot;Французский язык&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;фр.&lt;/a&gt;&amp;nbsp;&lt;i&gt;&lt;span lang=&quot;fr&quot; xml:lang=&quot;fr&quot;&gt;Compagnie des chemins de fer du midi&lt;/span&gt;&lt;/i&gt;). Для того, чтобы выполнить заказ, ему приходится построить второй завод в&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D0%BB%D1%83%D0%B7%D0%B0&quot; title=&quot;Тулуза&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Тулузе&lt;/a&gt;&lt;span id=&quot;cite_ref-asso_3-1&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-asso-3&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[3]&lt;/a&gt;&lt;/span&gt;.&lt;/p&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;С началом&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B2%D0%B0%D1%8F_%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B2%D0%BE%D0%B9%D0%BD%D0%B0&quot; title=&quot;Первая мировая война&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Первой мировой войны&lt;/a&gt;, несмотря на освобождение от воинской службы по зрению, идёт добровольцем в артиллерию, но через 4 месяца оказывается демобилизован. На заводе в Тулузе налаживает производство снарядов, а в Баньер-де-Бигор —&amp;nbsp;полевых кухонь. В 1917 году получает заказ на производство 1000 самолётов&amp;nbsp;&lt;i&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/Salmson&quot; title=&quot;Salmson&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Salmson&lt;/a&gt;&lt;/i&gt;, и до подписания&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B2%D0%BE%D0%B5_%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B8%D1%80%D0%B8%D0%B5&quot; title=&quot;Первое компьенское перемирие&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;перемирия&lt;/a&gt;&amp;nbsp;успевает поставить 800 из них&lt;span id=&quot;cite_ref-asso_3-2&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-asso-3&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[3]&lt;/a&gt;&lt;/span&gt;&lt;span id=&quot;cite_ref-larousse_4-0&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-larousse-4&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[4]&lt;/a&gt;&lt;/span&gt;.&lt;/p&gt;', '', 'Товар от Fly-girl для женщин', '', ''),
-(58, 1, 'Fly-girl для женщин', '&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;br&gt;&lt;/p&gt;', '', 'Товар от Fly-girl для женщин', '', '');
-INSERT INTO `ma_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(58, 2, 'Товар от Fly-girl для женщин', '&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;b&gt;Пьер-Жорж Латекоэ́р&lt;/b&gt;&amp;nbsp;(&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA&quot; title=&quot;Французский язык&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;фр.&lt;/a&gt;&amp;nbsp;&lt;i&gt;&lt;span lang=&quot;fr&quot; xml:lang=&quot;fr&quot;&gt;Pierre-Georges Latécoère&lt;/span&gt;&lt;/i&gt;;&amp;nbsp;&lt;span style=&quot;white-space: nowrap;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/25_%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%D0%B0&quot; title=&quot;25 августа&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;25&amp;nbsp;августа&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/1883_%D0%B3%D0%BE%D0%B4&quot; title=&quot;1883 год&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;1883&lt;/a&gt;&lt;/span&gt;,&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%BD%D1%8C%D0%B5%D1%80-%D0%B4%D0%B5-%D0%91%D0%B8%D0%B3%D0%BE%D1%80&quot; title=&quot;Баньер-де-Бигор&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Баньер-де-Бигор&lt;/a&gt;, департамент&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D1%80%D1%85%D0%BD%D0%B8%D0%B5_%D0%9F%D0%B8%D1%80%D0%B5%D0%BD%D0%B5%D0%B8&quot; title=&quot;Верхние Пиренеи&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Верхние Пиренеи&lt;/a&gt;&amp;nbsp;—&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/10_%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%D0%B0&quot; title=&quot;10 августа&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;10 августа&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/1943_%D0%B3%D0%BE%D0%B4&quot; title=&quot;1943 год&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;1943&lt;/a&gt;,&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6&quot; title=&quot;Париж&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Париж&lt;/a&gt;) —&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D1%8F&quot; title=&quot;Франция&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;французский&lt;/a&gt;&amp;nbsp;предприниматель и авиатор.&lt;/p&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;/p&gt;&lt;div id=&quot;toc&quot; class=&quot;toc&quot; style=&quot;border: 1px solid rgb(170, 170, 170); padding: 7px; font-size: 13px; display: table; zoom: 1; color: rgb(37, 37, 37); font-family: sans-serif; background-color: rgb(249, 249, 249);&quot;&gt;&lt;div id=&quot;toctitle&quot; style=&quot;direction: ltr; text-align: center;&quot;&gt;&lt;h2 style=&quot;font-family: sans-serif; font-weight: bold; line-height: 1.3; color: black; margin: 1em 0px 0.25em; font-size: 13px; overflow: hidden; padding: 0px; border: none; display: inline; background: none;&quot;&gt;Содержание&lt;/h2&gt;&amp;nbsp;&lt;span class=&quot;toctoggle&quot; style=&quot;-webkit-user-select: none;&quot;&gt;&amp;nbsp;[&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#&quot; id=&quot;togglelink&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;убрать&lt;/a&gt;]&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;ul style=&quot;margin: 0.3em 0px; list-style-type: none; padding: 0px; list-style-image: none;&quot;&gt;&lt;li class=&quot;toclevel-1 tocsection-1&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D0.BF.D1.80.D0.B5.D0.B4.D0.BF.D1.80.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.BE.D0.B9_.D0.B4.D0.B5.D1.8F.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Начало предпринимательской деятельности&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-2&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D0.B5.D0.BB.D1.8C_.D0.BF.D0.BE.D1.87.D1.82.D0.BE.D0.B2.D1.8B.D1.85_.D0.B0.D0.B2.D0.B8.D0.B0.D0.BB.D0.B8.D0.BD.D0.B8.D0.B9&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Создатель почтовых авиалиний&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-3&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.9F.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C_.D0.B3.D0.B8.D0.B4.D1.80.D0.BE.D0.BF.D0.BB.D0.B0.D0.BD.D0.BE.D0.B2&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Производитель гидропланов&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-4&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.93.D0.BE.D1.81.D1.83.D0.B4.D0.B0.D1.80.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BD.D0.B0.D0.B3.D1.80.D0.B0.D0.B4.D1.8B&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Государственные награды&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;toclevel-1 tocsection-5&quot; style=&quot;margin-bottom: 0.1em;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;tocnumber&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;toctext&quot; style=&quot;display: table-cell; text-decoration: inherit;&quot;&gt;Примечания&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;&lt;/p&gt;&lt;h2 style=&quot;font-family: ''Linux Libertine'', Georgia, Times, serif; line-height: 1.3; color: black; margin: 1em 0px 0.25em; font-size: 1.5em; overflow: hidden; padding: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(170, 170, 170); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span class=&quot;mw-headline&quot; id=&quot;.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D0.BF.D1.80.D0.B5.D0.B4.D0.BF.D1.80.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.BE.D0.B9_.D0.B4.D0.B5.D1.8F.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8&quot;&gt;Начало предпринимательской деятельности&lt;/span&gt;&lt;span class=&quot;mw-editsection&quot; style=&quot;-webkit-user-select: none; font-size: small; margin-left: 1em; vertical-align: baseline; line-height: 1em; display: inline-block; white-space: nowrap; unicode-bidi: -webkit-isolate; font-family: sans-serif;&quot;&gt;&lt;span class=&quot;mw-editsection-bracket&quot; style=&quot;margin-right: 0.25em; color: rgb(85, 85, 85);&quot;&gt;[&lt;/span&gt;&lt;a href=&quot;https://ru.wikipedia.org/w/index.php?title=%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6&amp;amp;veaction=edit&amp;amp;vesection=1&quot; title=&quot;Редактировать раздел «Начало предпринимательской деятельности»&quot; class=&quot;mw-editsection-visualeditor&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;править&lt;/a&gt;&lt;span class=&quot;mw-editsection-divider&quot; style=&quot;color: rgb(85, 85, 85);&quot;&gt;&amp;nbsp;|&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://ru.wikipedia.org/w/index.php?title=%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6&amp;amp;action=edit&amp;amp;section=1&quot; title=&quot;Редактировать раздел «Начало предпринимательской деятельности»&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;править вики-текст&lt;/a&gt;&lt;span class=&quot;mw-editsection-bracket&quot; style=&quot;margin-left: 0.25em; color: rgb(85, 85, 85);&quot;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;Родился в семье Габриэля Латекоэра, основавшего в 1872 году деревообрабатывающее предприятие на юге Франции. Окончил&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6&quot; title=&quot;Париж&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;парижскую&lt;/a&gt;&amp;nbsp;Центральную школу искусств и промышленности&lt;span id=&quot;cite_ref-asso_3-0&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-asso-3&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[3]&lt;/a&gt;&lt;/span&gt;.&lt;/p&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;После смерти отца в 1905 году, Пьер-Жорж Латекоэр берёт в свои руки управление семейным предприятием и вскоре расширяет его, начав производство рельсового транспорта. Сперва производит трамваи для окрестных городов, а затем ему удаётся получить заказ на&amp;nbsp;&lt;span style=&quot;white-space: nowrap;&quot;&gt;10&amp;nbsp;000&lt;/span&gt;&amp;nbsp;товарных вагонов для&amp;nbsp;&lt;i&gt;Южной железнодорожной компании&lt;/i&gt;&amp;nbsp;(&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA&quot; title=&quot;Французский язык&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;фр.&lt;/a&gt;&amp;nbsp;&lt;i&gt;&lt;span lang=&quot;fr&quot; xml:lang=&quot;fr&quot;&gt;Compagnie des chemins de fer du midi&lt;/span&gt;&lt;/i&gt;). Для того, чтобы выполнить заказ, ему приходится построить второй завод в&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D0%BB%D1%83%D0%B7%D0%B0&quot; title=&quot;Тулуза&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Тулузе&lt;/a&gt;&lt;span id=&quot;cite_ref-asso_3-1&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-asso-3&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[3]&lt;/a&gt;&lt;/span&gt;.&lt;/p&gt;&lt;p style=&quot;margin-top: 0.5em; margin-bottom: 0.5em; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;&quot;&gt;С началом&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B2%D0%B0%D1%8F_%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B2%D0%BE%D0%B9%D0%BD%D0%B0&quot; title=&quot;Первая мировая война&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Первой мировой войны&lt;/a&gt;, несмотря на освобождение от воинской службы по зрению, идёт добровольцем в артиллерию, но через 4 месяца оказывается демобилизован. На заводе в Тулузе налаживает производство снарядов, а в Баньер-де-Бигор —&amp;nbsp;полевых кухонь. В 1917 году получает заказ на производство 1000 самолётов&amp;nbsp;&lt;i&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/Salmson&quot; title=&quot;Salmson&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Salmson&lt;/a&gt;&lt;/i&gt;, и до подписания&amp;nbsp;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B2%D0%BE%D0%B5_%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B8%D1%80%D0%B8%D0%B5&quot; title=&quot;Первое компьенское перемирие&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;перемирия&lt;/a&gt;&amp;nbsp;успевает поставить 800 из них&lt;span id=&quot;cite_ref-asso_3-2&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-asso-3&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[3]&lt;/a&gt;&lt;/span&gt;&lt;span id=&quot;cite_ref-larousse_4-0&quot; class=&quot;reference&quot; style=&quot;font-size: 11px; line-height: 1em; position: relative; vertical-align: baseline; top: -0.5em; unicode-bidi: -webkit-isolate;&quot;&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D0%BE%D1%8D%D1%80,_%D0%9F%D1%8C%D0%B5%D1%80-%D0%96%D0%BE%D1%80%D0%B6#cite_note-larousse-4&quot; style=&quot;color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;[4]&lt;/a&gt;&lt;/span&gt;.&lt;/p&gt;', '', 'Товар от Fly-girl для женщин', '', ''),
-(59, 2, 'Хит №1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Хит №1', '', ''),
-(59, 1, 'Хит №1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Хит №1', '', ''),
-(60, 1, 'Хит №1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Хит №1', '', ''),
-(60, 2, 'Хит №1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Хит №1', '', ''),
-(61, 1, 'Хит №1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Хит №1', '', ''),
-(61, 2, 'Хит №1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Хит №1', '', ''),
-(62, 2, 'Хит №1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Хит №1', '', ''),
-(62, 1, 'Хит №1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Хит №1', '', '');
+(66, 2, 'Хит №1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Buy Хит №1 in online - shop Angel - moda', 'Buy Хит №1 in online - shop Angel - moda. Phone: +79295885399. Call us!', ''),
+(63, 1, 'Хит №5', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Купить Хит №5 в интернет - магазине Angel - moda', 'Купить Хит №5 в интернет - магазине Angel - moda. Телефон: +79295885399. Звоните!', ''),
+(63, 2, 'Хит №1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Buy Хит №1 in online - shop Angel - moda', 'Buy Хит №1 in online - shop Angel - moda. Phone: +79295885399. Call us!', ''),
+(67, 1, 'Хит №2', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Купить Хит №2 в интернет - магазине Angel - moda', 'Купить Хит №2 в интернет - магазине Angel - moda. Телефон: +79295885399. Звоните!', ''),
+(67, 2, 'Хит №1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Buy Хит №1 in online - shop Angel - moda', 'Buy Хит №1 in online - shop Angel - moda. Phone: +79295885399. Call us!', ''),
+(66, 1, 'Хит №3', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Купить Хит №3 в интернет - магазине Angel - moda', 'Купить Хит №3 в интернет - магазине Angel - moda. Телефон: +79295885399. Звоните!', ''),
+(64, 1, 'Хит №6', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Купить Хит №6 в интернет - магазине Angel - moda', 'Купить Хит №6 в интернет - магазине Angel - moda. Телефон: +79295885399. Звоните!', ''),
+(64, 2, 'Хит №1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Buy Хит №1 in online - shop Angel - moda', 'Buy Хит №1 in online - shop Angel - moda. Phone: +79295885399. Call us!', ''),
+(65, 1, 'Хит №4', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Купить Хит №4 в интернет - магазине Angel - moda', 'Купить Хит №4 в интернет - магазине Angel - moda. Телефон: +79295885399. Звоните!', ''),
+(65, 2, 'Хит №1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Buy Хит №1 in online - shop Angel - moda', 'Buy Хит №1 in online - shop Angel - moda. Phone: +79295885399. Call us!', ''),
+(52, 1, 'Хит №1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Купить Хит №1 в интернет - магазине Angel - moda', 'Купить Хит №1 в интернет - магазине Angel - moda. Телефон: +79295885399. Звоните!', ''),
+(52, 2, 'hit №1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '', 'Buy hit №1 in online - shop Angel - moda', 'Buy hit №1 in online - shop Angel - moda. Phone: +79295885399. Call us!', '');
 
 -- --------------------------------------------------------
 
@@ -3018,14 +3642,19 @@ CREATE TABLE IF NOT EXISTS `ma_product_discount` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_discount_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=442 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=472 ;
 
 --
 -- Дамп данных таблицы `ma_product_discount`
 --
 
 INSERT INTO `ma_product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(441, 62, 1, 1434, 0, 2500.0000, '0000-00-00', '0000-00-00');
+(470, 52, 1, 1434, 0, 1500.0000, '0000-00-00', '0000-00-00'),
+(458, 63, 1, 1434, 0, 1500.0000, '0000-00-00', '0000-00-00'),
+(459, 64, 1, 1434, 0, 1500.0000, '0000-00-00', '0000-00-00'),
+(471, 65, 1, 1434, 0, 1500.0000, '0000-00-00', '0000-00-00'),
+(456, 66, 1, 1434, 0, 1500.0000, '0000-00-00', '0000-00-00'),
+(455, 67, 1, 1434, 0, 1500.0000, '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -3038,18 +3667,6 @@ CREATE TABLE IF NOT EXISTS `ma_product_filter` (
   `filter_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`filter_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `ma_product_filter`
---
-
-INSERT INTO `ma_product_filter` (`product_id`, `filter_id`) VALUES
-(51, 5),
-(53, 23),
-(55, 5),
-(56, 5),
-(57, 5),
-(58, 5);
 
 -- --------------------------------------------------------
 
@@ -3064,29 +3681,21 @@ CREATE TABLE IF NOT EXISTS `ma_product_image` (
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_image_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2380 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2423 ;
 
 --
 -- Дамп данных таблицы `ma_product_image`
 --
 
 INSERT INTO `ma_product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
-(2365, 52, 'catalog/w_3734b7ce.jpg', 0),
-(2358, 53, 'catalog/DSC06436.jpg', 0),
-(2364, 51, 'catalog/521-900x350w.jpg', 0),
-(2363, 51, 'catalog/118728-800w-900x350w.jpg', 0),
-(2366, 55, 'catalog/521-900x350w.jpg', 0),
-(2367, 55, 'catalog/118728-800w-900x350w.jpg', 0),
-(2368, 56, 'catalog/521-900x350w.jpg', 0),
-(2369, 56, 'catalog/118728-800w-900x350w.jpg', 0),
-(2370, 57, 'catalog/521-900x350w.jpg', 0),
-(2371, 57, 'catalog/118728-800w-900x350w.jpg', 0),
-(2372, 58, 'catalog/521-900x350w.jpg', 0),
-(2373, 58, 'catalog/118728-800w-900x350w.jpg', 0),
-(2379, 59, 'catalog/w_3734b7ce.jpg', 0),
-(2375, 60, 'catalog/w_3734b7ce.jpg', 0),
-(2376, 61, 'catalog/w_3734b7ce.jpg', 0),
-(2378, 62, 'catalog/w_3734b7ce.jpg', 0);
+(2419, 52, 'catalog/w_3734b7ce.jpg', 0),
+(2405, 63, 'catalog/w_3734b7ce.jpg', 0),
+(2406, 64, 'catalog/w_3734b7ce.jpg', 0),
+(2403, 66, 'catalog/w_3734b7ce.jpg', 0),
+(2402, 67, 'catalog/w_3734b7ce.jpg', 0),
+(2420, 65, 'catalog/w_3734b7ce.jpg', 0),
+(2421, 65, 'catalog/DSC06436.jpg', 0),
+(2422, 65, 'catalog/DSC06423.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -3101,7 +3710,25 @@ CREATE TABLE IF NOT EXISTS `ma_product_option` (
   `value` text NOT NULL,
   `required` tinyint(1) NOT NULL,
   PRIMARY KEY (`product_option_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=227 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=243 ;
+
+--
+-- Дамп данных таблицы `ma_product_option`
+--
+
+INSERT INTO `ma_product_option` (`product_option_id`, `product_id`, `option_id`, `value`, `required`) VALUES
+(234, 64, 13, '', 1),
+(233, 63, 14, '', 1),
+(232, 63, 13, '', 1),
+(230, 52, 13, '', 1),
+(231, 52, 14, '', 1),
+(235, 64, 14, '', 1),
+(236, 65, 13, '', 1),
+(242, 65, 14, '', 1),
+(238, 66, 13, '', 1),
+(239, 66, 14, '', 1),
+(240, 67, 13, '', 1),
+(241, 67, 14, '', 1);
 
 -- --------------------------------------------------------
 
@@ -3124,7 +3751,74 @@ CREATE TABLE IF NOT EXISTS `ma_product_option_value` (
   `weight` decimal(15,8) NOT NULL,
   `weight_prefix` varchar(1) NOT NULL,
   PRIMARY KEY (`product_option_value_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=91 ;
+
+--
+-- Дамп данных таблицы `ma_product_option_value`
+--
+
+INSERT INTO `ma_product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
+(37, 235, 64, 14, 101, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(33, 233, 63, 14, 86, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(32, 233, 63, 14, 101, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(31, 233, 63, 14, 89, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(30, 232, 63, 13, 78, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(29, 232, 63, 13, 66, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(26, 231, 52, 14, 89, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(27, 231, 52, 14, 101, 342, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(28, 231, 52, 14, 86, 234, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(34, 234, 64, 13, 66, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(36, 235, 64, 14, 89, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(38, 235, 64, 14, 86, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(56, 236, 65, 13, 75, 4354, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(54, 236, 65, 13, 66, 4353, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(44, 238, 66, 13, 66, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(45, 238, 66, 13, 78, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(46, 239, 66, 14, 89, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(47, 239, 66, 14, 101, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(48, 239, 66, 14, 86, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(49, 240, 67, 13, 66, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(50, 240, 67, 13, 78, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(51, 241, 67, 14, 89, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(52, 241, 67, 14, 101, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(53, 241, 67, 14, 86, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(35, 234, 64, 13, 78, 0, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(57, 236, 65, 13, 69, 435, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(55, 236, 65, 13, 57, 43534, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(58, 236, 65, 13, 53, 342, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(59, 236, 65, 13, 52, 342, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(60, 236, 65, 13, 61, 342, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(61, 236, 65, 13, 80, 324, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(62, 236, 65, 13, 77, 342, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(63, 236, 65, 13, 82, 234, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(64, 236, 65, 13, 72, 342, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(65, 236, 65, 13, 50, 342, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(66, 236, 65, 13, 60, 234, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(67, 236, 65, 13, 62, 324, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(69, 236, 65, 13, 78, 554, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(70, 236, 65, 13, 54, 234, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(71, 236, 65, 13, 65, 342, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(72, 236, 65, 13, 74, 432, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(73, 236, 65, 13, 81, 324, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(74, 236, 65, 13, 64, 45, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(75, 236, 65, 13, 59, 325, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(76, 236, 65, 13, 76, 45, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(77, 236, 65, 13, 58, 342, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(78, 236, 65, 13, 79, 234, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(79, 236, 65, 13, 71, 342, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(80, 236, 65, 13, 49, 534, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(81, 236, 65, 13, 67, 432, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(82, 236, 65, 13, 73, 5, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(83, 236, 65, 13, 63, 32, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(84, 236, 65, 13, 51, 4, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(85, 236, 65, 13, 70, 5, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(88, 236, 65, 13, 56, 423, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(87, 236, 65, 13, 68, 234, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(86, 236, 65, 13, 55, 4, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(89, 242, 65, 14, 93, 32, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(90, 242, 65, 14, 89, 12, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(25, 230, 52, 13, 78, 23, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+(24, 230, 52, 13, 66, 342, 1, 0.0000, '+', 0, '+', 0.00000000, '+');
 
 -- --------------------------------------------------------
 
@@ -3181,7 +3875,14 @@ CREATE TABLE IF NOT EXISTS `ma_product_special` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_special_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=440 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=450 ;
+
+--
+-- Дамп данных таблицы `ma_product_special`
+--
+
+INSERT INTO `ma_product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
+(449, 65, 1, 0, 1245.0000, '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -3201,37 +3902,24 @@ CREATE TABLE IF NOT EXISTS `ma_product_to_category` (
 --
 
 INSERT INTO `ma_product_to_category` (`product_id`, `category_id`) VALUES
-(51, 60),
-(51, 68),
-(51, 78),
 (52, 68),
 (52, 77),
 (52, 78),
-(53, 68),
-(55, 60),
-(55, 68),
-(55, 78),
-(56, 60),
-(56, 68),
-(56, 78),
-(57, 60),
-(57, 68),
-(57, 78),
-(58, 60),
-(58, 68),
-(58, 78),
-(59, 68),
-(59, 77),
-(59, 78),
-(60, 68),
-(60, 77),
-(60, 78),
-(61, 68),
-(61, 77),
-(61, 78),
-(62, 68),
-(62, 77),
-(62, 78);
+(63, 68),
+(63, 77),
+(63, 78),
+(64, 68),
+(64, 77),
+(64, 78),
+(65, 68),
+(65, 77),
+(65, 78),
+(66, 68),
+(66, 77),
+(66, 78),
+(67, 68),
+(67, 77),
+(67, 78);
 
 -- --------------------------------------------------------
 
@@ -3263,17 +3951,12 @@ CREATE TABLE IF NOT EXISTS `ma_product_to_layout` (
 --
 
 INSERT INTO `ma_product_to_layout` (`product_id`, `store_id`, `layout_id`) VALUES
-(51, 0, 0),
 (52, 0, 0),
-(53, 0, 0),
-(55, 0, 0),
-(56, 0, 0),
-(57, 0, 0),
-(58, 0, 0),
-(59, 0, 0),
-(60, 0, 0),
-(61, 0, 0),
-(62, 0, 0);
+(67, 0, 0),
+(65, 0, 0),
+(64, 0, 0),
+(63, 0, 0),
+(66, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -3292,17 +3975,12 @@ CREATE TABLE IF NOT EXISTS `ma_product_to_store` (
 --
 
 INSERT INTO `ma_product_to_store` (`product_id`, `store_id`) VALUES
-(51, 0),
 (52, 0),
-(53, 0),
-(55, 0),
-(56, 0),
-(57, 0),
-(58, 0),
-(59, 0),
-(60, 0),
-(61, 0),
-(62, 0);
+(63, 0),
+(64, 0),
+(65, 0),
+(66, 0),
+(67, 0);
 
 -- --------------------------------------------------------
 
@@ -3479,7 +4157,14 @@ CREATE TABLE IF NOT EXISTS `ma_review` (
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`review_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `ma_review`
+--
+
+INSERT INTO `ma_review` (`review_id`, `product_id`, `customer_id`, `author`, `text`, `rating`, `status`, `date_added`, `date_modified`) VALUES
+(1, 65, 7, 'Дима', 'Все гуд мфпыпоавыфафвы вфыбаорвыфрфваы чм мфрыварврфвы ывфравылрфваыолавыф', 5, 1, '2016-02-21 16:56:24', '2016-02-21 16:56:50');
 
 -- --------------------------------------------------------
 
@@ -3495,7 +4180,7 @@ CREATE TABLE IF NOT EXISTS `ma_setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4298 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4542 ;
 
 --
 -- Дамп данных таблицы `ma_setting`
@@ -3532,136 +4217,136 @@ INSERT INTO `ma_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (1851, 0, 'filter', 'filter_status', '1', 0),
 (3438, 0, 'easy_blog', 'easy_blog_global_article_limit', '9', 0),
 (3439, 0, 'easy_blog', 'easy_blog_home_page_meta_title', 'Блог', 0),
+(4540, 0, 'config', 'config_error_log', '1', 0),
+(4539, 0, 'config', 'config_error_display', '1', 0),
 (94, 0, 'voucher', 'voucher_sort_order', '8', 0),
 (95, 0, 'voucher', 'voucher_status', '1', 0),
 (103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
 (104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
-(4297, 0, 'config', 'config_error_filename', 'error.log', 0),
-(4287, 0, 'config', 'config_compression', '0', 0),
-(4288, 0, 'config', 'config_secure', '0', 0),
-(4289, 0, 'config', 'config_password', '1', 0),
-(4290, 0, 'config', 'config_shared', '0', 0),
-(4291, 0, 'config', 'config_encryption', 'DvtJ5NYQhXhYLPPIYAs3DReC3CQmcPBPgWzlZUjdepDNd5s1NkG6PgKmVz8LZXKtqro5ItnaSB9M45x6QLhwdeFUq7X9Hi7hjSsBcRcWersAsCFRkEb843iFeOcFYjOkc8c8svVzQJYrBOLNk06zEDYNG1zlQOus8RiZUmCHeJqVVk0IFdUeWh16ChUURJiTlNWkZOA1NrOLnn0q8L3zRnWec8QP5A39VLY40bdyRhvTOTyxl7twNNbrWzhfQOvIHb1cYxJJ43RebHMiG5nuWH0Ha4u7UazhRqBL8g0wHL9NZvm1ZUAgPX3SlWbML7zVRpXqrNtA0Pp5QiT1MexueL61nwXksiLjXkpKS2i4gBdWSLuGIHIjQIMv0hGZi7pUnXtrUH8B0CXkVirMbByN3wyxg0IPxl5BXc2vRvkJM3qpmx8ioZzyCwMH043jPxuskFOtGNOXk9Uk5rqTaFLkPFqQ0FyKCfvKpH3p3XpYx8FpWbqAeR0GhqKBM8QSVB73AFB9GfgYIaY3mP69uhWo7a6PS4GxcuI3LVEyY57rCnAsAlhg5GSnS92nFtGhBftFlAjuMNoFaojHxMO3QmFOc9EPZQGY2Jiwq5HdsBnWLZjNiIjx0w20uHI7nWog1l5EI1eXqO09gOL4qkluLcz97pVYrIZq79osObx4MmmKkz01hcjbulsdnrHh1RHlPFH07hBubyyT2y9mcr13y5m7sVne1VVkLKva10a5GvuTkGOESFyVIs0plUgqyN8OiwvfW5rjEDXwYCe3RNisZxcdp7fjHd7fxysaYTwkqMiu3HgACGOOiQ98cjXArMdXKVZBC0uQxi3taNb9XZr2J35EIjGmG3dBlLUwChInUPnxDeRfhIPaaqJc0eIZqYpr8ucObZHrlJ3hVwXgJpJgdFU0yZljlZ6Sngjg2MbM29xuK6BzAWoXx3Lue1dzhskgmWn2W1P2ymR7PW4LOiVY6bgVUUqedwGj0COygWbyXFzFKDv5FJw2N4MGm0RzK9iQLTmV', 0),
-(4292, 0, 'config', 'config_file_max_size', '300000', 0),
-(4293, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nsvg', 0),
-(4294, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf\r\nimage/svg+xml\r\nimage/svg\r\n&quot;image/svg+xml&quot;', 0),
-(4295, 0, 'config', 'config_error_display', '1', 0),
-(4296, 0, 'config', 'config_error_log', '1', 0),
-(4199, 0, 'config', 'config_country_id', '176', 0),
-(4200, 0, 'config', 'config_zone_id', '', 0),
-(4201, 0, 'config', 'config_language', 'ru', 0),
-(4202, 0, 'config', 'config_admin_language', 'ru', 0),
-(4203, 0, 'config', 'config_currency', 'RUB', 0),
-(4204, 0, 'config', 'config_currency_auto', '1', 0),
-(4205, 0, 'config', 'config_length_class_id', '1', 0),
-(4206, 0, 'config', 'config_weight_class_id', '1', 0),
-(4207, 0, 'config', 'config_product_count', '1', 0),
-(4208, 0, 'config', 'config_product_limit', '15', 0),
-(4209, 0, 'config', 'config_product_description_length', '100', 0),
-(4210, 0, 'config', 'config_limit_admin', '20', 0),
-(4211, 0, 'config', 'config_review_status', '1', 0),
-(4212, 0, 'config', 'config_review_guest', '1', 0),
-(4213, 0, 'config', 'config_review_mail', '0', 0),
-(4214, 0, 'config', 'config_voucher_min', '1', 0),
-(4215, 0, 'config', 'config_voucher_max', '1000', 0),
-(4216, 0, 'config', 'config_tax', '0', 0),
-(4217, 0, 'config', 'config_tax_default', 'shipping', 0),
-(4218, 0, 'config', 'config_tax_customer', 'shipping', 0),
-(4219, 0, 'config', 'config_customer_online', '0', 0),
-(4220, 0, 'config', 'config_customer_group_id', '1', 0),
-(4221, 0, 'config', 'config_customer_group_display', '["1"]', 1),
-(4222, 0, 'config', 'config_customer_price', '0', 0),
-(4223, 0, 'config', 'config_login_attempts', '5', 0),
-(4224, 0, 'config', 'config_account_id', '3', 0),
-(4225, 0, 'config', 'config_account_mail', '0', 0),
-(4226, 0, 'config', 'config_invoice_prefix', 'INV-2015-00', 0),
-(4227, 0, 'config', 'config_cart_weight', '1', 0),
-(4228, 0, 'config', 'config_checkout_guest', '1', 0),
-(4229, 0, 'config', 'config_checkout_id', '5', 0),
-(4230, 0, 'config', 'config_order_status_id', '1', 0),
-(4231, 0, 'config', 'config_processing_status', '["2","3","1","12","5"]', 1),
-(4232, 0, 'config', 'config_complete_status', '["3","5"]', 1),
-(4233, 0, 'config', 'config_fraud_status_id', '2', 0),
-(4234, 0, 'config', 'config_order_mail', '1', 0),
-(4235, 0, 'config', 'config_api_id', '1', 0),
-(4236, 0, 'config', 'config_stock_display', '0', 0),
-(4237, 0, 'config', 'config_stock_warning', '0', 0),
-(4238, 0, 'config', 'config_stock_checkout', '0', 0),
-(4239, 0, 'config', 'config_affiliate_approval', '0', 0),
-(4240, 0, 'config', 'config_affiliate_auto', '0', 0),
-(4241, 0, 'config', 'config_affiliate_commission', '5', 0),
-(4242, 0, 'config', 'config_affiliate_id', '4', 0),
-(4243, 0, 'config', 'config_affiliate_mail', '0', 0),
-(4244, 0, 'config', 'config_return_id', '0', 0),
-(4245, 0, 'config', 'config_return_status_id', '2', 0),
-(4246, 0, 'config', 'config_captcha', '', 0),
-(4247, 0, 'config', 'config_captcha_page', '["review","return","contact"]', 1),
-(4248, 0, 'config', 'config_logo', 'catalog/_eps.png', 0),
-(4249, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
-(4250, 0, 'config', 'config_image_category_width', '80', 0),
-(4251, 0, 'config', 'config_image_category_height', '80', 0),
-(4252, 0, 'config', 'config_image_thumb_width', '219', 0),
-(4253, 0, 'config', 'config_image_thumb_height', '286', 0),
-(4254, 0, 'config', 'config_image_popup_width', '500', 0),
-(4255, 0, 'config', 'config_image_popup_height', '500', 0),
-(4256, 0, 'config', 'config_image_product_width', '219', 0),
-(4257, 0, 'config', 'config_image_product_height', '286', 0),
-(4258, 0, 'config', 'config_image_additional_width', '74', 0),
-(4259, 0, 'config', 'config_image_additional_height', '74', 0),
-(4260, 0, 'config', 'config_image_related_width', '80', 0),
-(4261, 0, 'config', 'config_image_related_height', '80', 0),
-(4262, 0, 'config', 'config_image_compare_width', '90', 0),
-(4263, 0, 'config', 'config_image_compare_height', '90', 0),
-(4264, 0, 'config', 'config_image_wishlist_width', '47', 0),
-(4265, 0, 'config', 'config_image_wishlist_height', '47', 0),
-(4266, 0, 'config', 'config_image_cart_width', '74', 0),
-(4267, 0, 'config', 'config_image_cart_height', '88', 0),
-(4268, 0, 'config', 'config_image_location_width', '268', 0),
-(4269, 0, 'config', 'config_image_location_height', '50', 0),
-(4270, 0, 'config', 'config_ftp_hostname', 'weblama.me', 0),
-(4271, 0, 'config', 'config_ftp_port', '21', 0),
-(4272, 0, 'config', 'config_ftp_username', 'fb7903js_moda', 0),
-(4273, 0, 'config', 'config_ftp_password', 'as210100', 0),
-(4274, 0, 'config', 'config_ftp_root', 'public_html', 0),
-(4275, 0, 'config', 'config_ftp_status', '1', 0),
-(4276, 0, 'config', 'config_mail_protocol', 'mail', 0),
-(4277, 0, 'config', 'config_mail_parameter', '', 0),
-(4278, 0, 'config', 'config_mail_smtp_hostname', '', 0),
-(4279, 0, 'config', 'config_mail_smtp_username', '', 0),
-(4280, 0, 'config', 'config_mail_smtp_password', '', 0),
+(4537, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nsvg', 0),
+(4538, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf\r\nimage/svg+xml\r\nimage/svg\r\n&quot;image/svg+xml&quot;', 0),
+(4447, 0, 'config', 'config_currency', 'RUB', 0),
+(4448, 0, 'config', 'config_currency_auto', '1', 0),
+(4449, 0, 'config', 'config_length_class_id', '1', 0),
+(4450, 0, 'config', 'config_weight_class_id', '1', 0),
+(4451, 0, 'config', 'config_product_count', '1', 0),
+(4452, 0, 'config', 'config_product_limit', '15', 0),
+(4453, 0, 'config', 'config_product_description_length', '100', 0),
+(4535, 0, 'config', 'config_encryption', 'DvtJ5NYQhXhYLPPIYAs3DReC3CQmcPBPgWzlZUjdepDNd5s1NkG6PgKmVz8LZXKtqro5ItnaSB9M45x6QLhwdeFUq7X9Hi7hjSsBcRcWersAsCFRkEb843iFeOcFYjOkc8c8svVzQJYrBOLNk06zEDYNG1zlQOus8RiZUmCHeJqVVk0IFdUeWh16ChUURJiTlNWkZOA1NrOLnn0q8L3zRnWec8QP5A39VLY40bdyRhvTOTyxl7twNNbrWzhfQOvIHb1cYxJJ43RebHMiG5nuWH0Ha4u7UazhRqBL8g0wHL9NZvm1ZUAgPX3SlWbML7zVRpXqrNtA0Pp5QiT1MexueL61nwXksiLjXkpKS2i4gBdWSLuGIHIjQIMv0hGZi7pUnXtrUH8B0CXkVirMbByN3wyxg0IPxl5BXc2vRvkJM3qpmx8ioZzyCwMH043jPxuskFOtGNOXk9Uk5rqTaFLkPFqQ0FyKCfvKpH3p3XpYx8FpWbqAeR0GhqKBM8QSVB73AFB9GfgYIaY3mP69uhWo7a6PS4GxcuI3LVEyY57rCnAsAlhg5GSnS92nFtGhBftFlAjuMNoFaojHxMO3QmFOc9EPZQGY2Jiwq5HdsBnWLZjNiIjx0w20uHI7nWog1l5EI1eXqO09gOL4qkluLcz97pVYrIZq79osObx4MmmKkz01hcjbulsdnrHh1RHlPFH07hBubyyT2y9mcr13y5m7sVne1VVkLKva10a5GvuTkGOESFyVIs0plUgqyN8OiwvfW5rjEDXwYCe3RNisZxcdp7fjHd7fxysaYTwkqMiu3HgACGOOiQ98cjXArMdXKVZBC0uQxi3taNb9XZr2J35EIjGmG3dBlLUwChInUPnxDeRfhIPaaqJc0eIZqYpr8ucObZHrlJ3hVwXgJpJgdFU0yZljlZ6Sngjg2MbM29xuK6BzAWoXx3Lue1dzhskgmWn2W1P2ymR7PW4LOiVY6bgVUUqedwGj0COygWbyXFzFKDv5FJw2N4MGm0RzK9iQLTmV', 0),
+(4534, 0, 'config', 'config_shared', '0', 0),
+(4533, 0, 'config', 'config_password', '1', 0),
+(4532, 0, 'config', 'config_secure', '0', 0),
+(4531, 0, 'config', 'config_compression', '0', 0),
+(4454, 0, 'config', 'config_limit_admin', '20', 0),
+(4455, 0, 'config', 'config_review_status', '1', 0),
+(4456, 0, 'config', 'config_review_guest', '1', 0),
+(4457, 0, 'config', 'config_review_mail', '0', 0),
+(4458, 0, 'config', 'config_voucher_min', '1', 0),
+(4459, 0, 'config', 'config_voucher_max', '1000', 0),
+(4460, 0, 'config', 'config_tax', '0', 0),
+(4461, 0, 'config', 'config_tax_default', 'shipping', 0),
+(4462, 0, 'config', 'config_tax_customer', 'shipping', 0),
+(4463, 0, 'config', 'config_customer_online', '0', 0),
+(4464, 0, 'config', 'config_customer_group_id', '1', 0),
+(4465, 0, 'config', 'config_customer_group_display', '["1"]', 1),
+(4466, 0, 'config', 'config_customer_price', '0', 0),
+(4467, 0, 'config', 'config_login_attempts', '5', 0),
+(4468, 0, 'config', 'config_account_id', '3', 0),
+(4469, 0, 'config', 'config_account_mail', '0', 0),
+(4470, 0, 'config', 'config_invoice_prefix', 'INV-2015-00', 0),
+(4471, 0, 'config', 'config_cart_weight', '1', 0),
+(4472, 0, 'config', 'config_checkout_guest', '1', 0),
+(4473, 0, 'config', 'config_checkout_id', '5', 0),
+(4474, 0, 'config', 'config_order_status_id', '1', 0),
+(4475, 0, 'config', 'config_processing_status', '["2","3","1","12","5"]', 1),
+(4476, 0, 'config', 'config_complete_status', '["3","5"]', 1),
+(4477, 0, 'config', 'config_fraud_status_id', '2', 0),
+(4478, 0, 'config', 'config_order_mail', '1', 0),
+(4479, 0, 'config', 'config_api_id', '1', 0),
+(4480, 0, 'config', 'config_stock_display', '0', 0),
+(4481, 0, 'config', 'config_stock_warning', '1', 0),
+(4482, 0, 'config', 'config_stock_checkout', '0', 0),
+(4483, 0, 'config', 'config_affiliate_approval', '0', 0),
+(4484, 0, 'config', 'config_affiliate_auto', '0', 0),
+(4485, 0, 'config', 'config_affiliate_commission', '5', 0),
+(4486, 0, 'config', 'config_affiliate_id', '4', 0),
+(4487, 0, 'config', 'config_affiliate_mail', '0', 0),
+(4488, 0, 'config', 'config_return_id', '0', 0),
+(4489, 0, 'config', 'config_return_status_id', '2', 0),
+(4490, 0, 'config', 'config_captcha', '', 0),
+(4491, 0, 'config', 'config_captcha_page', '["review","return","contact"]', 1),
+(4492, 0, 'config', 'config_logo', 'catalog/_eps.png', 0),
+(4493, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
+(4494, 0, 'config', 'config_image_category_width', '80', 0),
+(4495, 0, 'config', 'config_image_category_height', '80', 0),
+(4496, 0, 'config', 'config_image_thumb_width', '219', 0),
+(4497, 0, 'config', 'config_image_thumb_height', '286', 0),
+(4498, 0, 'config', 'config_image_popup_width', '500', 0),
+(4499, 0, 'config', 'config_image_popup_height', '500', 0),
+(4500, 0, 'config', 'config_image_product_width', '219', 0),
+(4501, 0, 'config', 'config_image_product_height', '286', 0),
+(4502, 0, 'config', 'config_image_additional_width', '101', 0),
+(4503, 0, 'config', 'config_image_additional_height', '94', 0),
+(4504, 0, 'config', 'config_image_related_width', '80', 0),
 (3440, 0, 'easy_blog', 'easy_blog_home_page_name', 'Блог', 0),
 (3441, 0, 'easy_blog', 'easy_blog_home_page_meta_description', '', 0),
 (3442, 0, 'easy_blog', 'easy_blog_home_page_meta_keyword', '', 0),
 (3443, 0, 'easy_blog', 'easy_blog_global_status', '1', 0),
-(4281, 0, 'config', 'config_mail_smtp_port', '25', 0),
-(4282, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
-(4283, 0, 'config', 'config_mail_alert', '', 0),
-(4284, 0, 'config', 'config_maintenance', '0', 0),
-(4285, 0, 'config', 'config_seo_url', '1', 0),
-(4286, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai''hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-(4197, 0, 'config', 'config_personal_guide_email', 'contact@shmakovdima.ru', 0),
-(4198, 0, 'config', 'config_head_email', 'contact@shmakovdima.ru', 0),
-(4179, 0, 'config', 'config_template', 'default', 0),
-(4180, 0, 'config', 'config_layout_id', '4', 0),
-(4181, 0, 'config', 'config_name', 'Интернет магазин Opencart &quot;Русская сборка&quot;', 0),
-(4182, 0, 'config', 'config_owner', 'Ольга Алексеева', 0),
-(4183, 0, 'config', 'config_address', 'г. Москва, ул. Ленина 10 оф. 32', 0),
-(4184, 0, 'config', 'config_geocode', '', 0),
-(4185, 0, 'config', 'config_email', 'contact@shmakovdima.ru', 0),
-(4186, 0, 'config', 'config_telephone', '+7(929) 588-53-99', 0),
-(4187, 0, 'config', 'config_telephone_rostov', '+7(928) 125-81-25', 0),
-(4188, 0, 'config', 'config_fax', '495 888-88-88', 0),
-(4189, 0, 'config', 'config_image', '', 0),
-(4190, 0, 'config', 'config_open', '', 0),
-(4191, 0, 'config', 'config_comment', '', 0),
-(4192, 0, 'config', 'config_vk_link', 'http://vk.com/angelsitalia', 0),
-(4193, 0, 'config', 'config_facebook_link', 'https://www.facebook.com/angelsitalia', 0),
-(4194, 0, 'config', 'config_twitter_link', 'https://twitter.com/angelsitalia', 0),
-(4195, 0, 'config', 'config_instagram_link', 'https://www.instagram.com/angelsitalia/', 0),
-(4196, 0, 'config', 'config_callback_email', 'contact@shmakovdima.ru', 0),
-(4176, 0, 'config', 'config_meta_title', 'Брендовая одежда, обувь и аксессуары итальянских производителей | Магазин брендовой одежды из Италии — Angel-Moda', 0),
-(4177, 0, 'config', 'config_meta_description', 'Брендовая\r\nодежда, обувь и аксессуары итальянских производителей | Магазин брендовой\r\nодежды из Италии — Angel-Moda\r\nКупить\r\nитальянскую одежду, обувь и аксессуары в интернет магазине Angel-Moda по\r\nдоступной цене. Брендовая одежда итальянских производителей - смотреть\r\nкаталог. Сайты брендовой одежды из Италии. Принимаем заказы по тел.\r\n+7-929-588-53-99.', 0),
-(4178, 0, 'config', 'config_meta_keyword', 'итальянская,\r\nбрендовая одежда, интернет магазин, италия, сайты, каталог, цены, angel-moda', 0);
+(4536, 0, 'config', 'config_file_max_size', '300000', 0),
+(4530, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai''hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+(4519, 0, 'config', 'config_ftp_status', '1', 0),
+(4520, 0, 'config', 'config_mail_protocol', 'mail', 0),
+(4521, 0, 'config', 'config_mail_parameter', '', 0),
+(4522, 0, 'config', 'config_mail_smtp_hostname', '', 0),
+(4523, 0, 'config', 'config_mail_smtp_username', '', 0),
+(4524, 0, 'config', 'config_mail_smtp_password', '', 0),
+(4525, 0, 'config', 'config_mail_smtp_port', '25', 0),
+(4526, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
+(4527, 0, 'config', 'config_mail_alert', '', 0),
+(4528, 0, 'config', 'config_maintenance', '0', 0),
+(4529, 0, 'config', 'config_seo_url', '0', 0),
+(4505, 0, 'config', 'config_image_related_height', '80', 0),
+(4506, 0, 'config', 'config_image_compare_width', '90', 0),
+(4507, 0, 'config', 'config_image_compare_height', '90', 0),
+(4508, 0, 'config', 'config_image_wishlist_width', '47', 0),
+(4509, 0, 'config', 'config_image_wishlist_height', '47', 0),
+(4510, 0, 'config', 'config_image_cart_width', '74', 0),
+(4511, 0, 'config', 'config_image_cart_height', '88', 0),
+(4512, 0, 'config', 'config_image_location_width', '268', 0),
+(4513, 0, 'config', 'config_image_location_height', '50', 0),
+(4514, 0, 'config', 'config_ftp_hostname', 'weblama.me', 0),
+(4515, 0, 'config', 'config_ftp_port', '21', 0),
+(4516, 0, 'config', 'config_ftp_username', 'fb7903js_moda', 0),
+(4517, 0, 'config', 'config_ftp_password', 'as210100', 0),
+(4518, 0, 'config', 'config_ftp_root', 'public_html', 0),
+(4444, 0, 'config', 'config_zone_id', '', 0),
+(4445, 0, 'config', 'config_language', 'ru', 0),
+(4446, 0, 'config', 'config_admin_language', 'ru', 0),
+(4443, 0, 'config', 'config_country_id', '176', 0),
+(4442, 0, 'config', 'config_head_email', 'contact@shmakovdima.ru', 0),
+(4441, 0, 'config', 'config_personal_guide_email', 'contact@shmakovdima.ru', 0),
+(4439, 0, 'config', 'config_instagram_link', 'https://www.instagram.com/angelsitalia/', 0),
+(4440, 0, 'config', 'config_callback_email', 'contact@shmakovdima.ru', 0),
+(4438, 0, 'config', 'config_twitter_link', 'https://twitter.com/angelsitalia', 0),
+(4437, 0, 'config', 'config_facebook_link', 'https://www.facebook.com/angelsitalia', 0),
+(4436, 0, 'config', 'config_vk_link', 'http://vk.com/angelsitalia', 0),
+(4435, 0, 'config', 'config_comment', '', 0),
+(4433, 0, 'config', 'config_image', '', 0),
+(4434, 0, 'config', 'config_open', '', 0),
+(4432, 0, 'config', 'config_fax', '495 888-88-88', 0),
+(4431, 0, 'config', 'config_telephone_rostov', '+7(928) 125-81-25', 0),
+(4430, 0, 'config', 'config_telephone', '+7(929) 588-53-99', 0),
+(4427, 0, 'config', 'config_address', 'г. Москва, ул. Ленина 10 оф. 32', 0),
+(4428, 0, 'config', 'config_geocode', '', 0),
+(4429, 0, 'config', 'config_email', 'contact@shmakovdima.ru', 0),
+(4426, 0, 'config', 'config_owner', 'Ольга Алексеева', 0),
+(4424, 0, 'config', 'config_layout_id', '4', 0),
+(4425, 0, 'config', 'config_name', 'Интернет магазин Opencart &quot;Русская сборка&quot;', 0),
+(4423, 0, 'config', 'config_template', 'default', 0),
+(4421, 0, 'config', 'config_meta_description', 'Брендовая\r\nодежда, обувь и аксессуары итальянских производителей | Магазин брендовой\r\nодежды из Италии — Angel-Moda\r\nКупить\r\nитальянскую одежду, обувь и аксессуары в интернет магазине Angel-Moda по\r\nдоступной цене. Брендовая одежда итальянских производителей - смотреть\r\nкаталог. Сайты брендовой одежды из Италии. Принимаем заказы по тел.\r\n+7-929-588-53-99.', 0),
+(4422, 0, 'config', 'config_meta_keyword', 'итальянская,\r\nбрендовая одежда, интернет магазин, италия, сайты, каталог, цены, angel-moda', 0),
+(4420, 0, 'config', 'config_meta_title', 'Брендовая одежда, обувь и аксессуары итальянских производителей | Магазин брендовой одежды из Италии — Angel-Moda', 0),
+(4541, 0, 'config', 'config_error_filename', 'error.log', 0);
 
 -- --------------------------------------------------------
 
@@ -3823,7 +4508,7 @@ CREATE TABLE IF NOT EXISTS `ma_url_alias` (
   PRIMARY KEY (`url_alias_id`),
   KEY `query` (`query`),
   KEY `keyword` (`keyword`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1146 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1217 ;
 
 --
 -- Дамп данных таблицы `ma_url_alias`
@@ -3835,23 +4520,21 @@ INSERT INTO `ma_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 (1005, 'information_id=4', 'aboutus'),
 (1055, 'category_id=79', 'odezhda'),
 (986, 'category_id=73', 'novaja-kollektsija'),
-(1093, 'product_id=53', 'sumka-angels'),
 (1032, 'category_id=78', 'tovary-na-infostranitsax'),
 (1118, 'manufacturer_id=11', 'fly-girl-brand'),
 (961, 'category_id=65', 'rasprodazhi'),
 (1033, 'category_id=77', 'xity-prodazh'),
 (1010, 'information_id=15', 'i-lab'),
-(1135, 'product_id=51', 'tovar-ot-fly-girl-dlja-zhenschin'),
 (985, 'category_id=72', 'sale'),
 (958, 'category_id=59', 'muzhchinam'),
 (1012, 'category_id=60', 'zhenschinam'),
-(1074, 'category_id=85', 'bizhuterija'),
-(952, 'category_id=68', 'nizhnee-belje'),
-(956, 'category_id=69', 'noski'),
+(1146, 'category_id=85', 'bizhuterija'),
+(1170, 'category_id=68', 'nizhnee-belje'),
+(1171, 'category_id=69', 'noski'),
 (1049, 'information_id=13', 'mailus'),
 (1101, 'information_id=14', 'contacts'),
 (1052, 'information_id=12', 'shoptour'),
-(935, 'information_id=8', 'return'),
+(1206, 'information_id=8', 'return'),
 (937, 'information_id=9', 'loyaty'),
 (1015, 'information_id=10', 'wholesale'),
 (939, 'information_id=11', 'choose_size'),
@@ -3863,7 +4546,7 @@ INSERT INTO `ma_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 (1114, 'manufacturer_id=12', 'cavalli-class'),
 (1067, 'category_id=84', 'rubashki'),
 (1066, 'category_id=83', 'sportivnaja-odezhda'),
-(1136, 'product_id=52', 'xit-1'),
+(1216, 'product_id=52', 'xit-1'),
 (1057, 'category_id=80', 'kostjumy'),
 (1069, 'category_id=81', 'sale'),
 (1065, 'category_id=82', 'dzhempery-i-kardigany'),
@@ -3913,13 +4596,52 @@ INSERT INTO `ma_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 (1128, 'manufacturer_id=19', 'severi-darling'),
 (1127, 'manufacturer_id=20', 'met'),
 (1126, 'manufacturer_id=21', 'marina-yachting'),
-(1138, 'product_id=55', ''),
 (1104, 'information_id=16', 'manufacturers'),
-(1139, 'product_id=56', ''),
-(1140, 'product_id=57', ''),
-(1141, 'product_id=58', ''),
-(1143, 'product_id=60', ''),
-(1144, 'product_id=61', '');
+(1148, 'category_id=87', ''),
+(1149, 'category_id=88', ''),
+(1150, 'category_id=89', ''),
+(1151, 'category_id=90', ''),
+(1152, 'category_id=91', ''),
+(1153, 'category_id=92', ''),
+(1157, 'category_id=96', ''),
+(1156, 'category_id=95', ''),
+(1158, 'category_id=97', ''),
+(1159, 'category_id=98', ''),
+(1160, 'category_id=99', ''),
+(1161, 'category_id=100', ''),
+(1162, 'category_id=101', ''),
+(1163, 'category_id=102', ''),
+(1164, 'category_id=103', ''),
+(1165, 'category_id=104', ''),
+(1166, 'category_id=105', ''),
+(1167, 'category_id=106', ''),
+(1168, 'category_id=107', ''),
+(1169, 'category_id=108', ''),
+(1177, 'category_id=114', ''),
+(1174, 'category_id=111', ''),
+(1175, 'category_id=112', ''),
+(1176, 'category_id=113', ''),
+(1178, 'category_id=115', ''),
+(1179, 'category_id=116', ''),
+(1180, 'category_id=117', ''),
+(1181, 'category_id=118', ''),
+(1182, 'category_id=119', ''),
+(1183, 'category_id=120', ''),
+(1184, 'category_id=121', ''),
+(1185, 'category_id=122', ''),
+(1186, 'category_id=123', ''),
+(1187, 'category_id=124', ''),
+(1188, 'category_id=125', ''),
+(1189, 'category_id=126', ''),
+(1190, 'category_id=127', ''),
+(1191, 'category_id=128', ''),
+(1192, 'category_id=129', ''),
+(1193, 'category_id=130', ''),
+(1194, 'category_id=131', ''),
+(1195, 'category_id=132', ''),
+(1196, 'category_id=133', ''),
+(1197, 'category_id=134', ''),
+(1198, 'category_id=135', '');
 
 -- --------------------------------------------------------
 
