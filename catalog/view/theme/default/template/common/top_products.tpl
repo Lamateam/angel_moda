@@ -9,16 +9,10 @@
       </div>
       <div class="row">
         <?php 
-        $count=0;
-
-            foreach ($products as $product) {
+           $count=0;
+           foreach ($products as $product) {
               ?>
-            
-
-
-
-
-
+          
           <?php 
             if (($count == 3) || ($count == 4)){ 
              if ($count == 3) { ?> 
@@ -57,6 +51,17 @@
                       <div class="en_text" title="Add to Wishlist" onclick="wishlist.add('<?php echo $product['product_id']; ?>');">
                         <i class="fa fa-heart-o"></i>
                         <span>put aside</span>
+
+                      </div>
+
+                      <div class="ru_text see" title="Просмотреть" onclick="wishlist.add('<?php echo $product['product_id']; ?>');">
+                        <i class="fa fa-eye"></i>
+                        <span>Просмотреть</span>
+                      </div>
+
+                      <div class="en_text see" title="Show short description" onclick="wishlist.add('<?php echo $product['product_id']; ?>');">
+                        <i class="fa fa-eye"></i>
+                        <span>view</span>
 
                       </div>
                    
@@ -135,21 +140,10 @@
       </div>
    </div>
    
-   <?php //echo "<pre>"; print_r($products) ?>
    
    
    
    
    
    
-   
-   
-   
-   
-<?php
-   
-   // print_r($products) 
-
-
-
-?>
+  
