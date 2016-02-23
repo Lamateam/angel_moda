@@ -1400,5 +1400,21 @@ $('.datetime').datetimepicker({
   <script type="text/javascript"><!--
 $('#language a:first').tab('show');
 $('#option a:first').tab('show');
+
+
+
+$(document).ready(function(){
+/*
+  if ($("#input-meta-title1").val() ==="") {
+    $("#input-meta-title1").val("Автоматически")
+  }
+  if ($("#input-meta-title2").val() ==="") {
+    $("#input-meta-title2").val("Автоматически")
+  }
+*/
+});
+
+
+
 //--></script></div>
 <?php echo $footer; ?>
